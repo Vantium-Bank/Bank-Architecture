@@ -3039,7 +3039,14 @@ Forms the central private network highway connecting the Huawei Cloud digital ba
     </g>
 
     <!-- Dual IPsec VPN Backup -->
-    <g transform="translate(3890, 1660)">
+    <g id="box_sec3_vpn" class="interactive-box cursor-pointer" data-id="sec3_vpn" transform="translate(3890, 1660)">
+      <title>Dual IPsec VPN Tunnels (Automated Backup) [Section 3: Hybrid Connectivity]
+================================================================================
+1. CONNECTION TYPE: VIRTUAL OVER PUBLIC INTERNET (NO DEDICATED PHYSICAL CABLE)
+2. WHAT IT DOES: The Bank's Emergency Backup Road. Does not own a dedicated cable; traverses public commercial internet lines (MTN, Airtel, IPNX) packaged inside military-grade AES-256 encrypted digital 'armored cars'.
+3. ROLE IN ARCHITECTURE: Ensures zero downtime if an excavator or road construction accidentally cuts the physical Direct Connect fiber. Automatically takes over cloud-to-core traffic within 1 second.
+4. HOW IT CONNECTS: Inbound from Huawei Cloud Virtual Gateway; Outbound to Fortinet FortiGate perimeter firewalls in Lagos Primary DC.
+(Click box on diagram for interactive detail view)</title>
       <rect width="550" height="200" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
       <rect x="0" y="0" width="6" height="200" rx="3" fill="#0284c7" />
       <g transform="translate(20, 9)">
@@ -3087,7 +3094,14 @@ Transports synchronous block-level database redo logs for Oracle Active Data Gua
     </g>
 
     <!-- Next-Gen Perimeter Firewalls -->
-    <g transform="translate(3890, 2100)">
+    <g id="box_sec3_ngfw" class="interactive-box cursor-pointer" data-id="sec3_ngfw" transform="translate(3890, 2100)">
+      <title>Perimeter Ingress &amp; Next-Gen Firewalls (NGFW) [Section 3: Perimeter Defense]
+================================================================================
+1. CONNECTION TYPE: PHYSICAL HARDWARE APPLIANCES &amp; HIGH-SPEED FIBER PATCHES
+2. WHAT IT DOES: The Bank's Armed Border Gate &amp; Inspection Station. Physical enterprise firewall chassis bolted into server racks in our data center, connected by 10GbE/25GbE fiber patch cords.
+3. ROLE IN ARCHITECTURE: Inspects every incoming packet from 220 branches, 85,000 POS agents, 1,200 ATMs, and partner banks. Enforces strict Demilitarized Zones (DMZs) so untrusted traffic can never touch core banking ledgers directly.
+4. HOW IT CONNECTS: Inbound from Branch SD-WAN, Telco APNs, and Cloud Direct Connect; Outbound to isolated DMZ subnets and Core Middleware.
+(Click box on diagram for interactive detail view)</title>
       <rect width="550" height="360" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
       <rect x="0" y="0" width="6" height="360" rx="3" fill="#0f172a" />
       <g transform="translate(18, 9)">

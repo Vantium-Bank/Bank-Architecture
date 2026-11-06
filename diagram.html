@@ -3370,7 +3370,14 @@ Forms the central private network highway connecting the Huawei Cloud digital ba
     </g>
 
     <!-- Dual IPsec VPN Backup -->
-    <g transform="translate(3890, 1660)">
+    <g id="box_sec3_vpn" class="interactive-box cursor-pointer" data-id="sec3_vpn" transform="translate(3890, 1660)">
+      <title>Dual IPsec VPN Tunnels (Automated Backup) [Section 3: Hybrid Connectivity]
+================================================================================
+1. CONNECTION TYPE: VIRTUAL OVER PUBLIC INTERNET (NO DEDICATED PHYSICAL CABLE)
+2. WHAT IT DOES: The Bank's Emergency Backup Road. Does not own a dedicated cable; traverses public commercial internet lines (MTN, Airtel, IPNX) packaged inside military-grade AES-256 encrypted digital 'armored cars'.
+3. ROLE IN ARCHITECTURE: Ensures zero downtime if an excavator or road construction accidentally cuts the physical Direct Connect fiber. Automatically takes over cloud-to-core traffic within 1 second.
+4. HOW IT CONNECTS: Inbound from Huawei Cloud Virtual Gateway; Outbound to Fortinet FortiGate perimeter firewalls in Lagos Primary DC.
+(Click box on diagram for interactive detail view)</title>
       <rect width="550" height="200" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
       <rect x="0" y="0" width="6" height="200" rx="3" fill="#0284c7" />
       <g transform="translate(20, 9)">
@@ -3418,7 +3425,14 @@ Transports synchronous block-level database redo logs for Oracle Active Data Gua
     </g>
 
     <!-- Next-Gen Perimeter Firewalls -->
-    <g transform="translate(3890, 2100)">
+    <g id="box_sec3_ngfw" class="interactive-box cursor-pointer" data-id="sec3_ngfw" transform="translate(3890, 2100)">
+      <title>Perimeter Ingress &amp; Next-Gen Firewalls (NGFW) [Section 3: Perimeter Defense]
+================================================================================
+1. CONNECTION TYPE: PHYSICAL HARDWARE APPLIANCES &amp; HIGH-SPEED FIBER PATCHES
+2. WHAT IT DOES: The Bank's Armed Border Gate &amp; Inspection Station. Physical enterprise firewall chassis bolted into server racks in our data center, connected by 10GbE/25GbE fiber patch cords.
+3. ROLE IN ARCHITECTURE: Inspects every incoming packet from 220 branches, 85,000 POS agents, 1,200 ATMs, and partner banks. Enforces strict Demilitarized Zones (DMZs) so untrusted traffic can never touch core banking ledgers directly.
+4. HOW IT CONNECTS: Inbound from Branch SD-WAN, Telco APNs, and Cloud Direct Connect; Outbound to isolated DMZ subnets and Core Middleware.
+(Click box on diagram for interactive detail view)</title>
       <rect width="550" height="360" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
       <rect x="0" y="0" width="6" height="360" rx="3" fill="#0f172a" />
       <g transform="translate(18, 9)">
@@ -3807,12 +3821,7 @@ Transports synchronous block-level database redo logs for Oracle Active Data Gua
       ],
       "failover": "Multi-AZ active-standby database replication (AZ1/AZ2) with <30s automatic failover, auto-scaled read replicas, and CCE multi-zone Kubernetes node pools.",
       "security": "Dedicated hardware KMS Customer Master Keys, Istio mTLS zero-trust pod mesh, OWASP Top 10 WAF, and Prisma Cloud container runtime security."
-    },
-    "hosting_location": "Huawei Cloud Multi-AZ Enterprise Region (South Africa / Nigeria Edge)",
-    "criticality": "Tier-1 Cloud Digital Engine (Omnichannel Banking Platform)",
-    "tech_stack": "Cloud Container Engine (CCE Turbo) Kubernetes 1.25 | Istio Zero-Trust Service Mesh | Temporal.io Distributed Saga Workflow Orchestrator | Huawei Cloud RDS for PostgreSQL 14 & GaussDB Multi-AZ | Distributed Cache Service (DCS Redis Enterprise)",
-    "capacity_metrics": "Elastic auto-scaling from 20 to 120 pods | Sub-80ms API Gateway edge response | 250,000+ active mobile/web concurrent sessions | Multi-AZ active-standby failover (< 30 seconds)",
-    "compliance_standards": "ISO 27001 / ISO 27017 Cloud Security | CSA STAR Gold Certified | SOC 2 Type II | NDPA 2023 Cross-Border Regulatory Whitelist"
+    }
   },
   "sec11": {
     "name": "11. Enterprise Data Lakehouse & Databricks Data Engineering",
@@ -3832,12 +3841,7 @@ Transports synchronous block-level database redo logs for Oracle Active Data Gua
       ],
       "failover": "Serverless auto-scaling compute clusters across availability zones; Delta Lake ACID transactions with time-travel and multi-AZ object storage.",
       "security": "Unity Catalog fine-grained row-level filtering and dynamic column-level PII masking for BVN/NIN compliance with Nigeria Data Protection Act (NDPA 2023)."
-    },
-    "hosting_location": "Unified Enterprise Lakehouse on Cloud Object Storage (OBS/S3)",
-    "criticality": "Tier-1 Business Intelligence & Regulatory Compliance Engine",
-    "tech_stack": "Databricks Runtime 13.x LTS on Cloud | Apache Spark 3.4 with Photon Vectorized C++ SQL Engine | Delta Lake 2.4 ACID Transaction Storage | Unity Catalog Fine-Grained Governance & Lineage | Delta Live Tables (DLT) & MLflow 2.5",
-    "capacity_metrics": "Petabyte-scale analytical storage capacity | Sub-second interactive Photon SQL BI dashboard queries | 100,000+ CDC events/sec streaming ingestion | Automated daily CBN/NDIC returns in < 15 minutes",
-    "compliance_standards": "Nigeria Data Protection Act (NDPA 2023) Dynamic PII Masking | CBN e-FASS & S4 Reporting Framework | BCBS 239 Risk Data Aggregation"
+    }
   },
   "sec9": {
     "name": "9. Non Self-Hosted Enterprise Applications (SaaS)",
@@ -3856,12 +3860,7 @@ Transports synchronous block-level database redo logs for Oracle Active Data Gua
       ],
       "failover": "Provider-managed global multi-region SaaS redundancy, redundant leased circuits for treasury data feeds, and local caching on endpoints.",
       "security": "Microsoft Entra ID SAML 2.0 SSO, Forcepoint CASB/DLP policy enforcement, Delinea PAM privileged access monitoring, and air-gapped dedicated hosting."
-    },
-    "hosting_location": "Specialized Global Provider-Hosted SaaS Infrastructure & Secure Enclaves",
-    "criticality": "Tier-1 Specialized SaaS & Capital Markets Dealing",
-    "tech_stack": "SWIFT Alliance Gateway & WebAccess | Bloomberg Professional B-PIPE Leased Lines | Refinitiv (FIFX) | Diligent BoardEffect | Microsoft 365 Enterprise E5 | CyberSOC Africa Managed 24/7 SOC | Prisma Cloud & QualysGuard",
-    "capacity_metrics": "Sub-millisecond market price tick feeds | Dedicated leased line failover | 99.99% provider SLA availability",
-    "compliance_standards": "SWIFT Customer Security Programme (CSP) v2023 Certified | Entra ID SAML 2.0 MFA | Forcepoint DLP Policy Enforcement"
+    }
   },
   "sec10": {
     "name": "10. Nigerian Financial Ecosystem, Regulators & Telecom Carriers",
@@ -3880,12 +3879,7 @@ Transports synchronous block-level database redo logs for Oracle Active Data Gua
       ],
       "failover": "Dual redundant MPLS circuits to NIBSS data centers (Victoria Island & Ikeja), 14 contracted telcos ensuring carrier diversity, and automated BGP routing failover.",
       "security": "Dedicated private MPLS leased lines, hardware HSM MAC verification, 3DES/AES PIN translation, and strict IP whitelisting."
-    },
-    "hosting_location": "External National Financial Rails & Telecom Telco Exchanges",
-    "criticality": "National Critical Financial Infrastructure",
-    "tech_stack": "NIBSS Instant Payments (NIP) & Central Pay Switch | Central Bank of Nigeria (CBN) Extranet & RTGS | Interswitch Financial Switch | NIMC National Identity API | 14 Contracted Telecom Carrier Lines (MTN, Airtel, Glo, 9mobile, etc.)",
-    "capacity_metrics": "Sub-3 second NIP instant credit guarantee | Dual-redundant carrier leased line failover | High-capacity SMPP telco aggregation",
-    "compliance_standards": "CBN Payments System Vision (PSV 2025) | NIBSS Operational Rules & Regulations | NCC Telecom Carrier Quality of Service Mandates"
+    }
   },
   "sec4": {
     "name": "4. Bank Primary Data Center \u2014 Lagos (Equinix / MainOne Tier III)",
@@ -3929,12 +3923,7 @@ Transports synchronous block-level database redo logs for Oracle Active Data Gua
       ],
       "failover": "Fast-Start Failover (FSFO) with independent cloud observer node (RPO=0, RTO<5 min); VMware Site Recovery Manager (SRM) automated application restart.",
       "security": "Subterranean gas-suppressed climate-controlled vault storage, air-gapped from IP networks to eliminate ransomware vectors."
-    },
-    "hosting_location": "Ikeja Disaster Recovery Facility (Lagos - 25km Geographic Separation)",
-    "criticality": "Tier-1 Disaster Recovery Site (Business Continuity)",
-    "tech_stack": "Oracle Database 19c Active Data Guard (Standby Master) | Dell VxRail VMware vSphere & SRM (Site Recovery Manager) | Dell EMC Data Domain DD6900 with DD Boost | Fireproof Vaults & Offsite Montgomery LTO-8 Tape Archival",
-    "capacity_metrics": "Synchronous block-level redo shipping over private metro dark fiber ring (<2ms optical latency) | Zero Data Loss (RPO = 0) | Full DC failover invocation in < 15 minutes",
-    "compliance_standards": "CBN Disaster Recovery & Business Continuity Guideline | ISO 22301 Business Continuity Management | NDIC Insured Depositor Safety Mandate"
+    }
   },
   "sec6": {
     "name": "6. Strategic Physical Branch Network",
@@ -3953,12 +3942,7 @@ Transports synchronous block-level database redo logs for Oracle Active Data Gua
       ],
       "failover": "Dual-uplink SD-WAN with auto-failover from Metro Fiber (MainOne/21st Century) to 4G/5G Wireless (MTN/Airtel); dual online modular UPS and automated generator ATS.",
       "security": "Portnox 802.1X port authentication, BitLocker endpoint encryption, Cencon vault locks, and CCTV surveillance streamed to Head Office SOC."
-    },
-    "hosting_location": "Distributed Nationwide Physical Branch Network (Tier-1 Commercial Centers)",
-    "criticality": "Tier-2 Physical Retail & Cash Settlement Hub",
-    "tech_stack": "Cisco / Fortinet SD-WAN Secure Edge Appliances | MainOne / 21st Century Metro Dedicated Fiber (Primary) + MTN/Airtel 4G/5G LTE (Secondary) | Portnox CLEAR 802.1X Cloud NAC | Finacle Teller Thick Client (HTTPS Port 8000-8080)",
-    "capacity_metrics": "Dual-uplink automated sub-second WAN rollover | Sub-200ms branch transaction latency | 100% till balancing uptime",
-    "compliance_standards": "Portnox 802.1X Hardware MAC Whitelisting | BitLocker Endpoint FIPS 140-2 Encryption | Portnox Zero-Trust NAC"
+    }
   },
   "sec7": {
     "name": "7. Bank Head Office (Victoria Island / Marina, Lagos)",
@@ -3998,32 +3982,32 @@ Transports synchronous block-level database redo logs for Oracle Active Data Gua
       ],
       "failover": "Avaya Communication Manager clustered failover, multi-telco voice SIP trunking with automated overflow routing to backup voice circuits.",
       "security": "Dual-channel call recording with automated CVV pause/resume masking (PCI-DSS), encrypted softphone RTP audio, and role-based agent CTI permissions."
-    },
-    "hosting_location": "Contact Center Central Operations Complex (Victoria Island, Lagos)",
-    "criticality": "Tier-2 Customer Care & Fraud Dispute Operations",
-    "tech_stack": "Avaya CCaaS Aura / Oceana Platform | SIP Trunking over Dedicated Metro Dark Fiber | Avaya CTI Screen-Pop over SQL*Net Port 1521 | K2 BPM Workflow Dispute Automation Engine",
-    "capacity_metrics": "120+ concurrent active call center agents | Sub-2 second automated CTI screen-pop on customer call arrival | 100% voice recording with automated CVV pause-and-resume masking",
-    "compliance_standards": "PCI-DSS Audio Recording Compliance (CVV Masking) | NDPA 2023 Call Privacy | ISO 18295 Customer Contact Centers"
+    }
   },
   "sec3": {
     "name": "3. Hybrid Connectivity & Perimeter Ingress",
     "tier": "Network Backbone Tier",
-    "what_it_does": "The dedicated inter-facility backbone encompassing the 1 Gbps Huawei Cloud Direct Connect circuit, backup IPsec VPN tunnels, low-latency (<2ms) DCI dark fiber rings, and perimeter Fortinet Next-Gen Firewalls (NGFW).",
-    "role_in_architecture": "Forms the mission-critical transport highway uniting Huawei Cloud with on-premise primary and disaster recovery data centers. Enforces zero-trust boundary segmentation, cryptographic encapsulation, and sub-millisecond data replication.",
+    "hosting_location": "Lagos Equinix/MainOne Tier III & Abuja DR DC",
+    "criticality": "Tier-1 Mission-Critical (Sub-5ms Backbone)",
+    "what_it_does": "The Bank's Secured Private Transport Highway and Border Control. Unites Huawei Cloud with on-premise Primary and DR Data Centers across 4 pillars: (1) Direct Connect [PHYSICAL FIBER CABLE] for sub-5ms daily cloud transactions, (2) Dual IPsec VPN [VIRTUAL OVER PUBLIC INTERNET] for emergency backup, (3) Metro Dark Fiber Ring [PHYSICAL FIBER CABLE] for real-time zero-loss database mirroring (<2ms), and (4) Next-Gen Firewalls [PHYSICAL APPLIANCES] for perimeter threat defense.",
+    "role_in_architecture": "Guarantees that every customer transfer, card swipe, and balance query reaches the bank's core ledger instantly without downtime. Provides dual-layer redundancy: high-speed dedicated physical cables for daily production, and virtual encrypted tunnels over the public internet for emergency business continuity.",
+    "tech_stack": "Dedicated Single-Mode Dark Fiber (MainOne/Broadbased), 1 Gbps Direct Connect MPLS, Fortinet FortiGate NGFW Clusters, Forcepoint SWG, and Cisco Nexus 9000 Backbone.",
+    "capacity_metrics": "100 Gbps DCI Backbone Bandwidth | Sub-2ms Latency | Zero Data Loss (RPO = 0) | Sub-second Failover",
     "how_it_connects": {
       "inbound": [
-        "Huawei Cloud CCE Cluster via Direct Connect MPLS (Port 443)",
-        "Primary DC Core Switches via 10 GbE SFP+ Cross-Connects",
-        "Secondary DR DC via DCI Dark Fiber Ring"
+        "Huawei Cloud CCE (.NET Microservices via Direct Connect 1Gbps)",
+        "Branch SD-WAN Routers (220 Locations via Perimeter NGFW)",
+        "Payment Switches & Telco Carriers (Dedicated MMR Fiber Cross-Connects)"
       ],
       "outbound": [
-        "Core Banking Middleware Bus (mTLS Port 443)",
-        "Oracle Active Data Guard Standby (Port 1521)",
-        "Databricks Delta Lake Bronze Stream (Port 9092)"
+        "Primary DC Finacle Core Banking & Oracle RAC (mTLS Port 443 / TCP 1521)",
+        "Abuja Secondary DR Site (Active Data Guard Redo Replication over Dark Fiber)",
+        "Databricks Data Lakehouse (Kafka CDC Port 9092 over Direct Connect)"
       ],
-      "failover": "Sub-second BGP routing failover from Direct Connect 1 Gbps to redundant IPsec VPN tunnels; protected dual-routed metro dark fiber rings.",
-      "security": "Hardware IPsec AES-256-GCM encryption, Fortinet deep packet inspection (DPI), Forcepoint SWG egress proxy, and strict network segmentation (DMZ)."
-    }
+      "failover": "Dual-path physical routing with automated sub-second BGP failover to encrypted IPsec VPN backup tunnels upon any physical fiber cut.",
+      "security": "Dedicated physical fiber isolation, Layer-2 MACsec hardware encryption, AES-256-GCM VPN tunnels, and Fortinet deep packet inspection."
+    },
+    "compliance_standards": "CBN PSV 2025 Guidelines | PCI-DSS v4.0 Network Segmentation | NDPA 2023"
   },
   "sec1_card1": {
     "name": "Retail Mobile Banking App (iOS & Android)",
@@ -4647,35 +4631,48 @@ Transports synchronous block-level database redo logs for Oracle Active Data Gua
   },
   "sec3_direct_connect": {
     "name": "Huawei Cloud Direct Connect (Primary 1 Gbps)",
-    "tier": "Section 3: Hybrid Connectivity",
-    "what_it_does": "Dedicated layer-2 MPLS leased circuit terminating directly from Equinix / MainOne Tier III data center into Huawei Cloud edge routers.",
-    "role_in_architecture": "The primary low-latency high-throughput data highway uniting cloud microservices with on-prem core banking and Oracle RAC.",
+    "tier": "Section 3: Physical Leased Line",
+    "hosting_location": "Equinix / MainOne Lagos Meet-Me-Room (MMR)",
+    "criticality": "Tier-1 Mission-Critical [PHYSICAL FIBER CABLE]",
+    "what_it_does": "PHYSICAL FIBER CABLE CONNECTION: The Bank's Private Dedicated Express Highway. A physical single-mode fiber-optic cable running directly from the Lagos Data Center into Huawei Cloud's edge network facility. Leased exclusively to Vantium Bank; completely isolated from the public internet.",
+    "role_in_architecture": "Carries daily high-volume digital banking transactions (mobile app transfers, USSD requests, card controls) directly into on-premise Finacle Core Banking with sub-5ms round-trip latency. Completely immune to internet congestion, outages, or DDoS attacks.",
+    "tech_stack": "Dedicated OS2 Single-Mode Optical Fiber, 1 Gbps MPLS Bandwidth, Redundant BGP Peering, 9000 Byte Jumbo Frames, mTLS Encryption.",
+    "capacity_metrics": "1 Gbps Dedicated Throughput | < 5ms Latency | 99.999% SLA Uptime",
     "how_it_connects": {
       "inbound": [
-        "Huawei Cloud CCE Cluster & RDS PostgreSQL via VPC Peering"
+        "Huawei Cloud Container Engine (CCE) .NET Microservices"
       ],
       "outbound": [
-        "On-Premises Core Banking Middleware & Oracle RAC via 10 GbE Cross-Connect"
+        "Primary Data Center Core Banking Middleware Bus (mTLS Port 443)",
+        "Finacle Core Ledger via Direct Ingress Bus"
       ],
-      "failover": "Sub-second BGP failover to secondary IPsec VPN backup tunnels over public internet.",
-      "security": "Dedicated private physical circuit isolated from the public internet, BGP MD5 authentication, and MACsec encryption."
-    }
+      "failover": "Sub-second automatic failover to Dual IPsec VPN Backup Tunnels over public internet if physical cable is cut.",
+      "security": "Physically isolated fiber circuit, 802.1Q VLAN encapsulation, Mutual TLS (mTLS) application encryption."
+    },
+    "compliance_standards": "CBN IT Standards | PCI-DSS v4.0 Requirement 1 & 4"
   },
   "sec3_dci": {
     "name": "Inter-DC Dark Fiber Ring (DCI Interconnect)",
-    "tier": "Section 3: Hybrid Connectivity",
-    "what_it_does": "Dedicated private metro dark fiber ring connecting the Primary Data Center (Lagos) with the Secondary DR Data Center (Ikeja) across 25km.",
-    "role_in_architecture": "Enables synchronous Oracle Active Data Guard replication with sub-2ms latency, guaranteeing zero data loss (RPO = 0).",
+    "tier": "Section 3: Dedicated Metro Dark Fiber",
+    "hosting_location": "Lagos Lekki Primary DC to Abuja DR DC",
+    "criticality": "Zero Data Loss Backbone [PHYSICAL FIBER CABLE]",
+    "what_it_does": "PHYSICAL CABLE CONNECTION (100% DEDICATED UNDERGROUND GLASS): The Bank's Real-Time Data Mirror. Dedicated physical single-mode optical fiber pairs buried in underground conduits across separate geographic routes. Unshared with any other organization.",
+    "role_in_architecture": "Instantly mirrors every deposit, withdrawal, and transfer from Lagos to the Abuja Disaster Recovery site at lightspeed (< 2ms round-trip latency). Powers Oracle 19c Active Data Guard synchronous database replication, ensuring Zero Data Loss (RPO = 0) even during a catastrophic failure in Lagos.",
+    "tech_stack": "Dense Wavelength Division Multiplexing (DWDM), Dedicated Single-Mode Fiber (Broadbased Communications & 21st Century), IEEE 802.1AE MACsec Line-Rate Hardware Encryption.",
+    "capacity_metrics": "100 Gbps DCI Optical Bandwidth | < 2ms Round-Trip Latency | Zero Data Loss (RPO = 0)",
     "how_it_connects": {
       "inbound": [
-        "Primary DC DWDM Optical Transponders (10 Gbps / 40 Gbps)"
+        "Primary DC Oracle 19c RAC Nodes",
+        "Dell EMC Data Domain DD6900 Backup Appliances"
       ],
       "outbound": [
-        "Secondary DR DC DWDM Transponders via Protected Redundant Fiber Paths"
+        "Secondary DR DC Oracle Standby Database (TCP 1521)",
+        "DR Data Domain Backup Store (TCP 2051)"
       ],
-      "failover": "Protected counter-rotating dual-ring topology: automatic optical sub-50ms self-healing switch upon physical fiber cut.",
-      "security": "Dedicated unlit fiber strands with physical optical intrusion monitoring and hardware line-rate AES-256 encryption."
-    }
+      "failover": "Dual-routed physical ring topology with automated optical protection switching (< 50ms) against fiber cuts.",
+      "security": "Dedicated unlit glass strands, wiretap-proof physical conduits, hardware MACsec Layer-2 encryption."
+    },
+    "compliance_standards": "CBN Risk Management Framework | NDIC RPO=0 Compliance | ISO 27001"
   },
   "sec1_customer_channels": {
     "name": "1. Digital & Physical Customer Channels",
@@ -4696,12 +4693,7 @@ Transports synchronous block-level database redo logs for Oracle Active Data Gua
       ],
       "failover": "BGP Anycast DNS, multi-telco dual-SIM failover on POS/ATMs, multi-AZ cloud WAF ingestion.",
       "security": "GuardSquare DexGuard/iXGuard, FIDO2 biometrics, SafeToken 2FA, DUKPT PIN encryption, PCI-DSS Level 1 terminal certs."
-    },
-    "hosting_location": "Public Internet & Omnichannel Access Perimeters",
-    "criticality": "Tier-1 Customer Engagement & Transaction Entrypoint",
-    "tech_stack": "Native iOS & Android Mobile Banking Apps | Responsive HTML5 Web Portals | SMPP USSD Gateway (*XYZ#) | Android POS EMV Terminals (Dukpt) | Diebold Nixdorf ATMs",
-    "capacity_metrics": "1,000,000+ registered retail/SME digital customers | Peak burst 10,000 customer logins/min | Sub-3 second mobile session bootstrap",
-    "compliance_standards": "FIDO2 Biometric Authentication | GuardSquare DexGuard/iXGuard Obfuscation | OWASP Mobile Top 10 | PCI-PTS v6.0"
+    }
   },
   "sec2_huawei_cloud": {
     "name": "2. Huawei Cloud Platform (Digital Platform & Workflows)",
@@ -4767,12 +4759,7 @@ Transports synchronous block-level database redo logs for Oracle Active Data Gua
       ],
       "failover": "Active-Active 2-node Oracle RAC with ASM, redundant power, Dell VxRail HCI vSAN, and dual-homed telecom feeds.",
       "security": "Thales payShield 10K hardware HSM for PIN translation, Oracle TDE encryption with hardware keys, Fortinet NGFW perimeter, and physical biometric mantrap access."
-    },
-    "hosting_location": "Equinix / MainOne Tier III Colocation Data Center (Lagos, Nigeria)",
-    "criticality": "Bank Master Primary Production Data Center",
-    "tech_stack": "Dell VxRail Hyperconverged Infrastructure (HCI) | Cisco Nexus 9000 100GbE Spine-Leaf Fabric | Infosys Finacle 11.x Core Banking | Oracle 19c RAC (2-Node) | Postilion Financial Switch | Thales payShield 10K & Luna HSMs | Fortinet FortiGate 3000F Next-Gen Firewalls",
-    "capacity_metrics": "Dual utility power grid feeds + 2N Cummins Diesel Generators | N+1 Precision In-Row Cooling | Sub-1ms intra-datacenter latency | 100% uptime SLA",
-    "compliance_standards": "Tier III Uptime Institute Design & Facility Certified | PCI-DSS Level 1 v4.0 | ISO 27001 / ISO 22301"
+    }
   },
   "sec5_secondary_dr_dc": {
     "name": "5. Secondary DR Data Center & Tape Vault",
@@ -4938,6 +4925,52 @@ Transports synchronous block-level database redo logs for Oracle Active Data Gua
     "tech_stack": "Databricks Runtime 13.x LTS on Cloud | Apache Spark 3.4 with Photon Vectorized C++ SQL Engine | Delta Lake 2.4 ACID Transaction Storage | Unity Catalog Fine-Grained Governance & Lineage | Delta Live Tables (DLT) & MLflow 2.5",
     "capacity_metrics": "Petabyte-scale analytical storage capacity | Sub-second interactive Photon SQL BI dashboard queries | 100,000+ CDC events/sec streaming ingestion | Automated daily CBN/NDIC returns in < 15 minutes",
     "compliance_standards": "Nigeria Data Protection Act (NDPA 2023) Dynamic PII Masking | CBN e-FASS & S4 Reporting Framework | BCBS 239 Risk Data Aggregation"
+  },
+  "sec3_vpn": {
+    "name": "Dual IPsec VPN Tunnels (Automated Backup)",
+    "tier": "Section 3: Virtual Fallback Tunnel",
+    "hosting_location": "Redundant Multi-ISP Internet Gateways",
+    "criticality": "Emergency Business Continuity [VIRTUAL OVER PUBLIC INTERNET]",
+    "what_it_does": "VIRTUAL / SOFTWARE-BASED CONNECTION (TRAVERSES PUBLIC INTERNET): The Bank's Emergency Backup Road. Does NOT have a dedicated physical cable. Operates across public commercial internet pipes (MTN, Airtel, IPNX), packaging bank traffic into encrypted digital 'armored cars' (AES-256-GCM).",
+    "role_in_architecture": "Guarantees that banking operations never stall if an excavator or road construction accidentally cuts the physical Direct Connect fiber. BGP routing automatically flips cloud-to-core transactions onto this backup tunnel within 1 second.",
+    "tech_stack": "IPsec IKEv2 Protocol, AES-256-GCM Hardware Cryptography, BGP Routing Health Monitoring with BFD, Multi-Telco Internet Underlays.",
+    "capacity_metrics": "Redundant 500 Mbps Internet Bandwidth | < 1 Second Automated Failover",
+    "how_it_connects": {
+      "inbound": [
+        "Huawei Cloud Virtual Private Gateway (VGW)"
+      ],
+      "outbound": [
+        "Fortinet FortiGate Perimeter Firewall Cluster in Lagos Primary DC"
+      ],
+      "failover": "Active-Standby redundant VPN gateways routed across diverse telecom internet backhauls.",
+      "security": "Military-grade AES-256 encryption, SHA-384 integrity hashing, Diffie-Hellman Group 20 key exchange."
+    },
+    "compliance_standards": "CBN Business Continuity Guidelines | ISO 22301"
+  },
+  "sec3_ngfw": {
+    "name": "Perimeter Ingress & Next-Gen Firewalls (NGFW)",
+    "tier": "Section 3: Perimeter Defense",
+    "hosting_location": "Primary Data Center Secure Cage",
+    "criticality": "Enterprise Perimeter Shield [PHYSICAL APPLIANCES]",
+    "what_it_does": "PHYSICAL SECURITY HARDWARE APPLIANCES & FIBER PATCHES: The Bank's Armed Border Gate & Inspection Station. Heavy-duty physical security chassis bolted into server racks in our data center, connected by 10GbE/25GbE fiber patch cords to core switches.",
+    "role_in_architecture": "Inspects every incoming connection from branches, ATMs, POS merchants, cloud direct connects, and partner banks. Enforces Demilitarized Zones (DMZ) to ensure untrusted traffic never touches core banking ledgers directly.",
+    "tech_stack": "Clustered Fortinet FortiGate Enterprise NGFW Appliances, Forcepoint Secure Web Gateway (SWG), Microsoft Entra ID SAML Proxy, Delinea PAM Bastion.",
+    "capacity_metrics": "80 Gbps Firewall Throughput | 20M Concurrent Sessions | Deep Packet Inspection (DPI)",
+    "how_it_connects": {
+      "inbound": [
+        "Branch SD-WAN Routers (220 Locations)",
+        "Telco Private APNs (85k POS & 1,200 ATMs)",
+        "Direct Connect & VPN Ingress"
+      ],
+      "outbound": [
+        "Isolated DMZ Subnets",
+        "Core Banking Middleware Bus (Restricted Port 443)",
+        "Forcepoint SWG Outbound Proxy"
+      ],
+      "failover": "Active-Active clustered hardware failover with state synchronization (< 100ms switchover).",
+      "security": "Deep packet inspection, IPS attack signature matching, anti-botnet screening, zero-trust network access (ZTNA)."
+    },
+    "compliance_standards": "PCI-DSS v4.0 Level 1 Firewall Mandates | CBN Cyber Security Framework"
   }
 };
     const CONNECTIONS = [
@@ -7298,6 +7331,38 @@ Transports synchronous block-level database redo logs for Oracle Active Data Gua
     "h": 0.0,
     "center_x": 0.0,
     "center_y": 0.0
+  },
+  "box_sec3_vpn": {
+    "abs_x": 3890.0,
+    "abs_y": 1660.0,
+    "w": 550.0,
+    "h": 200.0,
+    "center_x": 4165.0,
+    "center_y": 1760.0
+  },
+  "box_sec3_ngfw": {
+    "abs_x": 3890.0,
+    "abs_y": 2100.0,
+    "w": 550.0,
+    "h": 360.0,
+    "center_x": 4165.0,
+    "center_y": 2280.0
+  },
+  "sec3_vpn": {
+    "abs_x": 3890.0,
+    "abs_y": 1660.0,
+    "w": 550.0,
+    "h": 200.0,
+    "center_x": 4165.0,
+    "center_y": 1760.0
+  },
+  "sec3_ngfw": {
+    "abs_x": 3890.0,
+    "abs_y": 2100.0,
+    "w": 550.0,
+    "h": 360.0,
+    "center_x": 4165.0,
+    "center_y": 2280.0
   }
 };
     const SEC_COORDS = {
@@ -8290,9 +8355,10 @@ Transports synchronous block-level database redo logs for Oracle Active Data Gua
         zoom: 0.65,
         targetComp: 'sec3_direct_connect',
         networking: [
-          'Two physically diverse 1 Gbps MPLS fiber circuits (MainOne and Broadbased Communications).',
-          'BGP dynamic routing with sub-second automatic route convergence upon fiber cut.',
-          'Metro dark fiber ring interconnects Primary DC (Lagos) to Standby DR DC (Abuja) with < 2ms latency.'
+          '⚡ 1. DIRECT CONNECT (1 Gbps) — [PHYSICAL FIBER CABLE]: Dedicated private highway linking Cloud CCE to on-prem Finacle Core. Sub-5ms transaction speed; 100% isolated from public internet.',
+          '🔄 2. DUAL IPsec VPN — [VIRTUAL / PUBLIC INTERNET]: Automated emergency backup road. If the physical cable cuts, traffic flips to encrypted public web tunnels within 1 second.',
+          '💎 3. METRO DARK FIBER RING — [PHYSICAL FIBER CABLE]: Dedicated underground glass fiber pair connecting Lagos Primary DC to Abuja DR Site. Real-time (<2ms) data mirror guaranteeing Zero Data Loss (RPO = 0).',
+          '🛡️ 4. PERIMETER FIREWALLS (NGFW) — [PHYSICAL APPLIANCES]: Armed border control gate inspecting all incoming traffic from branches, ATMs, POS, and partners before reaching the core vault.'
         ],
         security: [
           'Dedicated physical fiber medium completely isolated and air-gapped from the public internet.',
@@ -9848,6 +9914,14 @@ Transports synchronous block-level database redo logs for Oracle Active Data Gua
     window.addEventListener('DOMContentLoaded', () => {
       fitToScreen();
       initInteractiveBoxes();
+
+      // URL hash deep linking for inspection
+      const hash = window.location.hash;
+      if (hash && hash.includes('inspect=')) {
+        const comp = hash.split('inspect=')[1].split('&')[0];
+        setTimeout(() => selectComponent(comp), 400);
+      }
+
       // Touch Navigation for Mobile & Tablet (Pinch Zoom & Drag Pan)
       let touchStartDist = 0;
       let touchStartZoom = 0.45;
