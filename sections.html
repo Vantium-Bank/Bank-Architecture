@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commercial Bank Nigeria PLC — Section-by-Section Executive Architecture Briefing</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+    
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #060c18;
+      color: #f1f5f9;
+    }
+    
+    @media print {
+      body {
+        background-color: #060c18 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .page-break {
+        page-break-after: always;
+      }
+    }
+
+    .glass-card {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.6) 100%);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col p-4 md:p-6 lg:p-8 space-y-8">
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="flex flex-wrap items-center justify-between pb-6 border-b border-slate-800 gap-4">
+    <div class="flex items-center space-x-4">
+      <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-amber-500 flex items-center justify-center shadow-lg shadow-blue-500/20 text-white font-extrabold text-2xl tracking-wider">
+        CB
+      </div>
+      <div>
+        <div class="flex items-center space-x-2">
+          <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/30">
+            C-Suite &amp; Board Deep Dive
+          </span>
+          <span class="text-xs text-slate-400 font-mono">11 Architectural Tiers</span>
+        </div>
+        <h1 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight mt-0.5">
+          Section-by-Section Executive Architecture Briefing
+        </h1>
+        <p class="text-xs text-slate-400 mt-1">
+          A plain-English walkthrough highlighting <strong>(1) Networking &amp; Interconnectivity</strong>, <strong>(2) Security &amp; Compliance</strong>, and <strong>(3) Qualified Vendor Ecosystem</strong> across all 11 tiers.
+        </p>
+      </div>
+    </div>
+
+    <!-- Quick Action Controls -->
+    <div class="flex items-center space-x-3 no-print">
+      <a href="index.html" class="px-4 py-2 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition flex items-center space-x-2">
+        <span>🖥️</span>
+        <span>Interactive Visualizer</span>
+      </a>
+      <a href="executive.html" class="px-4 py-2 rounded-lg text-xs font-semibold bg-amber-600/20 hover:bg-amber-600/30 text-amber-300 border border-amber-500/40 transition flex items-center space-x-2">
+        <span>📄</span>
+        <span>1-Page Metro Summary</span>
+      </a>
+      <button onclick="window.print()" class="px-4 py-2 rounded-lg text-xs font-semibold bg-blue-600 hover:bg-blue-500 text-white shadow-md shadow-blue-600/30 transition flex items-center space-x-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4H7v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+        <span>Print Report</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==================== EXECUTIVE SUMMARY CARDS ==================== -->
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div class="glass-card rounded-xl p-4 border-l-4 border-l-blue-500">
+      <div class="flex items-center space-x-2 text-blue-400 font-bold text-xs uppercase tracking-wider mb-1">
+        <span>🌐</span>
+        <span>Pillar 1: Networking &amp; Interconnectivity</span>
+      </div>
+      <p class="text-xs text-slate-300 leading-relaxed">
+        Defines how every tier talks to the next. Emphasizes the <strong>Core Middleware Bus</strong> as the non-negotiable security gatekeeper for 100% of core transactions.
+      </p>
+    </div>
+
+    <div class="glass-card rounded-xl p-4 border-l-4 border-l-rose-500">
+      <div class="flex items-center space-x-2 text-rose-400 font-bold text-xs uppercase tracking-wider mb-1">
+        <span>🛡️</span>
+        <span>Pillar 2: Security &amp; Compliance</span>
+      </div>
+      <p class="text-xs text-slate-300 leading-relaxed">
+        Explains how customer funds and confidential data are shielded via hardware HSMs, Cloud WAF, DMZ isolation, and Central Bank of Nigeria (CBN PSV 2025) audits.
+      </p>
+    </div>
+
+    <div class="glass-card rounded-xl p-4 border-l-4 border-l-amber-500">
+      <div class="flex items-center space-x-2 text-amber-400 font-bold text-xs uppercase tracking-wider mb-1">
+        <span>🏢</span>
+        <span>Pillar 3: Vendor Ecosystem (No Pricing)</span>
+      </div>
+      <p class="text-xs text-slate-300 leading-relaxed">
+        Identifies the world-class OEM platform, its certified local Nigerian delivery partner (with on-the-ground engineers in Lagos), and a qualified benchmark alternative.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== THE 11 ARCHITECTURAL SECTIONS ==================== -->
+  <main class="space-y-6">
+
+    <!-- 1. SECTION 1: CUSTOMER CHANNELS -->
+    <article id="sec1" class="glass-card rounded-2xl p-6 border border-cyan-500/30">
+      <div class="flex flex-wrap items-center justify-between pb-4 border-b border-slate-800 gap-2">
+        <div class="flex items-center space-x-3">
+          <span class="w-8 h-8 rounded-lg bg-cyan-950 text-cyan-300 border border-cyan-500/50 flex items-center justify-center font-bold text-sm">1</span>
+          <div>
+            <h2 class="text-lg font-bold text-white flex items-center">
+              <span>Section 1: Customer Channels &amp; Touchpoints</span>
+              <span class="ml-2 px-2 py-0.5 rounded text-[10px] font-mono bg-cyan-950 text-cyan-300 border border-cyan-800">Omnichannel Ingress</span>
+            </h2>
+            <p class="text-xs text-slate-400">Mobile Banking, Internet Banking, 85,000 POS, 1,200 ATMs, 220 Branches, and USSD</p>
+          </div>
+        </div>
+        <span class="text-xs text-emerald-400 font-mono font-semibold">15M+ Daily Transactions</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-5">
+        <!-- Pillar 1 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-cyan-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🌐</span> 1. Networking &amp; Interconnectivity
+          </div>
+          <ul class="text-xs space-y-2 text-slate-300 leading-relaxed">
+            <li><strong>Mobile &amp; Web Apps:</strong> Connect over public internet via encrypted HTTPS TLS 1.3 to the <strong>Huawei Cloud WAF</strong> (Section 2).</li>
+            <li><strong>POS Fleet (85,000 Terminals):</strong> Connect over private telco APNs (MTN/Airtel private SIMs) directly to the on-premise <strong>Postilion Payment Switch</strong> (Section 4).</li>
+            <li><strong>ATM Fleet (1,200 Units):</strong> Connect over private MPLS/IPsec circuits to the <strong>Postilion Switch</strong>.</li>
+            <li><strong>USSD Gateway:</strong> Connects over dedicated telco SS7/SMPP links to Core Middleware.</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-rose-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🛡️</span> 2. Security &amp; Compliance
+          </div>
+          <ul class="text-xs space-y-2 text-slate-300 leading-relaxed">
+            <li><strong>Tamper Proofing:</strong> GuardSquare mobile binary obfuscation prevents reverse engineering or malware injection.</li>
+            <li><strong>PIN Encryption:</strong> DUKPT (Derived Unique Key Per Transaction) encrypts ATM/POS PIN blocks at the physical SAM chip.</li>
+            <li><strong>Zero-Trust Authentication:</strong> FIDO2 biometric login (FaceID / Fingerprint) and dynamic SMS/email OTP.</li>
+            <li><strong>Certifications:</strong> PCI-DSS v4.0 Level 1 certified; compliant with CBN Consumer Protection Framework.</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🏢</span> 3. Qualified Vendor Ecosystem
+          </div>
+          <div class="space-y-2.5 text-xs">
+            <div class="p-2.5 rounded-lg bg-blue-950/30 border border-blue-900/50">
+              <span class="text-[10px] font-mono text-blue-300 font-bold uppercase block">Option 1: Primary Deployed Platform</span>
+              <div class="text-white font-bold">Backbase Omnichannel Platform</div>
+              <div class="text-emerald-400 text-[11px]">Local Partner: ActivEdge Technologies Limited (Lekki, Lagos)</div>
+            </div>
+            <div class="p-2.5 rounded-lg bg-purple-950/30 border border-purple-900/50">
+              <span class="text-[10px] font-mono text-purple-300 font-bold uppercase block">Option 2: Benchmark Alternative</span>
+              <div class="text-white font-bold">EdgeVerve Finacle Digital Engagement Suite</div>
+              <div class="text-slate-300 text-[11px]">Local Partner: Inlaks Computers Limited (VI, Lagos)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- 2. SECTION 2: HUAWEI CLOUD DIGITAL SHIELD -->
+    <article id="sec2" class="glass-card rounded-2xl p-6 border border-blue-500/30">
+      <div class="flex flex-wrap items-center justify-between pb-4 border-b border-slate-800 gap-2">
+        <div class="flex items-center space-x-3">
+          <span class="w-8 h-8 rounded-lg bg-blue-950 text-blue-300 border border-blue-500/50 flex items-center justify-center font-bold text-sm">2</span>
+          <div>
+            <h2 class="text-lg font-bold text-white flex items-center">
+              <span>Section 2: Huawei Cloud Digital Gateway &amp; Shield</span>
+              <span class="ml-2 px-2 py-0.5 rounded text-[10px] font-mono bg-blue-950 text-blue-300 border border-blue-800">Elastic Cloud Zone</span>
+            </h2>
+            <p class="text-xs text-slate-400">Cloud WAF, Anti-DDoS, CCE Kubernetes Microservices, APIG, and Multi-AZ Databases</p>
+          </div>
+        </div>
+        <span class="text-xs text-blue-400 font-mono font-semibold">50M+ Cyber Probes Blocked/Mo</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-5">
+        <!-- Pillar 1 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-cyan-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🌐</span> 1. Networking &amp; Interconnectivity
+          </div>
+          <ul class="text-xs space-y-2 text-slate-300 leading-relaxed">
+            <li><strong>Traffic Termination:</strong> Internet traffic terminates at Cloud WAF; internal routing via Huawei APIG / Kong API Gateway.</li>
+            <li><strong>Microservices Mesh:</strong> High-density container pods (Customer Onboarding, Bill Pay) run on CCE Kubernetes.</li>
+            <li><strong>On-Prem Gateway:</strong> Back-end transaction calls leave the cloud <strong>exclusively via Dual 1 Gbps Direct Connect</strong> (Section 3).</li>
+            <li><strong>Isolation:</strong> Backend pods have zero public IP addresses and cannot be reached from the public web.</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-rose-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🛡️</span> 2. Security &amp; Compliance
+          </div>
+          <ul class="text-xs space-y-2 text-slate-300 leading-relaxed">
+            <li><strong>DDoS Shield:</strong> Dedicated Anti-DDoS hardware absorbs volumetric attacks up to 500 Gbps.</li>
+            <li><strong>Application Defense:</strong> WAF rules block SQL injection, cross-site scripting (XSS), and zero-day web threats.</li>
+            <li><strong>Container Security:</strong> Automated container image vulnerability scanning and IAM role-based least privilege.</li>
+            <li><strong>Multi-AZ Storage:</strong> Database replicas synchronized across 3 Availability Zones with automated 30s failover.</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🏢</span> 3. Qualified Vendor Ecosystem
+          </div>
+          <div class="space-y-2.5 text-xs">
+            <div class="p-2.5 rounded-lg bg-blue-950/30 border border-blue-900/50">
+              <span class="text-[10px] font-mono text-blue-300 font-bold uppercase block">Option 1: Primary Deployed Platform</span>
+              <div class="text-white font-bold">Huawei Cloud Financial Services Cloud</div>
+              <div class="text-emerald-400 text-[11px]">Local Partner: Huawei Technologies Nigeria (VI, Lagos)</div>
+            </div>
+            <div class="p-2.5 rounded-lg bg-purple-950/30 border border-purple-900/50">
+              <span class="text-[10px] font-mono text-purple-300 font-bold uppercase block">Option 2: Benchmark Alternative</span>
+              <div class="text-white font-bold">AWS Financial Services Reference Architecture</div>
+              <div class="text-slate-300 text-[11px]">Local Partner: Dimension Data Nigeria (NTT)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- 3. SECTION 3: HYBRID DEDICATED CONNECTIVITY -->
+    <article id="sec3" class="glass-card rounded-2xl p-6 border border-indigo-500/30">
+      <div class="flex flex-wrap items-center justify-between pb-4 border-b border-slate-800 gap-2">
+        <div class="flex items-center space-x-3">
+          <span class="w-8 h-8 rounded-lg bg-indigo-950 text-indigo-300 border border-indigo-500/50 flex items-center justify-center font-bold text-sm">3</span>
+          <div>
+            <h2 class="text-lg font-bold text-white flex items-center">
+              <span>Section 3: Hybrid Dedicated Connectivity (Direct Connect)</span>
+              <span class="ml-2 px-2 py-0.5 rounded text-[10px] font-mono bg-indigo-950 text-indigo-300 border border-indigo-800">Private Backbone</span>
+            </h2>
+            <p class="text-xs text-slate-400">Dual 1 Gbps MPLS Direct Connect, Metro Dark Fiber DCI, and Perimeter FortiGate Firewalls</p>
+          </div>
+        </div>
+        <span class="text-xs text-indigo-400 font-mono font-semibold">Dual 1 Gbps Carriers</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-5">
+        <!-- Pillar 1 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-cyan-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🌐</span> 1. Networking &amp; Interconnectivity
+          </div>
+          <ul class="text-xs space-y-2 text-slate-300 leading-relaxed">
+            <li><strong>Dedicated Fiber Highway:</strong> Two independent tier-1 telco providers (MainOne and Broadbased Communications) provide diverse physical fiber paths.</li>
+            <li><strong>BGP High Availability:</strong> BGP dynamic routing provides sub-second automatic route failover if either fiber is severed.</li>
+            <li><strong>DCI Dark Fiber:</strong> Metro dark fiber ring connects Primary Data Center in Lagos to Standby DR DC in Abuja with &lt; 2ms latency.</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-rose-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🛡️</span> 2. Security &amp; Compliance
+          </div>
+          <ul class="text-xs space-y-2 text-slate-300 leading-relaxed">
+            <li><strong>Air-Gapped Private Medium:</strong> Physical fiber completely separate from the public internet; unroutable RFC 1918 private IP addressing.</li>
+            <li><strong>Line-Rate Cryptography:</strong> MACsec hardware encryption at Layer 2 and IPsec AES-256 at Layer 3.</li>
+            <li><strong>Perimeter Enforcement:</strong> Clustered Fortinet FortiGate 3000F firewalls inspect and log all cross-facility traffic.</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🏢</span> 3. Qualified Vendor Ecosystem
+          </div>
+          <div class="space-y-2.5 text-xs">
+            <div class="p-2.5 rounded-lg bg-blue-950/30 border border-blue-900/50">
+              <span class="text-[10px] font-mono text-blue-300 font-bold uppercase block">Option 1: Primary Deployed Platform</span>
+              <div class="text-white font-bold">Huawei Direct Connect &amp; Fortinet FortiGate</div>
+              <div class="text-emerald-400 text-[11px]">Local Partners: Broadbased / MainOne &amp; Reliance Infosystems</div>
+            </div>
+            <div class="p-2.5 rounded-lg bg-purple-950/30 border border-purple-900/50">
+              <span class="text-[10px] font-mono text-purple-300 font-bold uppercase block">Option 2: Benchmark Alternative</span>
+              <div class="text-white font-bold">Cisco Catalyst 8500 Edge &amp; Check Point Quantum</div>
+              <div class="text-slate-300 text-[11px]">Local Partner: Dimension Data Nigeria (NTT)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- 4. SECTION 4: PRIMARY PRODUCTION DATA CENTER -->
+    <article id="sec4" class="glass-card rounded-2xl p-6 border-2 border-purple-500/50 bg-gradient-to-br from-slate-950 via-purple-950/20 to-slate-950">
+      <div class="flex flex-wrap items-center justify-between pb-4 border-b border-purple-500/30 gap-2">
+        <div class="flex items-center space-x-3">
+          <span class="w-8 h-8 rounded-lg bg-purple-950 text-purple-300 border border-purple-500 flex items-center justify-center font-bold text-sm">4</span>
+          <div>
+            <h2 class="text-lg font-bold text-white flex items-center">
+              <span>Section 4: Primary Production Data Center (The Core Sovereign Vault)</span>
+              <span class="ml-2 px-2 py-0.5 rounded text-[10px] font-mono bg-amber-500/20 text-amber-300 border border-amber-500/50 font-bold">THE FORTRESS HUB</span>
+            </h2>
+            <p class="text-xs text-slate-400">Core Middleware Bus (Gatekeeper), Infosys Finacle 11.x, Oracle 19c RAC, Postilion Switch, Dell Data Domain</p>
+          </div>
+        </div>
+        <span class="text-xs text-amber-400 font-mono font-bold">99.999% Availability</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-5">
+        <!-- Pillar 1 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-cyan-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🌐</span> 1. Networking &amp; Interconnectivity
+          </div>
+          <ul class="text-xs space-y-2 text-slate-300 leading-relaxed">
+            <li><strong>THE SOLE GATEKEEPER:</strong> The <strong>Core Middleware Bus (JBoss ESB)</strong> is the single entry point. Receives calls from Cloud, Postilion, Branches, and Call Center.</li>
+            <li><strong>Finacle Ledger:</strong> Finacle connects exclusively to Core Middleware over a dedicated 10GbE internal VLAN.</li>
+            <li><strong>Oracle Database:</strong> Finacle commits transactions to 2-node Oracle 19c RAC over private 100 Gbps InfiniBand SAN.</li>
+            <li><strong>Real-time CDC:</strong> Oracle GoldenGate streams transaction redo logs to Kafka on TLS Port 9092 for the Databricks Lakehouse.</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-rose-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🛡️</span> 2. Security &amp; Compliance
+          </div>
+          <ul class="text-xs space-y-2 text-slate-300 leading-relaxed">
+            <li><strong>THE FORTRESS RULE:</strong> Strict zero direct external access to Finacle or Oracle RAC. Firewalls drop any non-middleware traffic.</li>
+            <li><strong>Hardware HSM:</strong> Thales payShield 10K hardware security module handles all EMV PIN translations.</li>
+            <li><strong>Database Cryptography:</strong> Oracle Transparent Data Encryption (TDE) protects all tablespaces on disk.</li>
+            <li><strong>Regulatory Audits:</strong> Certified PCI-DSS v4.0 Level 1, ISO 27001, and fully compliant with Central Bank of Nigeria (CBN PSV 2025).</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🏢</span> 3. Qualified Vendor Ecosystem
+          </div>
+          <div class="space-y-2.5 text-xs">
+            <div class="p-2.5 rounded-lg bg-blue-950/30 border border-blue-900/50">
+              <span class="text-[10px] font-mono text-blue-300 font-bold uppercase block">Option 1: Primary Deployed Platforms</span>
+              <div class="text-white font-bold">Infosys Finacle 11.x + JBoss EAP + Postilion Switch</div>
+              <div class="text-emerald-400 text-[11px]">Local Partners: Inlaks Computers Limited &amp; Interswitch Limited (VI, Lagos)</div>
+            </div>
+            <div class="p-2.5 rounded-lg bg-purple-950/30 border border-purple-900/50">
+              <span class="text-[10px] font-mono text-purple-300 font-bold uppercase block">Option 2: Benchmark Alternatives</span>
+              <div class="text-white font-bold">Temenos Transact R23 + IBM ACE + BPC SmartVista</div>
+              <div class="text-slate-300 text-[11px]">Local Partners: Tech Mahindra Nigeria &amp; ActivEdge Technologies</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- 5. SECTION 5: SECONDARY DR DC (ABUJA) -->
+    <article id="sec5" class="glass-card rounded-2xl p-6 border border-rose-500/30">
+      <div class="flex flex-wrap items-center justify-between pb-4 border-b border-slate-800 gap-2">
+        <div class="flex items-center space-x-3">
+          <span class="w-8 h-8 rounded-lg bg-rose-950 text-rose-300 border border-rose-500/50 flex items-center justify-center font-bold text-sm">5</span>
+          <div>
+            <h2 class="text-lg font-bold text-white flex items-center">
+              <span>Section 5: Secondary Disaster Recovery DC (Abuja Standby)</span>
+              <span class="ml-2 px-2 py-0.5 rounded text-[10px] font-mono bg-rose-950 text-rose-300 border border-rose-800">Business Continuity</span>
+            </h2>
+            <p class="text-xs text-slate-400">Oracle Active Data Guard (ADG) Standby Cluster, Dell EMC PowerEdge HCI, Quantum LTO-9 Tape Library</p>
+          </div>
+        </div>
+        <span class="text-xs text-rose-400 font-mono font-semibold">RPO = 0 / RTO &lt; 5 mins</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-5">
+        <!-- Pillar 1 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-cyan-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🌐</span> 1. Networking &amp; Interconnectivity
+          </div>
+          <ul class="text-xs space-y-2 text-slate-300 leading-relaxed">
+            <li><strong>Continuous Redo Mirroring:</strong> Oracle Active Data Guard receives byte-level transactional redo streams over dedicated MPLS lines.</li>
+            <li><strong>Hot Standby Topology:</strong> Standby JBoss Middleware and Postilion switch instances remain in warm standby state.</li>
+            <li><strong>Automated DNS Failover:</strong> F5 BIG-IP DNS (GTM) redirects branch and channel traffic to Abuja within seconds if primary DC goes dark.</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-rose-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🛡️</span> 2. Security &amp; Compliance
+          </div>
+          <ul class="text-xs space-y-2 text-slate-300 leading-relaxed">
+            <li><strong>Zero Data Loss (RPO=0):</strong> Synchronous database replication guarantees no financial transaction is lost.</li>
+            <li><strong>Immutable Tape Vaulting:</strong> Quantum Scalar i6 LTO-9 WORM tapes vaulted in climate-controlled off-site facility (CBN 7-year rule).</li>
+            <li><strong>Geographic Separation:</strong> Abuja location satisfies CBN disaster recovery distance mandate (>500km from coastal Lagos).</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🏢</span> 3. Qualified Vendor Ecosystem
+          </div>
+          <div class="space-y-2.5 text-xs">
+            <div class="p-2.5 rounded-lg bg-blue-950/30 border border-blue-900/50">
+              <span class="text-[10px] font-mono text-blue-300 font-bold uppercase block">Option 1: Primary Deployed Platform</span>
+              <div class="text-white font-bold">Oracle Active Data Guard + Dell EMC PowerEdge HCI</div>
+              <div class="text-emerald-400 text-[11px]">Local Partner: Inlaks Computers Limited (Victoria Island, Lagos)</div>
+            </div>
+            <div class="p-2.5 rounded-lg bg-purple-950/30 border border-purple-900/50">
+              <span class="text-[10px] font-mono text-purple-300 font-bold uppercase block">Option 2: Benchmark Alternative</span>
+              <div class="text-white font-bold">IBM Db2 pureScale Disaster Recovery HADR</div>
+              <div class="text-slate-300 text-[11px]">Local Partner: Wipro Nigeria Limited (Lagos)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- 6. SECTION 6: NATIONWIDE BRANCH SD-WAN -->
+    <article id="sec6" class="glass-card rounded-2xl p-6 border border-emerald-500/30">
+      <div class="flex flex-wrap items-center justify-between pb-4 border-b border-slate-800 gap-2">
+        <div class="flex items-center space-x-3">
+          <span class="w-8 h-8 rounded-lg bg-emerald-950 text-emerald-300 border border-emerald-500/50 flex items-center justify-center font-bold text-sm">6</span>
+          <div>
+            <h2 class="text-lg font-bold text-white flex items-center">
+              <span>Section 6: Nationwide Branch SD-WAN Network</span>
+              <span class="ml-2 px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-950 text-emerald-300 border border-emerald-800">Branch Infrastructure</span>
+            </h2>
+            <p class="text-xs text-slate-400">220 Physical Branches, Cisco Catalyst SD-WAN, Teller Terminals, Branch Cash Vaults</p>
+          </div>
+        </div>
+        <span class="text-xs text-emerald-400 font-mono font-semibold">220 Branches Connected</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-5">
+        <!-- Pillar 1 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-cyan-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🌐</span> 1. Networking &amp; Interconnectivity
+          </div>
+          <ul class="text-xs space-y-2 text-slate-300 leading-relaxed">
+            <li><strong>Dual-Carrier SD-WAN:</strong> Each branch connects via primary fiber and secondary cellular 4G/5G with 100ms failover.</li>
+            <li><strong>Encrypted Tunnels:</strong> IPsec AES-256 tunnels terminate at the DC core routers.</li>
+            <li><strong>Teller Operations (Direct to Finacle UI):</strong> Branch tellers operate the native <strong>Infosys Finacle UI</strong> on their workstations, communicating directly across SD-WAN to the Finacle Core Banking application servers in the Primary DC (Ports 8000–8080 HTTPS). Teller cash limits, till balances, and supervisor dual-control approvals are enforced natively by Finacle (bypassing middleware).</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-rose-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🛡️</span> 2. Security &amp; Compliance
+          </div>
+          <ul class="text-xs space-y-2 text-slate-300 leading-relaxed">
+            <li><strong>Network Access Control:</strong> 802.1X port security prevents unauthorized rogue laptops from plugging into branch ethernet.</li>
+            <li><strong>Zero-Touch Provisioning:</strong> Centralized cryptographic configuration prevents on-site tampering by branch staff.</li>
+            <li><strong>Teller Audit Logs:</strong> Every deposit, withdrawal, and cash transfer recorded with dual-control supervisor overrides.</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🏢</span> 3. Qualified Vendor Ecosystem
+          </div>
+          <div class="space-y-2.5 text-xs">
+            <div class="p-2.5 rounded-lg bg-blue-950/30 border border-blue-900/50">
+              <span class="text-[10px] font-mono text-blue-300 font-bold uppercase block">Option 1: Primary Deployed Platform</span>
+              <div class="text-white font-bold">Cisco Catalyst SD-WAN (Meraki &amp; 8300 Edge)</div>
+              <div class="text-emerald-400 text-[11px]">Local Partner: Dimension Data Nigeria (NTT Victoria Island)</div>
+            </div>
+            <div class="p-2.5 rounded-lg bg-purple-950/30 border border-purple-900/50">
+              <span class="text-[10px] font-mono text-purple-300 font-bold uppercase block">Option 2: Benchmark Alternative</span>
+              <div class="text-white font-bold">Fortinet Secure SD-WAN (FortiGate 70F/80F Series)</div>
+              <div class="text-slate-300 text-[11px]">Local Partner: Reliance Infosystems Limited (Lagos)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- 7. SECTION 7: HEAD OFFICE OPERATIONS & SOC -->
+    <article id="sec7" class="glass-card rounded-2xl p-6 border border-yellow-500/30">
+      <div class="flex flex-wrap items-center justify-between pb-4 border-b border-slate-800 gap-2">
+        <div class="flex items-center space-x-3">
+          <span class="w-8 h-8 rounded-lg bg-yellow-950 text-yellow-300 border border-yellow-500/50 flex items-center justify-center font-bold text-sm">7</span>
+          <div>
+            <h2 class="text-lg font-bold text-white flex items-center">
+              <span>Section 7: Head Office Operations, Treasury &amp; 24/7 SOC</span>
+              <span class="ml-2 px-2 py-0.5 rounded text-[10px] font-mono bg-yellow-950 text-yellow-300 border border-yellow-800">Governance &amp; Markets</span>
+            </h2>
+            <p class="text-xs text-slate-400">Treasury Dealing Room (Bloomberg/Refinitiv), 24/7 SIEM/SOC (Splunk), Executive Workstations</p>
+          </div>
+        </div>
+        <span class="text-xs text-yellow-400 font-mono font-semibold">24/7 Threat Monitoring</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-5">
+        <!-- Pillar 1 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-cyan-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🌐</span> 1. Networking &amp; Interconnectivity
+          </div>
+          <ul class="text-xs space-y-2 text-slate-300 leading-relaxed">
+            <li><strong>Market Data Feeds:</strong> Dedicated leased lines connect Treasury dealers directly to Bloomberg B-PIPE and Refinitiv Elektron for FX &amp; bonds.</li>
+            <li><strong>Telemetry Aggregation:</strong> 24/7 SOC receives syslog and NetFlow streams from all servers, switches, and firewalls bank-wide.</li>
+            <li><strong>Internal Segmentation:</strong> Executive and Treasury workstations isolated on private VLANs with no direct public internet exposure.</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-rose-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🛡️</span> 2. Security &amp; Compliance
+          </div>
+          <ul class="text-xs space-y-2 text-slate-300 leading-relaxed">
+            <li><strong>SIEM &amp; SOAR:</strong> Splunk Enterprise Security provides automated incident response and anomaly detection.</li>
+            <li><strong>Physical Mantrap Access:</strong> Biometric facial recognition and dual-badge verification to access Treasury and Data Centers.</li>
+            <li><strong>Compliance Filings:</strong> Automated CBN Risk-Based Cybersecurity Framework reporting and NDPA audit compliance.</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🏢</span> 3. Qualified Vendor Ecosystem
+          </div>
+          <div class="space-y-2.5 text-xs">
+            <div class="p-2.5 rounded-lg bg-blue-950/30 border border-blue-900/50">
+              <span class="text-[10px] font-mono text-blue-300 font-bold uppercase block">Option 1: Primary Deployed Platforms</span>
+              <div class="text-white font-bold">Splunk Enterprise Security &amp; Bloomberg B-PIPE</div>
+              <div class="text-emerald-400 text-[11px]">Local Partners: CyberSOC Africa Limited &amp; Bloomberg Direct</div>
+            </div>
+            <div class="p-2.5 rounded-lg bg-purple-950/30 border border-purple-900/50">
+              <span class="text-[10px] font-mono text-purple-300 font-bold uppercase block">Option 2: Benchmark Alternatives</span>
+              <div class="text-white font-bold">IBM Security QRadar &amp; LSEG Workspace (Refinitiv)</div>
+              <div class="text-slate-300 text-[11px]">Local Partners: ActivEdge Technologies &amp; Refinitiv Direct</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- 8. SECTION 8: CONTACT CENTER OPERATIONS -->
+    <article id="sec8" class="glass-card rounded-2xl p-6 border border-orange-500/30">
+      <div class="flex flex-wrap items-center justify-between pb-4 border-b border-slate-800 gap-2">
+        <div class="flex items-center space-x-3">
+          <span class="w-8 h-8 rounded-lg bg-orange-950 text-orange-300 border border-orange-500/50 flex items-center justify-center font-bold text-sm">8</span>
+          <div>
+            <h2 class="text-lg font-bold text-white flex items-center">
+              <span>Section 8: Contact Center Operations (Customer Care)</span>
+              <span class="ml-2 px-2 py-0.5 rounded text-[10px] font-mono bg-orange-950 text-orange-300 border border-orange-800">Customer Support</span>
+            </h2>
+            <p class="text-xs text-slate-400">Avaya Aura &amp; Oceana, Omnichannel Voice/Chat/WhatsApp, CRM Integration, Dispute Desk</p>
+          </div>
+        </div>
+        <span class="text-xs text-orange-400 font-mono font-semibold">150+ Inbound Seats</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-5">
+        <!-- Pillar 1 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-cyan-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🌐</span> 1. Networking &amp; Interconnectivity
+          </div>
+          <ul class="text-xs space-y-2 text-slate-300 leading-relaxed">
+            <li><strong>SIP Ingress:</strong> Dual-redundant SIP trunks connect to MTN, Airtel, and Glo telecom providers for toll-free inbound calls.</li>
+            <li><strong>Core Banking Link:</strong> CRM interfaces strictly via the <strong>Core Middleware Bus</strong> over REST HTTPS to look up customer accounts.</li>
+            <li><strong>Dispute Resolution:</strong> Queries connect to <strong>Fiserv Automated Reconciliation</strong> (Section 4) to verify terminal failures.</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-rose-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🛡️</span> 2. Security &amp; Compliance
+          </div>
+          <ul class="text-xs space-y-2 text-slate-300 leading-relaxed">
+            <li><strong>PCI-DSS Audio Pause:</strong> Voice recordings automatically pause when customer utters card or PIN details.</li>
+            <li><strong>Screen PII Masking:</strong> Sensitive identifiers (BVN, full account numbers) dynamically masked on agent consoles (NDPA 2023).</li>
+            <li><strong>Zero SQL Access:</strong> Agents have zero direct database access; all interactions mediated by API permissions.</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🏢</span> 3. Qualified Vendor Ecosystem
+          </div>
+          <div class="space-y-2.5 text-xs">
+            <div class="p-2.5 rounded-lg bg-blue-950/30 border border-blue-900/50">
+              <span class="text-[10px] font-mono text-blue-300 font-bold uppercase block">Option 1: Primary Deployed Platform</span>
+              <div class="text-white font-bold">Avaya Aura &amp; Oceana Suite 3.8</div>
+              <div class="text-emerald-400 text-[11px]">Local Partners: Inlaks Computers &amp; Wipro Nigeria (Lagos)</div>
+            </div>
+            <div class="p-2.5 rounded-lg bg-purple-950/30 border border-purple-900/50">
+              <span class="text-[10px] font-mono text-purple-300 font-bold uppercase block">Option 2: Benchmark Alternative</span>
+              <div class="text-white font-bold">Genesys Cloud CX 3 Enterprise</div>
+              <div class="text-slate-300 text-[11px]">Local Partner: Dimension Data Nigeria (NTT)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- 9. SECTION 9: ENTERPRISE SAAS CLOUD -->
+    <article id="sec9" class="glass-card rounded-2xl p-6 border border-slate-700/60">
+      <div class="flex flex-wrap items-center justify-between pb-4 border-b border-slate-800 gap-2">
+        <div class="flex items-center space-x-3">
+          <span class="w-8 h-8 rounded-lg bg-slate-900 text-slate-300 border border-slate-700 flex items-center justify-center font-bold text-sm">9</span>
+          <div>
+            <h2 class="text-lg font-bold text-white flex items-center">
+              <span>Section 9: Enterprise SaaS Cloud &amp; Corporate Services</span>
+              <span class="ml-2 px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300 border border-slate-700">Corporate Productivity</span>
+            </h2>
+            <p class="text-xs text-slate-400">Microsoft 365 E5, Entra ID (Azure AD), Exchange Online, Teams, Intune Device Management</p>
+          </div>
+        </div>
+        <span class="text-xs text-slate-400 font-mono font-semibold">4,500+ Staff Accounts</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-5">
+        <!-- Pillar 1 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-cyan-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🌐</span> 1. Networking &amp; Interconnectivity
+          </div>
+          <ul class="text-xs space-y-2 text-slate-300 leading-relaxed">
+            <li><strong>ExpressRoute Connectivity:</strong> Dedicated private peering into Microsoft Cloud for low-latency corporate email and files.</li>
+            <li><strong>Directory Synchronization:</strong> On-premises Active Directory syncs password hashes to Entra ID over TLS port 443.</li>
+            <li><strong>Zero Production Access:</strong> SaaS corporate cloud has zero logical network paths into the Core Banking enclave.</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-rose-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🛡️</span> 2. Security &amp; Compliance
+          </div>
+          <ul class="text-xs space-y-2 text-slate-300 leading-relaxed">
+            <li><strong>Data Loss Prevention (DLP):</strong> Automated filters block staff from sending customer account numbers or card data externally.</li>
+            <li><strong>Device Trust:</strong> Microsoft Intune ensures only bank-encrypted laptops can access corporate email.</li>
+            <li><strong>Conditional Access:</strong> Geofenced login policies require corporate MFA and block out-of-country access.</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🏢</span> 3. Qualified Vendor Ecosystem
+          </div>
+          <div class="space-y-2.5 text-xs">
+            <div class="p-2.5 rounded-lg bg-blue-950/30 border border-blue-900/50">
+              <span class="text-[10px] font-mono text-blue-300 font-bold uppercase block">Option 1: Primary Deployed Platform</span>
+              <div class="text-white font-bold">Microsoft 365 E5 Enterprise &amp; Entra ID</div>
+              <div class="text-emerald-400 text-[11px]">Local Partners: Wipro Nigeria / Reliance Infosystems (Lagos)</div>
+            </div>
+            <div class="p-2.5 rounded-lg bg-purple-950/30 border border-purple-900/50">
+              <span class="text-[10px] font-mono text-purple-300 font-bold uppercase block">Option 2: Benchmark Alternative</span>
+              <div class="text-white font-bold">Google Workspace Enterprise Plus &amp; BeyondCorp</div>
+              <div class="text-slate-300 text-[11px]">Local Partner: Descasio Limited (Lagos)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- 10. SECTION 10: REGULATORS & INTERBANK CLEARING -->
+    <article id="sec10" class="glass-card rounded-2xl p-6 border border-amber-500/30">
+      <div class="flex flex-wrap items-center justify-between pb-4 border-b border-slate-800 gap-2">
+        <div class="flex items-center space-x-3">
+          <span class="w-8 h-8 rounded-lg bg-amber-950 text-amber-300 border border-amber-500/50 flex items-center justify-center font-bold text-sm">10</span>
+          <div>
+            <h2 class="text-lg font-bold text-white flex items-center">
+              <span>Section 10: National Regulators &amp; Interbank Clearing</span>
+              <span class="ml-2 px-2 py-0.5 rounded text-[10px] font-mono bg-amber-950 text-amber-300 border border-amber-800">Settlement Rails</span>
+            </h2>
+            <p class="text-xs text-slate-400">NIBSS (Instant Payments), Central Bank of Nigeria (CBN RTGS), Interswitch, SWIFT Alliance Gateway</p>
+          </div>
+        </div>
+        <span class="text-xs text-amber-400 font-mono font-semibold">&lt; 3 Sec Settlement</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-5">
+        <!-- Pillar 1 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-cyan-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🌐</span> 1. Networking &amp; Interconnectivity
+          </div>
+          <ul class="text-xs space-y-2 text-slate-300 leading-relaxed">
+            <li><strong>NIBSS Link:</strong> Dedicated Metro fiber connects Finacle to NIBSS Instant Payments (NIP) for real-time interbank money transfers.</li>
+            <li><strong>CBN RTGS:</strong> Dedicated secure VPN tunnels connect treasury to Central Bank of Nigeria for high-value interbank clearing.</li>
+            <li><strong>Card Schemes:</strong> Postilion switch connects over private links to Interswitch, Visa, and Mastercard schemes.</li>
+            <li><strong>SWIFT Gateway:</strong> Encrypted SWIFT Alliance Gateway connects to SWIFT international network for foreign wire transfers.</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-rose-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🛡️</span> 2. Security &amp; Compliance
+          </div>
+          <ul class="text-xs space-y-2 text-slate-300 leading-relaxed">
+            <li><strong>ISO 20022 Messaging:</strong> Full compliance with rich XML financial messaging standards.</li>
+            <li><strong>SWIFT CSP Certified:</strong> Annual compliance with SWIFT Customer Security Programme controls.</li>
+            <li><strong>Maker-Checker Dual Control:</strong> Interbank payment batches require cryptographic approval by two authorized bank officers.</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🏢</span> 3. Qualified Vendor Ecosystem
+          </div>
+          <div class="space-y-2.5 text-xs">
+            <div class="p-2.5 rounded-lg bg-blue-950/30 border border-blue-900/50">
+              <span class="text-[10px] font-mono text-blue-300 font-bold uppercase block">Option 1: Primary Deployed Platforms</span>
+              <div class="text-white font-bold">SWIFT Alliance Gateway &amp; NIBSS NIP Interface</div>
+              <div class="text-emerald-400 text-[11px]">Local Partners: SWIFT Regional Support &amp; Inlaks Systems</div>
+            </div>
+            <div class="p-2.5 rounded-lg bg-purple-950/30 border border-purple-900/50">
+              <span class="text-[10px] font-mono text-purple-300 font-bold uppercase block">Option 2: Benchmark Alternative</span>
+              <div class="text-white font-bold">Finastra Fusion Global PAYplus (GPP)</div>
+              <div class="text-slate-300 text-[11px]">Local Partners: Tech Mahindra Nigeria &amp; ActivEdge Technologies</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- 11. SECTION 11: DATABRICKS LAKEHOUSE -->
+    <article id="sec11" class="glass-card rounded-2xl p-6 border border-emerald-500/30">
+      <div class="flex flex-wrap items-center justify-between pb-4 border-b border-slate-800 gap-2">
+        <div class="flex items-center space-x-3">
+          <span class="w-8 h-8 rounded-lg bg-emerald-950 text-emerald-300 border border-emerald-500/50 flex items-center justify-center font-bold text-sm">11</span>
+          <div>
+            <h2 class="text-lg font-bold text-white flex items-center">
+              <span>Section 11: Enterprise Data Lakehouse (Databricks)</span>
+              <span class="ml-2 px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-950 text-emerald-300 border border-emerald-800">Big Data &amp; AI</span>
+            </h2>
+            <p class="text-xs text-slate-400">Delta Lake Medallion Architecture (Bronze, Silver, Gold), Real-Time Kafka CDC, Board Power BI Dashboards</p>
+          </div>
+        </div>
+        <span class="text-xs text-emerald-400 font-mono font-semibold">Sub-Second Analytics</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-5">
+        <!-- Pillar 1 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-cyan-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🌐</span> 1. Networking &amp; Interconnectivity
+          </div>
+          <ul class="text-xs space-y-2 text-slate-300 leading-relaxed">
+            <li><strong>Non-Intrusive Ingestion:</strong> Kafka CDC stream from Oracle 19c RAC (GoldenGate) ingests real-time redo logs on TLS Port 9092.</li>
+            <li><strong>Cloud Storage:</strong> Delta Lake tables stored securely on Cloud Object Storage (OBS).</li>
+            <li><strong>Reporting Separation:</strong> 100% of executive dashboards, BI queries, and AML analytics execute in Databricks; <strong>zero reporting strain on Core Banking</strong>.</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-rose-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🛡️</span> 2. Security &amp; Compliance
+          </div>
+          <ul class="text-xs space-y-2 text-slate-300 leading-relaxed">
+            <li><strong>Dynamic PII Masking:</strong> Unity Catalog dynamically masks customer BVN, NIN, and card numbers (NDPA 2023 compliance).</li>
+            <li><strong>End-to-End Lineage:</strong> Every table modification tracked with complete ACID transaction logs and audit history.</li>
+            <li><strong>Automated Regulatory Marts:</strong> Pre-calculated Gold marts for CBN e-FASS/S4 prudential returns and NDIC deposit insurance filings.</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+          <div class="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center">
+            <span class="mr-1.5">🏢</span> 3. Qualified Vendor Ecosystem
+          </div>
+          <div class="space-y-2.5 text-xs">
+            <div class="p-2.5 rounded-lg bg-blue-950/30 border border-blue-900/50">
+              <span class="text-[10px] font-mono text-blue-300 font-bold uppercase block">Option 1: Primary Deployed Platform</span>
+              <div class="text-white font-bold">Databricks Enterprise Lakehouse (Delta Lake / Unity)</div>
+              <div class="text-emerald-400 text-[11px]">Local Partners: Inlaks Systems &amp; Cloud Direct Africa (Lagos)</div>
+            </div>
+            <div class="p-2.5 rounded-lg bg-purple-950/30 border border-purple-900/50">
+              <span class="text-[10px] font-mono text-purple-300 font-bold uppercase block">Option 2: Benchmark Alternative</span>
+              <div class="text-white font-bold">Snowflake Financial Services Data Cloud</div>
+              <div class="text-slate-300 text-[11px]">Local Partners: Tech Mahindra Nigeria &amp; Wipro Nigeria</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="pt-6 border-t border-slate-800 flex flex-wrap items-center justify-between text-xs text-slate-400 gap-4">
+    <div class="flex items-center space-x-4">
+      <span>Commercial Bank Nigeria PLC &copy; 2026. All rights reserved.</span>
+      <span class="text-slate-600">|</span>
+      <span>Compliant with Central Bank of Nigeria (CBN) Risk-Based Cybersecurity Framework</span>
+    </div>
+    <div class="flex items-center space-x-3 font-mono text-[11px]">
+      <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800/60">PCI-DSS v4.0 Level 1</span>
+      <span class="px-2 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-800/60">NDPA 2023 Certified</span>
+      <span class="px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-800/60">ISO 27001 / 22301</span>
+    </div>
+  </footer>
+
+</body>
+</html>

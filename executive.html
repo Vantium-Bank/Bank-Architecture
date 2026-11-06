@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commercial Bank Nigeria PLC — Executive Infrastructure Blueprint (Board & Management Briefing)</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+    
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #060c18;
+      color: #f1f5f9;
+    }
+    
+    @media print {
+      @page {
+        size: landscape;
+        margin: 0.5cm;
+      }
+      body {
+        background-color: #060c18 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+
+    .glass-card {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(30, 41, 59, 0.55) 100%);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .express-line {
+      position: relative;
+    }
+    .express-line::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 3px;
+      z-index: 1;
+    }
+
+    .glow-blue {
+      box-shadow: 0 0 25px -5px rgba(59, 130, 246, 0.35);
+    }
+    .glow-gold {
+      box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.35);
+    }
+    .glow-emerald {
+      box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.35);
+    }
+    .glow-purple {
+      box-shadow: 0 0 25px -5px rgba(168, 85, 247, 0.35);
+    }
+
+    /* Custom Pulse */
+    @keyframes pulseSoft {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.02); opacity: 0.92; }
+    }
+    .pulse-card {
+      animation: pulseSoft 4s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col p-4 md:p-6 lg:p-8">
+
+  <!-- ==================== TOP NAVIGATION / EXECUTIVE HEADER ==================== -->
+  <header class="flex flex-wrap items-center justify-between pb-6 border-b border-slate-800 gap-4">
+    <div class="flex items-center space-x-4">
+      <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-amber-500 flex items-center justify-center shadow-lg shadow-blue-500/20 text-white font-extrabold text-2xl tracking-wider">
+        CB
+      </div>
+      <div>
+        <div class="flex items-center space-x-2">
+          <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/30">
+            Board &amp; C-Suite Briefing
+          </span>
+          <span class="text-xs text-slate-400 font-mono">v5.0 Enterprise Architecture</span>
+        </div>
+        <h1 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight mt-0.5">
+          Commercial Bank Nigeria PLC
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-amber-400 text-lg md:text-xl font-semibold ml-2">
+            — Enterprise Infrastructure Blueprint
+          </span>
+        </h1>
+      </div>
+    </div>
+
+    <!-- Quick Action Controls -->
+    <div class="flex items-center space-x-3 no-print">
+      <a href="index.html" class="px-4 py-2 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition flex items-center space-x-2">
+        <span>🖥️</span>
+        <span>Interactive Live Model</span>
+      </a>
+      <button onclick="window.print()" class="px-4 py-2 rounded-lg text-xs font-semibold bg-blue-600 hover:bg-blue-500 text-white shadow-md shadow-blue-600/30 transition flex items-center space-x-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4H7v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+        <span>Print / Save as PDF</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==================== EXECUTIVE STRATEGIC PILLARS (THE 3 CORE RULES) ==================== -->
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
+    <div class="glass-card rounded-xl p-4 border-l-4 border-l-blue-500 flex items-start space-x-3.5">
+      <div class="p-2.5 rounded-lg bg-blue-500/10 text-blue-400 text-xl shrink-0">🛡️</div>
+      <div>
+        <h4 class="text-sm font-bold text-white uppercase tracking-wider">The Fortress Rule (Zero Direct Access)</h4>
+        <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+          No external app, mobile user, branch, or cloud workload connects directly to the Core Banking Ledger. Every request is mediated by the <strong>Core Middleware Bus</strong>.
+        </p>
+      </div>
+    </div>
+
+    <div class="glass-card rounded-xl p-4 border-l-4 border-l-emerald-500 flex items-start space-x-3.5">
+      <div class="p-2.5 rounded-lg bg-emerald-500/10 text-emerald-400 text-xl shrink-0">⚡</div>
+      <div>
+        <h4 class="text-sm font-bold text-white uppercase tracking-wider">Hybrid Cloud-to-Ground Resilience</h4>
+        <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+          Customer apps scale elastically in <strong>Huawei Cloud</strong>, while critical banking books &amp; compliance sovereignty remain safely on-premises via redundant <strong>Direct Connect</strong> links.
+        </p>
+      </div>
+    </div>
+
+    <div class="glass-card rounded-xl p-4 border-l-4 border-l-amber-500 flex items-start space-x-3.5">
+      <div class="p-2.5 rounded-lg bg-amber-500/10 text-amber-400 text-xl shrink-0">🤝</div>
+      <div>
+        <h4 class="text-sm font-bold text-white uppercase tracking-wider">Certified Nigerian Tier-1 Support</h4>
+        <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+          Global OEM solutions (Infosys, SAP, Huawei, Avaya) backed by accredited local Nigerian engineering partners (Inlaks, Wipro, ActivEdge) with guaranteed 15-min emergency SLAs.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== THE 4-ZONE METRO TRANSIT BLUEPRINT ==================== -->
+  <main class="flex-1 flex flex-col gap-6">
+
+    <!-- DIAGRAM CONTAINER: 4 MAJOR COLOR-CODED SECTORS -->
+    <div class="grid grid-cols-1 xl:grid-cols-4 gap-5">
+
+      <!-- ==================== ZONE 1: CUSTOMER TOUCHPOINTS ==================== -->
+      <div class="glass-card rounded-2xl p-5 border border-cyan-500/30 relative flex flex-col justify-between">
+        <div class="absolute -top-3 left-6 px-3 py-0.5 rounded-full text-[10px] font-bold tracking-widest uppercase bg-cyan-950 text-cyan-300 border border-cyan-500/50 shadow">
+          ZONE 1: CUSTOMER TOUCHPOINTS
+        </div>
+
+        <div>
+          <div class="flex items-center justify-between mb-3 mt-1">
+            <h3 class="text-base font-bold text-white flex items-center">
+              <span class="mr-2">📱</span> Front Doors
+            </h3>
+            <span class="text-[10px] text-cyan-400 font-mono bg-cyan-950/60 px-2 py-0.5 rounded">All Channels</span>
+          </div>
+          <p class="text-xs text-slate-400 mb-4 leading-normal">
+            Where 15M+ retail, corporate, and agency customers interact with the bank daily.
+          </p>
+
+          <!-- Component Cards -->
+          <div class="space-y-2.5">
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/40 transition">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white flex items-center">
+                  <span class="text-base mr-2">📲</span> Retail &amp; Corporate Mobile
+                </span>
+                <span class="text-[10px] text-emerald-400 font-medium">99.99% Uptime</span>
+              </div>
+              <div class="text-[11px] text-slate-400 mt-1">iOS &amp; Android Native Apps (Backbase Engine)</div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/40 transition">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white flex items-center">
+                  <span class="text-base mr-2">💳</span> Nationwide POS Terminals
+                </span>
+                <span class="text-[10px] text-slate-400">85,000+ Active</span>
+              </div>
+              <div class="text-[11px] text-slate-400 mt-1">Merchant Smart Android POS (Ingenico / Tracom)</div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/40 transition">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white flex items-center">
+                  <span class="text-base mr-2">🏧</span> Branch &amp; Offsite ATMs
+                </span>
+                <span class="text-[10px] text-slate-400">1,200+ Fleet</span>
+              </div>
+              <div class="text-[11px] text-slate-400 mt-1">Multifunction Cash Recyclers (NCR / Inlaks)</div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/40 transition">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white flex items-center">
+                  <span class="text-base mr-2">🏦</span> Nationwide Branch Network
+                </span>
+                <span class="text-[10px] text-slate-400">220 Branches</span>
+              </div>
+              <div class="text-[11px] text-slate-400 mt-1">Cisco SD-WAN Secure Branch Tunnels</div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/40 transition">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white flex items-center">
+                  <span class="text-base mr-2">🎧</span> Contact Center Operations
+                </span>
+                <span class="text-[10px] text-amber-400">Avaya Oceana</span>
+              </div>
+              <div class="text-[11px] text-slate-400 mt-1">Omnichannel Voice, Chat &amp; Dispute Desk</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-cyan-300/80 flex items-center justify-between font-mono">
+          <span>Flows To: Zone 2 &amp; Zone 3</span>
+          <span>&rarr;</span>
+        </div>
+      </div>
+
+
+      <!-- ==================== ZONE 2: DIGITAL SHIELD & CLOUD ==================== -->
+      <div class="glass-card rounded-2xl p-5 border border-blue-500/30 relative flex flex-col justify-between">
+        <div class="absolute -top-3 left-6 px-3 py-0.5 rounded-full text-[10px] font-bold tracking-widest uppercase bg-blue-950 text-blue-300 border border-blue-500/50 shadow">
+          ZONE 2: DIGITAL GATEWAY &amp; SHIELD
+        </div>
+
+        <div>
+          <div class="flex items-center justify-between mb-3 mt-1">
+            <h3 class="text-base font-bold text-white flex items-center">
+              <span class="mr-2">☁️</span> Huawei Cloud
+            </h3>
+            <span class="text-[10px] text-blue-400 font-mono bg-blue-950/60 px-2 py-0.5 rounded">Cyber Shield</span>
+          </div>
+          <p class="text-xs text-slate-400 mb-4 leading-normal">
+            Absorbs internet traffic spikes, filters cyber threats, and runs digital banking services.
+          </p>
+
+          <!-- Component Cards -->
+          <div class="space-y-2.5">
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-blue-500/40 transition">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white flex items-center">
+                  <span class="text-base mr-2">🛡️</span> Cloud WAF &amp; Anti-DDoS
+                </span>
+                <span class="text-[10px] text-emerald-400 font-medium">Active Defense</span>
+              </div>
+              <div class="text-[11px] text-slate-400 mt-1">Blocks 50M+ bot &amp; malicious probes monthly</div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-blue-500/40 transition">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white flex items-center">
+                  <span class="text-base mr-2">⚡</span> Digital Microservices (CCE)
+                </span>
+                <span class="text-[10px] text-blue-400">Kubernetes</span>
+              </div>
+              <div class="text-[11px] text-slate-400 mt-1">Customer Onboarding, Bill Pay, Airtime &amp; FX</div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-blue-500/40 transition">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white flex items-center">
+                  <span class="text-base mr-2">🔑</span> API Gateway &amp; Open Banking
+                </span>
+                <span class="text-[10px] text-slate-400">Huawei APIG</span>
+              </div>
+              <div class="text-[11px] text-slate-400 mt-1">Fintech &amp; Partner API Sandboxes (CBN Regulated)</div>
+            </div>
+
+            <!-- Inter-Zone Highway Badge -->
+            <div class="p-3 rounded-xl bg-gradient-to-r from-blue-950/70 to-indigo-950/70 border border-blue-500/40 glow-blue">
+              <div class="flex items-center justify-between text-xs font-bold text-blue-300">
+                <span class="flex items-center"><span class="mr-2">🚀</span> Dual Direct Connect</span>
+                <span class="text-[10px] text-emerald-400 font-mono">1 Gbps &times; 2</span>
+              </div>
+              <div class="text-[11px] text-slate-300 mt-1">
+                Private fiber highway to on-prem data center. Zero exposure to public internet.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-blue-300/80 flex items-center justify-between font-mono">
+          <span>Private Transit To: Zone 3</span>
+          <span>&rarr;</span>
+        </div>
+      </div>
+
+
+      <!-- ==================== ZONE 3: THE BANK'S SECURE VAULT ==================== -->
+      <div class="glass-card rounded-2xl p-5 border border-purple-500/40 relative flex flex-col justify-between glow-purple">
+        <div class="absolute -top-3 left-6 px-3 py-0.5 rounded-full text-[10px] font-bold tracking-widest uppercase bg-purple-950 text-purple-300 border border-purple-500/50 shadow">
+          ZONE 3: THE BANK'S SECURE VAULT
+        </div>
+
+        <div>
+          <div class="flex items-center justify-between mb-3 mt-1">
+            <h3 class="text-base font-bold text-white flex items-center">
+              <span class="mr-2">🏛️</span> On-Premises Core
+            </h3>
+            <span class="text-[10px] text-purple-400 font-mono bg-purple-950/60 px-2 py-0.5 rounded">Sovereign Vault</span>
+          </div>
+          <p class="text-xs text-slate-400 mb-4 leading-normal">
+            Physical Tier-3 data center in Victoria Island. Stores the official ledger &amp; balances.
+          </p>
+
+          <!-- Component Cards -->
+          <div class="space-y-2.5">
+            <!-- Core Middleware: The Gatekeeper -->
+            <div class="p-3 rounded-xl bg-gradient-to-r from-indigo-950 to-purple-950 border-2 border-indigo-400 shadow-lg">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-extrabold text-amber-300 flex items-center">
+                  <span class="text-base mr-1.5">🛡️</span> CORE MIDDLEWARE BUS (ESB)
+                </span>
+                <span class="text-[9px] bg-amber-500/20 text-amber-300 border border-amber-500/40 px-1.5 py-0.5 rounded font-bold uppercase">
+                  Sole Gatekeeper
+                </span>
+              </div>
+              <div class="text-[11px] text-slate-200 mt-1 font-medium">
+                Every request from Cloud, Cards, Branches &amp; ERP must authenticate here before entering Core Banking.
+              </div>
+            </div>
+
+            <!-- Core Banking Finacle -->
+            <div class="p-3 rounded-xl bg-slate-900/90 border border-purple-500/40 hover:border-purple-400 transition">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white flex items-center">
+                  <span class="text-base mr-2">🏛️</span> Infosys Finacle 11.x Core
+                </span>
+                <span class="text-[10px] text-emerald-400 font-medium">Master Ledger</span>
+              </div>
+              <div class="text-[11px] text-slate-400 mt-1">Customer Accounts, Deposits, Loans &amp; Interest</div>
+            </div>
+
+            <!-- Payment Switch Postilion -->
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-purple-500/40 transition">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white flex items-center">
+                  <span class="text-base mr-2">💳</span> Postilion Realtime Switch
+                </span>
+                <span class="text-[10px] text-slate-400">Card Processor</span>
+              </div>
+              <div class="text-[11px] text-slate-400 mt-1">ISO 8583 Routing for ATMs, POS &amp; Web Acquiring</div>
+            </div>
+
+            <!-- Oracle RAC & Backup -->
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-purple-500/40 transition">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white flex items-center">
+                  <span class="text-base mr-2">🗄️</span> Oracle 19c RAC + Data Domain
+                </span>
+                <span class="text-[10px] text-rose-400 font-medium">Zero Data Loss</span>
+              </div>
+              <div class="text-[11px] text-slate-400 mt-1">Active Data Guard sync to DR site in Abuja</div>
+            </div>
+
+            <!-- Enterprise Apps -->
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-purple-500/40 transition">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white flex items-center">
+                  <span class="text-base mr-2">💼</span> SAP ERP, Reconciliations &amp; HR
+                </span>
+                <span class="text-[10px] text-slate-400">Dell VxRail</span>
+              </div>
+              <div class="text-[11px] text-slate-400 mt-1">Automated daily reconciliations &amp; payroll</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-purple-300/80 flex items-center justify-between font-mono">
+          <span>Settlement Rail To: Zone 4</span>
+          <span>&rarr;</span>
+        </div>
+      </div>
+
+
+      <!-- ==================== ZONE 4: REGULATORS & CLEARING ==================== -->
+      <div class="glass-card rounded-2xl p-5 border border-amber-500/30 relative flex flex-col justify-between">
+        <div class="absolute -top-3 left-6 px-3 py-0.5 rounded-full text-[10px] font-bold tracking-widest uppercase bg-amber-950 text-amber-300 border border-amber-500/50 shadow">
+          ZONE 4: NATIONAL &amp; GLOBAL RAILS
+        </div>
+
+        <div>
+          <div class="flex items-center justify-between mb-3 mt-1">
+            <h3 class="text-base font-bold text-white flex items-center">
+              <span class="mr-2">🌐</span> Interbank Rails
+            </h3>
+            <span class="text-[10px] text-amber-400 font-mono bg-amber-950/60 px-2 py-0.5 rounded">Settlement</span>
+          </div>
+          <p class="text-xs text-slate-400 mb-4 leading-normal">
+            National financial highways that clear transactions with peer banks &amp; central authorities.
+          </p>
+
+          <!-- Component Cards -->
+          <div class="space-y-2.5">
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-amber-500/40 transition">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white flex items-center">
+                  <span class="text-base mr-2">⚡</span> NIBSS Instant Payments (NIP)
+                </span>
+                <span class="text-[10px] text-emerald-400 font-medium">&lt; 3 Sec Settlement</span>
+              </div>
+              <div class="text-[11px] text-slate-400 mt-1">Real-time interbank money transfers across Nigeria</div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-amber-500/40 transition">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white flex items-center">
+                  <span class="text-base mr-2">🏛️</span> Central Bank of Nigeria (CBN)
+                </span>
+                <span class="text-[10px] text-amber-400 font-mono">RTGS / CRR</span>
+              </div>
+              <div class="text-[11px] text-slate-400 mt-1">Statutory reserves, RTGS clearing &amp; compliance</div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-amber-500/40 transition">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white flex items-center">
+                  <span class="text-base mr-2">💳</span> Card Schemes (V/MC/Verve)
+                </span>
+                <span class="text-[10px] text-slate-400">Interswitch</span>
+              </div>
+              <div class="text-[11px] text-slate-400 mt-1">Visa, Mastercard &amp; Verve interbank card switching</div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-amber-500/40 transition">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white flex items-center">
+                  <span class="text-base mr-2">🌍</span> SWIFT International Network
+                </span>
+                <span class="text-[10px] text-blue-400 font-mono">ISO 20022</span>
+              </div>
+              <div class="text-[11px] text-slate-400 mt-1">Cross-border foreign exchange &amp; trade letters of credit</div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-amber-500/40 transition">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-white flex items-center">
+                  <span class="text-base mr-2">📊</span> Databricks Lakehouse
+                </span>
+                <span class="text-[10px] text-emerald-400">Analytics</span>
+              </div>
+              <div class="text-[11px] text-slate-400 mt-1">Unified analytics &amp; C-Suite executive dashboards</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-amber-300/80 flex items-center justify-between font-mono">
+          <span>End of Interbank Journey</span>
+          <span>&check;</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ==================== EXECUTIVE TRANSACTION JOURNEYS (HOW MONEY FLOWS) ==================== -->
+    <section class="glass-card rounded-2xl p-6 border border-slate-800">
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-blue-500/10 text-blue-400 border border-blue-500/30">
+            Lifecycle of a Transaction
+          </span>
+          <h2 class="text-lg font-bold text-white mt-1">
+            How Money &amp; Data Move Through the 4 Zones (In Plain English)
+          </h2>
+        </div>
+        <span class="text-xs text-slate-400 font-mono hidden md:inline">End-to-End Latency: &lt; 850 milliseconds</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+        <!-- Journey 1 -->
+        <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+          <div class="flex items-center space-x-2 text-cyan-400 font-bold text-xs mb-2">
+            <span>📱</span>
+            <span>Mobile App Transfer</span>
+          </div>
+          <ol class="space-y-2 text-[11px] text-slate-300">
+            <li class="flex items-start">
+              <span class="w-4 h-4 rounded-full bg-cyan-950 text-cyan-300 text-[10px] font-bold flex items-center justify-center mr-2 shrink-0 border border-cyan-800">1</span>
+              <span><strong>Customer taps Send Money</strong> on Mobile App (Zone 1).</span>
+            </li>
+            <li class="flex items-start">
+              <span class="w-4 h-4 rounded-full bg-blue-950 text-blue-300 text-[10px] font-bold flex items-center justify-center mr-2 shrink-0 border border-blue-800">2</span>
+              <span><strong>Cloud WAF</strong> verifies device identity &amp; encrypts request (Zone 2).</span>
+            </li>
+            <li class="flex items-start">
+              <span class="w-4 h-4 rounded-full bg-indigo-950 text-indigo-300 text-[10px] font-bold flex items-center justify-center mr-2 shrink-0 border border-indigo-800">3</span>
+              <span>Crosses <strong>Direct Connect Highway</strong> into <strong>Core Middleware</strong> (Zone 3).</span>
+            </li>
+            <li class="flex items-start">
+              <span class="w-4 h-4 rounded-full bg-purple-950 text-purple-300 text-[10px] font-bold flex items-center justify-center mr-2 shrink-0 border border-purple-800">4</span>
+              <span><strong>Finacle Core</strong> debits customer account &amp; updates ledger.</span>
+            </li>
+            <li class="flex items-start">
+              <span class="w-4 h-4 rounded-full bg-amber-950 text-amber-300 text-[10px] font-bold flex items-center justify-center mr-2 shrink-0 border border-amber-800">5</span>
+              <span>Dispatches to <strong>NIBSS (Zone 4)</strong> to credit recipient bank.</span>
+            </li>
+          </ol>
+        </div>
+
+        <!-- Journey 2 -->
+        <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+          <div class="flex items-center space-x-2 text-emerald-400 font-bold text-xs mb-2">
+            <span>💳</span>
+            <span>ATM &amp; POS Card Payment</span>
+          </div>
+          <ol class="space-y-2 text-[11px] text-slate-300">
+            <li class="flex items-start">
+              <span class="w-4 h-4 rounded-full bg-emerald-950 text-emerald-300 text-[10px] font-bold flex items-center justify-center mr-2 shrink-0 border border-emerald-800">1</span>
+              <span>Customer inserts Chip &amp; PIN card at POS terminal (Zone 1).</span>
+            </li>
+            <li class="flex items-start">
+              <span class="w-4 h-4 rounded-full bg-purple-950 text-purple-300 text-[10px] font-bold flex items-center justify-center mr-2 shrink-0 border border-purple-800">2</span>
+              <span>Reaches on-prem <strong>Postilion Switch</strong> via private APN (Zone 3).</span>
+            </li>
+            <li class="flex items-start">
+              <span class="w-4 h-4 rounded-full bg-indigo-950 text-indigo-300 text-[10px] font-bold flex items-center justify-center mr-2 shrink-0 border border-indigo-800">3</span>
+              <span>Passes to <strong>Core Middleware</strong> for account validation.</span>
+            </li>
+            <li class="flex items-start">
+              <span class="w-4 h-4 rounded-full bg-purple-950 text-purple-300 text-[10px] font-bold flex items-center justify-center mr-2 shrink-0 border border-purple-800">4</span>
+              <span><strong>Finacle</strong> checks balance, holds funds, and approves terminal.</span>
+            </li>
+            <li class="flex items-start">
+              <span class="w-4 h-4 rounded-full bg-amber-950 text-amber-300 text-[10px] font-bold flex items-center justify-center mr-2 shrink-0 border border-amber-800">5</span>
+              <span>Clears overnight with <strong>Interswitch &amp; NIBSS (Zone 4)</strong>.</span>
+            </li>
+          </ol>
+        </div>
+
+        <!-- Journey 3 -->
+        <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+          <div class="flex items-center space-x-2 text-amber-400 font-bold text-xs mb-2">
+            <span>🎧</span>
+            <span>Dispute Resolution</span>
+          </div>
+          <ol class="space-y-2 text-[11px] text-slate-300">
+            <li class="flex items-start">
+              <span class="w-4 h-4 rounded-full bg-amber-950 text-amber-300 text-[10px] font-bold flex items-center justify-center mr-2 shrink-0 border border-amber-800">1</span>
+              <span>Customer calls or chats with <strong>Contact Center</strong> (Zone 1).</span>
+            </li>
+            <li class="flex items-start">
+              <span class="w-4 h-4 rounded-full bg-indigo-950 text-indigo-300 text-[10px] font-bold flex items-center justify-center mr-2 shrink-0 border border-indigo-800">2</span>
+              <span>Agent queries transaction history via <strong>Core Middleware</strong>.</span>
+            </li>
+            <li class="flex items-start">
+              <span class="w-4 h-4 rounded-full bg-purple-950 text-purple-300 text-[10px] font-bold flex items-center justify-center mr-2 shrink-0 border border-purple-800">3</span>
+              <span>Directs query to <strong>Fiserv Reconciliation</strong> (Zone 3).</span>
+            </li>
+            <li class="flex items-start">
+              <span class="w-4 h-4 rounded-full bg-blue-950 text-blue-300 text-[10px] font-bold flex items-center justify-center mr-2 shrink-0 border border-blue-800">4</span>
+              <span>Instant auto-reversal logged if terminal timed out.</span>
+            </li>
+            <li class="flex items-start">
+              <span class="w-4 h-4 rounded-full bg-emerald-950 text-emerald-300 text-[10px] font-bold flex items-center justify-center mr-2 shrink-0 border border-emerald-800">5</span>
+              <span>Customer receives automated SMS notification before call ends.</span>
+            </li>
+          </ol>
+        </div>
+
+        <!-- Journey 4: Branch Cash & Cheque Operations -->
+        <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+          <div class="flex items-center space-x-2 text-blue-400 font-bold text-xs mb-2">
+            <span>🏛️</span>
+            <span>Branch Cash &amp; Cheque Clearing</span>
+          </div>
+          <ol class="space-y-2 text-[11px] text-slate-300">
+            <li class="flex items-start">
+              <span class="w-4 h-4 rounded-full bg-blue-950 text-blue-300 text-[10px] font-bold flex items-center justify-center mr-2 shrink-0 border border-blue-800">1</span>
+              <span>Teller enters deposit into native <strong>Finacle UI</strong> on branch PC (Zone 1).</span>
+            </li>
+            <li class="flex items-start">
+              <span class="w-4 h-4 rounded-full bg-emerald-950 text-emerald-300 text-[10px] font-bold flex items-center justify-center mr-2 shrink-0 border border-emerald-800">2</span>
+              <span>Traverses <strong>Cisco SD-WAN IPsec tunnel</strong> directly to Primary DC.</span>
+            </li>
+            <li class="flex items-start">
+              <span class="w-4 h-4 rounded-full bg-purple-950 text-purple-300 text-[10px] font-bold flex items-center justify-center mr-2 shrink-0 border border-purple-800">3</span>
+              <span><strong>Direct to Finacle (No Middleware)</strong>: Finacle validates till limits &amp; sessions.</span>
+            </li>
+            <li class="flex items-start">
+              <span class="w-4 h-4 rounded-full bg-indigo-950 text-indigo-300 text-[10px] font-bold flex items-center justify-center mr-2 shrink-0 border border-indigo-800">4</span>
+              <span><strong>Oracle RAC</strong> commits double-entry ledger debit/credit immediately.</span>
+            </li>
+            <li class="flex items-start">
+              <span class="w-4 h-4 rounded-full bg-amber-950 text-amber-300 text-[10px] font-bold flex items-center justify-center mr-2 shrink-0 border border-amber-800">5</span>
+              <span>Clearing settled via <strong>NIBSS CTS</strong>; SMS alert fired via Telco (Zone 4).</span>
+            </li>
+          </ol>
+        </div>
+
+        <!-- Journey 5: Branch Instant Biometric KYC & Card Issuance -->
+        <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+          <div class="flex items-center space-x-2 text-violet-400 font-bold text-xs mb-2">
+            <span>🪪</span>
+            <span>Instant Account &amp; Card Issuance</span>
+          </div>
+          <ol class="space-y-2 text-[11px] text-slate-300">
+            <li class="flex items-start">
+              <span class="w-4 h-4 rounded-full bg-violet-950 text-violet-300 text-[10px] font-bold flex items-center justify-center mr-2 shrink-0 border border-violet-800">1</span>
+              <span>Customer presents NIN &amp; BVN at <strong>Branch KYC Desk</strong> (Zone 1).</span>
+            </li>
+            <li class="flex items-start">
+              <span class="w-4 h-4 rounded-full bg-emerald-950 text-emerald-300 text-[10px] font-bold flex items-center justify-center mr-2 shrink-0 border border-emerald-800">2</span>
+              <span>Secure branch scanner captures live biometrics over SD-WAN.</span>
+            </li>
+            <li class="flex items-start">
+              <span class="w-4 h-4 rounded-full bg-amber-950 text-amber-300 text-[10px] font-bold flex items-center justify-center mr-2 shrink-0 border border-amber-800">3</span>
+              <span>Inquiry dispatched to <strong>NIMC &amp; NIBSS BVN API</strong> (Zone 4).</span>
+            </li>
+            <li class="flex items-start">
+              <span class="w-4 h-4 rounded-full bg-purple-950 text-purple-300 text-[10px] font-bold flex items-center justify-center mr-2 shrink-0 border border-purple-800">4</span>
+              <span><strong>Finacle CIF</strong> creates account &amp; generates profile (Zone 3).</span>
+            </li>
+            <li class="flex items-start">
+              <span class="w-4 h-4 rounded-full bg-emerald-950 text-emerald-300 text-[10px] font-bold flex items-center justify-center mr-2 shrink-0 border border-emerald-800">5</span>
+              <span><strong>Postilion &amp; Matica Printer</strong> print &amp; activate Chip card instantly.</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== STRATEGIC VENDOR & LOCAL NIGERIAN PARTNER TABLE ==================== -->
+    <section class="glass-card rounded-2xl p-6 border border-slate-800 mb-6">
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+            Governance &amp; Support Ecosystem
+          </span>
+          <h2 class="text-lg font-bold text-white mt-1">
+            Global OEM Platforms &amp; Authorized Nigerian Implementation Partners (Without Pricing)
+          </h2>
+        </div>
+        <span class="text-xs text-slate-400 font-mono">Strictly Free of Fee Schedules</span>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs">
+          <thead>
+            <tr class="border-b border-slate-800 text-slate-400 text-[11px] font-semibold uppercase tracking-wider">
+              <th class="py-3 px-3">Architectural Area</th>
+              <th class="py-3 px-3">Primary Platform Deployed</th>
+              <th class="py-3 px-3">Certified Nigerian Partner</th>
+              <th class="py-3 px-3">Secondary Benchmark Alternative</th>
+              <th class="py-3 px-3">Alternative Local Partner</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800/60 text-slate-300">
+            <tr>
+              <td class="py-2.5 px-3 font-semibold text-white">Core Banking Ledger</td>
+              <td class="py-2.5 px-3 text-blue-300 font-medium">Infosys Finacle 11.x</td>
+              <td class="py-2.5 px-3 text-emerald-400">Inlaks Computers Limited (VI, Lagos)</td>
+              <td class="py-2.5 px-3 text-slate-400">Temenos Transact R23</td>
+              <td class="py-2.5 px-3 text-slate-400">Tech Mahindra / Sofgen Africa</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-3 font-semibold text-white">Core Security Gatekeeper (ESB)</td>
+              <td class="py-2.5 px-3 text-blue-300 font-medium">Red Hat JBoss EAP + AMQ</td>
+              <td class="py-2.5 px-3 text-emerald-400">Wipro Nigeria Limited / Inlaks</td>
+              <td class="py-2.5 px-3 text-slate-400">IBM Cloud Pak for Integration (ACE)</td>
+              <td class="py-2.5 px-3 text-slate-400">ActivEdge Technologies Limited</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-3 font-semibold text-white">Payment Switch (Cards/POS/ATM)</td>
+              <td class="py-2.5 px-3 text-blue-300 font-medium">ACI Postilion Realtime v5.6</td>
+              <td class="py-2.5 px-3 text-emerald-400">Interswitch Limited (VI, Lagos)</td>
+              <td class="py-2.5 px-3 text-slate-400">BPC SmartVista Suite v8.5</td>
+              <td class="py-2.5 px-3 text-slate-400">Neptune Software / Tracom</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-3 font-semibold text-white">Hybrid Cloud &amp; Security Shield</td>
+              <td class="py-2.5 px-3 text-blue-300 font-medium">Huawei Cloud (WAF + APIG + CCE)</td>
+              <td class="py-2.5 px-3 text-emerald-400">Huawei Technologies Nigeria (VI)</td>
+              <td class="py-2.5 px-3 text-slate-400">AWS Financial Services Architecture</td>
+              <td class="py-2.5 px-3 text-slate-400">Dimension Data Nigeria (NTT)</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-3 font-semibold text-white">Enterprise ERP &amp; General Ledger</td>
+              <td class="py-2.5 px-3 text-blue-300 font-medium">SAP S/4HANA Finance 2023</td>
+              <td class="py-2.5 px-3 text-emerald-400">Wipro Nigeria Limited (Lagos)</td>
+              <td class="py-2.5 px-3 text-slate-400">Oracle Fusion Cloud Financials ERP</td>
+              <td class="py-2.5 px-3 text-slate-400">ActivEdge Technologies Limited</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-3 font-semibold text-white">Contact Center Operations</td>
+              <td class="py-2.5 px-3 text-blue-300 font-medium">Avaya Aura &amp; Oceana Suite 3.8</td>
+              <td class="py-2.5 px-3 text-emerald-400">Inlaks Computers / Wipro Nigeria</td>
+              <td class="py-2.5 px-3 text-slate-400">Genesys Cloud CX 3 Enterprise</td>
+              <td class="py-2.5 px-3 text-slate-400">Dimension Data Nigeria (NTT)</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-3 font-semibold text-white">Big Data &amp; AI Lakehouse</td>
+              <td class="py-2.5 px-3 text-blue-300 font-medium">Databricks Lakehouse (Delta Lake)</td>
+              <td class="py-2.5 px-3 text-emerald-400">Inlaks Systems / Cloud Direct Africa</td>
+              <td class="py-2.5 px-3 text-slate-400">Snowflake Financial Services Cloud</td>
+              <td class="py-2.5 px-3 text-slate-400">Tech Mahindra Nigeria / Wipro</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== EXECUTIVE FOOTER ==================== -->
+  <footer class="pt-4 border-t border-slate-800 flex flex-wrap items-center justify-between text-xs text-slate-400 gap-4">
+    <div class="flex items-center space-x-4">
+      <span>Commercial Bank Nigeria PLC &copy; 2026. All rights reserved.</span>
+      <span class="text-slate-600">|</span>
+      <span>Compliant with Central Bank of Nigeria (CBN) Risk-Based Cybersecurity Framework</span>
+    </div>
+    <div class="flex items-center space-x-3 font-mono text-[11px]">
+      <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800/60">PCI-DSS v4.0 Level 1</span>
+      <span class="px-2 py-0.5 rounded bg-blue-950 text-blue-300 border border-blue-800/60">NDPA 2023 Certified</span>
+      <span class="px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-800/60">ISO 27001 / 22301</span>
+    </div>
+  </footer>
+
+</body>
+</html>
