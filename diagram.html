@@ -852,7 +852,7 @@ Enables multi-tiered maker-checker workflows, bulk salary payroll processing, co
       <text x="215" y="121" fill="#475569" font-size="10" font-weight="600" text-anchor="middle">Vendor: Maxut Consulting</text>
     </g>
 
-    <!-- Card 3: USSD Gateway -->
+    <!-- Card 3: USSD Banking Channel -->
     <g id="box_sec1_card3" class="interactive-box cursor-pointer" data-id="sec1_card3" transform="translate(60, 485)">
       <title>USSD Banking Channel (*XYZ#) [Section 1: Customer Channels]
 ================================================================================
@@ -863,9 +863,9 @@ Interactive session-based USSD financial channel operating on feature phones wit
 Delivers financial inclusion across unbanked and semi-urban populations in Nigeria for rapid balance checks, airtime top-ups, and instant transfers.
 
 3. HOW IT CONNECTS TO OTHERS:
-• INBOUND: Mobile Subscribers on MTN, Airtel, Glo, 9mobile dialing *XYZ#
-• OUTBOUND: Telco Aggregators via SMPP Protocol over IPsec VPN (Port 2775), Huawei Cloud USSD State Service
-• FAILOVER: Multi-aggregator routing failover; automated fallback between telco SMPP gateways.
+• INBOUND: Mobile Subscribers on MTN, Airtel, Glo, 9mobile dialing *XYZ# via Telco Aggregators
+• OUTBOUND: Calls Digital Banking Applications &amp; API Gateway (Section 2) via REST over HTTPS / mTLS (Port 443)
+• FAILOVER: Multi-aggregator automated failover; redundant cloud API gateway endpoints with auto-scaling microservices.
 • SECURITY: Thales payShield 10K hardware HSM for PIN translation, ephemeral 90-second session state timeouts, and daily velocity transaction caps.
 (Click box on diagram for interactive detail view)</title>
       <rect width="380" height="130" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.2" />
@@ -876,13 +876,13 @@ Delivers financial inclusion across unbanked and semi-urban populations in Niger
       </g>
       <text x="44" y="24" fill="#0f172a" font-size="13" font-weight="700">USSD Banking Channel (*XYZ#)</text>
       <text x="18" y="44" fill="#475569" font-size="11">Feature phone financial inclusion channel</text>
-      <text x="18" y="62" fill="#64748b" font-size="11">&#8226; Protocol: SMPP over Telco Aggregator VPN circuits</text>
-      <text x="18" y="80" fill="#64748b" font-size="11">&#8226; PIN Encryption: Hardware HSM (Thales payShield)</text>
-      <text x="18" y="98" fill="#64748b" font-size="11">&#8226; Session Handling: Cloud USSD Session State Engine</text>
+      <text x="18" y="62" fill="#64748b" font-size="11">&#8226; Target: <tspan font-weight="600" fill="#0f172a">Calls Digital Applications (Section 2)</tspan></text>
+      <text x="18" y="80" fill="#64748b" font-size="11">&#8226; Protocol: REST over mTLS (Session translated from SMPP)</text>
+      <text x="18" y="98" fill="#64748b" font-size="11">&#8226; PIN Encryption: Hardware HSM (Thales payShield)</text>
       <rect x="18" y="104" width="105" height="18" rx="4" fill="#fffbeb" />
-      <text x="70" y="117" fill="#b45309" font-size="10" font-weight="600" text-anchor="middle">SMPP / Port 2775</text>
-      <rect x="130" y="104" width="160" height="18" rx="4" fill="#f1f5f9" />
-      <text x="210" y="117" fill="#475569" font-size="10" font-weight="600" text-anchor="middle">Aggregators: MTN, Airtel, Glo</text>
+      <text x="70" y="117" fill="#b45309" font-size="10" font-weight="600" text-anchor="middle">HTTPS / TLS 1.3</text>
+      <rect x="130" y="104" width="175" height="18" rx="4" fill="#f1f5f9" />
+      <text x="217" y="117" fill="#475569" font-size="10" font-weight="600" text-anchor="middle">Calls: Digital Applications (Sec 2)</text>
     </g>
 
     <!-- Card 4: POS &amp; Agency Banking Network -->
@@ -5341,35 +5341,35 @@ Transports synchronous block-level database redo logs for Oracle Active Data Gua
     "badge_text": "Via Encrypted IPsec Tunnel | Syslog TLS Port 6514"
   },
   {
-    "id": "conn_ussd_to_telco",
+    "id": "conn_ussd_to_digital_apps",
     "category": "customer_access",
     "source": "sec1_card3",
-    "target": "sec10_regulators_carriers",
+    "target": "sec2_apig",
     "source_name": "USSD Banking Channel (*XYZ#) (Section 1)",
-    "target_name": "Telco Aggregators (MTN/Airtel/Glo) (Section 10)",
-    "channel": "Multi-Telco Dedicated IPsec VPN Leased Lines",
-    "protocol": "SMPP Protocol",
-    "port": "TCP Port 2775",
-    "payload": "Feature phone session initiation, menu navigation, and instant airtime/transfer commands",
-    "security": "IPsec AES-256 tunnel, telco shortcode binding, ephemeral 90s session timeout",
-    "failover": "Multi-aggregator automated failover between Africa's Talking and Infobip",
-    "color": "#0284c7",
-    "path": "M 440 550 L 465 550 L 465 1255 L 3255 1255 L 3255 550 L 3270 550",
-    "badge_x": 1850,
-    "badge_y": 1250,
-    "badge_text": "Via Multi-Telco IPsec VPN | SMPP Port 2775"
+    "target_name": "Digital Banking Applications & API Gateway (Section 2)",
+    "channel": "High-Speed Ingress Bus to Cloud Digital Platform",
+    "protocol": "REST API over mTLS",
+    "port": "TCP Port 443",
+    "payload": "USSD financial sessions (*XYZ# balance check, transfer, airtime) calling containerized Digital Banking Microservices",
+    "security": "Mutual TLS (mTLS), subscriber MSISDN validation, Thales payShield HSM PIN encryption, 90s session timeouts",
+    "failover": "Active-active API Gateway clustering with auto-scaling microservices on CCE",
+    "color": "#d97706",
+    "path": "M 440 550 L 480 550 L 480 580 L 520 580",
+    "badge_x": 480,
+    "badge_y": 540,
+    "badge_text": "Calls Digital Applications | REST mTLS Port 443"
   },
   {
     "id": "conn_telco_to_cloud_ussd",
     "category": "customer_access",
     "source": "sec10_regulators_carriers",
     "target": "sec2_apig",
-    "source_name": "Telco Aggregators (Section 10)",
-    "target_name": "Huawei Cloud API Gateway & USSD Engine (Section 2)",
+    "source_name": "Telco Carriers (MTN / Airtel / Glo) (Section 10)",
+    "target_name": "Digital Applications & USSD Engine (Section 2)",
     "channel": "Dedicated Metro MPLS Leased Circuit",
     "protocol": "REST API over mTLS",
     "port": "TCP Port 443",
-    "payload": "Converts telco SMPP sessions into core banking account balance checks and interbank transfers",
+    "payload": "Telco network routes customer dialed *XYZ# session traffic into Cloud Digital Banking Applications",
     "security": "Mutual TLS (mTLS), IP whitelisting, rate limiting per subscriber",
     "failover": "Sub-second failover across redundant telco aggregator endpoints",
     "color": "#0284c7",
@@ -8247,7 +8247,7 @@ Transports synchronous block-level database redo logs for Oracle Active Data Gua
           'Mobile & Web Apps connect over public internet via TLS 1.3 to the Huawei Cloud WAF (Section 2).',
           '85,000 POS terminals connect over private telco APNs (MTN/Airtel private SIMs) directly to Postilion Switch (Section 4).',
           '1,200 ATMs connect over private MPLS/IPsec circuits to Postilion Switch (Section 4).',
-          'USSD Gateway interfaces over SMPP telco links into Core Middleware.'
+          'USSD Banking Channel (*XYZ#) interfaces over secure telco trunks directly calling Digital Applications (Section 2) for session state and microservice business logic.'
         ],
         security: [
           'GuardSquare mobile app binary obfuscation prevents reverse engineering and malicious tampering.',
