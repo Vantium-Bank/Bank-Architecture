@@ -1,0 +1,835 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="468.0 1348.0 1354.0 1144.0" width="100%" height="auto" class="rounded-xl shadow-lg border border-slate-700/60 bg-slate-900" style="max-height: 480px;">
+  <defs>
+    <!-- Card Shadow -->
+    <filter id="cardShadow" x="-1%" y="-1%" width="102%" height="103%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.05" />
+    </filter>
+    <filter id="badgeGlow" x="-5%" y="-5%" width="110%" height="110%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#0f172a" flood-opacity="0.10" />
+    </filter>
+
+    <!-- Arrow Markers -->
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb" />
+    </marker>
+    <marker id="arr-emerald" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#059669" />
+    </marker>
+    <marker id="arr-purple" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#7c3aed" />
+    </marker>
+        <marker id="arr-amber-prominent" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#d97706" />
+    </marker>
+    <marker id="arr-orange-prominent" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#ea580c" />
+    </marker>
+    <marker id="arr-amber" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#d97706" />
+    </marker>
+    <marker id="arr-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#dc2626" />
+    </marker>
+    <marker id="arr-cyan" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#0891b2" />
+    </marker>
+
+    <!-- Subtle Architectural Background Grid -->
+    <pattern id="dotPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="1" fill="#f1f5f9" />
+    </pattern>
+  
+    <marker id="arr-orange" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#ea580c" />
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#334155" />
+    </marker>
+    <marker id="arr-sky" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#0284c7" />
+    </marker>
+    <marker id="arr-teal" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#0d9488" />
+    </marker>
+
+  
+    <!-- ==================== ENTERPRISE VECTOR ICON DEFINITIONS ==================== -->
+    <symbol id="ico-sec-channels" viewBox="0 0 24 24">
+      <rect x="5" y="2" width="14" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
+      <line x1="10" y1="18" x2="14" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="12" cy="5" r="1" fill="currentColor"/>
+    </symbol>
+    <symbol id="ico-sec-cloud" viewBox="0 0 24 24">
+      <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-sec-lakehouse" viewBox="0 0 24 24">
+      <path d="M12 2L2 7l10 5 10-5-10-5Z" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-sec-saas" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-sec-regulators" viewBox="0 0 24 24">
+      <path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v4M12 14v4M16 14v4" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-sec-branches" viewBox="0 0 24 24">
+      <path d="M3 21h18M4 18V9l8-5 8 5v9M9 18v-5h6v5" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-sec-datacenter" viewBox="0 0 24 24">
+      <rect x="2" y="3" width="20" height="7" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <rect x="2" y="14" width="20" height="7" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="6" cy="6.5" r="1" fill="currentColor"/>
+      <circle cx="6" cy="17.5" r="1" fill="currentColor"/>
+      <line x1="10" y1="6.5" x2="18" y2="6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <line x1="10" y1="17.5" x2="18" y2="17.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ico-sec-dr" viewBox="0 0 24 24">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="ico-sec-headoffice" viewBox="0 0 24 24">
+      <rect x="4" y="2" width="16" height="20" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <line x1="9" y1="6" x2="9.01" y2="6" stroke="currentColor" stroke-width="2"/>
+      <line x1="15" y1="6" x2="15.01" y2="6" stroke="currentColor" stroke-width="2"/>
+      <line x1="9" y1="10" x2="9.01" y2="10" stroke="currentColor" stroke-width="2"/>
+      <line x1="15" y1="10" x2="15.01" y2="10" stroke="currentColor" stroke-width="2"/>
+      <line x1="9" y1="14" x2="9.01" y2="14" stroke="currentColor" stroke-width="2"/>
+      <line x1="15" y1="14" x2="15.01" y2="14" stroke="currentColor" stroke-width="2"/>
+      <line x1="11" y1="22" x2="11" y2="18" stroke="currentColor" stroke-width="2"/>
+      <line x1="13" y1="22" x2="13" y2="18" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+    <symbol id="ico-sec-contact" viewBox="0 0 24 24">
+      <path d="M3 18v-6a9 9 0 0 1 18 0v6" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-sec-network" viewBox="0 0 24 24">
+      <circle cx="12" cy="5" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="5" cy="19" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="19" cy="19" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M12 8v4m-5 4 3-2m4 0 3 2" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+
+    <!-- Component Icons -->
+    <symbol id="ico-mobile" viewBox="0 0 24 24">
+      <rect x="5" y="2" width="14" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
+      <line x1="10" y1="18" x2="14" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ico-web" viewBox="0 0 24 24">
+      <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <line x1="2" y1="7" x2="22" y2="7" stroke="currentColor" stroke-width="2"/>
+      <line x1="6" y1="20" x2="18" y2="20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <line x1="12" y1="17" x2="12" y2="20" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+    <symbol id="ico-dialer" viewBox="0 0 24 24">
+      <rect x="4" y="2" width="16" height="20" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="8" cy="7" r="1" fill="currentColor"/>
+      <circle cx="12" cy="7" r="1" fill="currentColor"/>
+      <circle cx="16" cy="7" r="1" fill="currentColor"/>
+      <circle cx="8" cy="11" r="1" fill="currentColor"/>
+      <circle cx="12" cy="11" r="1" fill="currentColor"/>
+      <circle cx="16" cy="11" r="1" fill="currentColor"/>
+      <circle cx="8" cy="15" r="1" fill="currentColor"/>
+      <circle cx="12" cy="15" r="1" fill="currentColor"/>
+      <circle cx="16" cy="15" r="1" fill="currentColor"/>
+    </symbol>
+    <symbol id="ico-pos" viewBox="0 0 24 24">
+      <rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <line x1="2" y1="10" x2="22" y2="10" stroke="currentColor" stroke-width="2"/>
+      <rect x="5" y="14" width="4" height="2.5" rx="0.5" fill="currentColor"/>
+    </symbol>
+    <symbol id="ico-atm" viewBox="0 0 24 24">
+      <rect x="3" y="2" width="18" height="20" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <rect x="6" y="5" width="12" height="6" rx="1" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      <line x1="7" y1="15" x2="17" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="12" cy="18" r="1" fill="currentColor"/>
+    </symbol>
+    <symbol id="ico-chat" viewBox="0 0 24 24">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-shield-key" viewBox="0 0 24 24">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="12" cy="10" r="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      <path d="M12 12v3" stroke="currentColor" stroke-width="1.5"/>
+    </symbol>
+    <symbol id="ico-waf" viewBox="0 0 24 24">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M8 9h8M8 13h8M12 9v8" stroke="currentColor" stroke-width="1.5"/>
+    </symbol>
+    <symbol id="ico-ddos" viewBox="0 0 24 24">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="m13 8-3 4h4l-2 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="ico-api" viewBox="0 0 24 24">
+      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-nat" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M3.6 9h16.8M3.6 15h16.8M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" stroke="currentColor" stroke-width="1.5"/>
+    </symbol>
+    <symbol id="ico-radar" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      <line x1="12" y1="12" x2="18.5" y2="5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ico-key" viewBox="0 0 24 24">
+      <circle cx="7.5" cy="15.5" r="4.5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="m10.8 12.2 7.7-7.7a1 1 0 0 1 1.4 0l1.6 1.6-2 2 1.5 1.5-2 2" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-workflow" viewBox="0 0 24 24">
+      <circle cx="6" cy="6" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="18" cy="18" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="18" cy="6" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M6 9v9a3 3 0 0 0 3 3h6M9 6h6" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+    <symbol id="ico-kafka" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="5" cy="6" r="2.5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="19" cy="6" r="2.5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="5" cy="18" r="2.5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="19" cy="18" r="2.5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="m7.2 7.5 3 3M16.8 7.5l-3 3M7.2 16.5l3-3M16.8 16.5l-3-3" stroke="currentColor" stroke-width="1.8"/>
+    </symbol>
+    <symbol id="ico-mesh" viewBox="0 0 24 24">
+      <polygon points="12 2 2 7 12 12 22 7 12 2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <polyline points="2 17 12 22 22 17" stroke="currentColor" stroke-width="2" fill="none"/>
+      <polyline points="2 12 12 17 22 12" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-hybrid-gw" viewBox="0 0 24 24">
+      <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="m8 17 4 4 4-4M12 12v9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ico-database" viewBox="0 0 24 24">
+      <ellipse cx="12" cy="5" rx="8" ry="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-db-replica" viewBox="0 0 24 24">
+      <ellipse cx="9" cy="5" rx="6" ry="2.5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M3 5v10c0 1.38 2.69 2.5 6 2.5s6-1.12 6-2.5V5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M3 10c0 1.38 2.69 2.5 6 2.5s6-1.12 6-2.5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M15 13v6c0 1.38 2.69 2.5 6 2.5s6-1.12 6-2.5v-6" stroke="currentColor" stroke-width="1.8" fill="none"/>
+      <ellipse cx="21" cy="13" rx="4" ry="1.8" stroke="currentColor" stroke-width="1.8" fill="none"/>
+    </symbol>
+    <symbol id="ico-cache" viewBox="0 0 24 24">
+      <rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <rect x="9" y="9" width="6" height="6" fill="currentColor"/>
+      <line x1="9" y1="1" x2="9" y2="4" stroke="currentColor" stroke-width="2"/>
+      <line x1="15" y1="1" x2="15" y2="4" stroke="currentColor" stroke-width="2"/>
+      <line x1="9" y1="20" x2="9" y2="23" stroke="currentColor" stroke-width="2"/>
+      <line x1="15" y1="20" x2="15" y2="23" stroke="currentColor" stroke-width="2"/>
+      <line x1="20" y1="9" x2="23" y2="9" stroke="currentColor" stroke-width="2"/>
+      <line x1="20" y1="15" x2="23" y2="15" stroke="currentColor" stroke-width="2"/>
+      <line x1="1" y1="9" x2="4" y2="9" stroke="currentColor" stroke-width="2"/>
+      <line x1="1" y1="15" x2="4" y2="15" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+    <symbol id="ico-backup" viewBox="0 0 24 24">
+      <path d="M19 11v9a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-9" stroke="currentColor" stroke-width="2" fill="none"/>
+      <rect x="2" y="3" width="20" height="5" rx="1" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M12 12v5m-2-2 2 2 2-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ico-bronze" viewBox="0 0 24 24">
+      <path d="M3 6h18l-2 13a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2L3 6Z" stroke="currentColor" stroke-width="2" fill="none"/>
+      <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2"/>
+      <circle cx="9" cy="13" r="1" fill="currentColor"/>
+      <circle cx="15" cy="13" r="1" fill="currentColor"/>
+    </symbol>
+    <symbol id="ico-silver" viewBox="0 0 24 24">
+      <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <line x1="12" y1="2" x2="12" y2="22" stroke="currentColor" stroke-width="1.5"/>
+    </symbol>
+    <symbol id="ico-gold" viewBox="0 0 24 24">
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-unity" viewBox="0 0 24 24">
+      <circle cx="12" cy="8" r="6" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="m15.4 12.8 2.6 7.2-6-3-6 3 2.6-7.2" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-bus" viewBox="0 0 24 24">
+      <rect x="2" y="5" width="20" height="14" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <line x1="2" y1="10" x2="22" y2="10" stroke="currentColor" stroke-width="2"/>
+      <circle cx="7" cy="15" r="1.5" fill="currentColor"/>
+      <circle cx="17" cy="15" r="1.5" fill="currentColor"/>
+    </symbol>
+    <symbol id="ico-bank" viewBox="0 0 24 24">
+      <path d="M3 21h18M3 10h18M5 6l7-4 7 4M4 10v11M20 10v11M8 10v11M12 10v11M16 10v11" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-switch" viewBox="0 0 24 24">
+      <path d="m16 3 4 4-4 4M20 7H4M8 21l-4-4 4-4M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="ico-rac" viewBox="0 0 24 24">
+      <ellipse cx="8" cy="5" rx="5" ry="2" stroke="currentColor" stroke-width="1.8" fill="none"/>
+      <path d="M3 5v8c0 1.1 2.2 2 5 2s5-.9 5-2V5" stroke="currentColor" stroke-width="1.8" fill="none"/>
+      <ellipse cx="16" cy="11" rx="5" ry="2" stroke="currentColor" stroke-width="1.8" fill="none"/>
+      <path d="M11 11v8c0 1.1 2.2 2 5 2s5-.9 5-2v-8" stroke="currentColor" stroke-width="1.8" fill="none"/>
+      <line x1="8" y1="9" x2="16" y2="15" stroke="currentColor" stroke-width="1.8"/>
+    </symbol>
+    <symbol id="ico-storage" viewBox="0 0 24 24">
+      <rect x="3" y="4" width="18" height="6" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <rect x="3" y="14" width="18" height="6" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="7" cy="7" r="1" fill="currentColor"/>
+      <circle cx="7" cy="17" r="1" fill="currentColor"/>
+    </symbol>
+    <symbol id="ico-tape" viewBox="0 0 24 24">
+      <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="8" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="16" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <line x1="8" y1="15" x2="16" y2="15" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+    <symbol id="ico-sdwan" viewBox="0 0 24 24">
+      <rect x="2" y="14" width="20" height="8" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <line x1="6" y1="14" x2="6" y2="4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <line x1="18" y1="14" x2="18" y2="4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="6" cy="3" r="1" fill="currentColor"/>
+      <circle cx="18" cy="3" r="1" fill="currentColor"/>
+      <circle cx="8" cy="18" r="1" fill="currentColor"/>
+      <circle cx="12" cy="18" r="1" fill="currentColor"/>
+      <circle cx="16" cy="18" r="1" fill="currentColor"/>
+    </symbol>
+    <symbol id="ico-teller" viewBox="0 0 24 24">
+      <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M5 21v-2a7 7 0 0 1 14 0v2M2 21h20" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-chart" viewBox="0 0 24 24">
+      <path d="m3 3v18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="m7 14 4-4 4 4 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="ico-soc" viewBox="0 0 24 24">
+      <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M2 17h20M12 17v4M8 21h8" stroke="currentColor" stroke-width="2"/>
+      <path d="m6 10 3 3 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ico-headset" viewBox="0 0 24 24">
+      <path d="M3 18v-6a9 9 0 0 1 18 0v6" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-direct-connect" viewBox="0 0 24 24">
+      <line x1="6" y1="3" x2="6" y2="15" stroke="currentColor" stroke-width="2"/>
+      <line x1="18" y1="3" x2="18" y2="15" stroke="currentColor" stroke-width="2"/>
+      <circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="18" cy="18" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M6 18h12" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+    <symbol id="ico-dci" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <line x1="12" y1="3" x2="12" y2="9" stroke="currentColor" stroke-width="2"/>
+      <line x1="12" y1="15" x2="12" y2="21" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+    <symbol id="ico-lightning" viewBox="0 0 24 24">
+      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/>
+    </symbol>
+
+  
+    <symbol id="ico-office" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M3 9h18M9 21V9" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+    <symbol id="ico-market" viewBox="0 0 24 24">
+      <path d="M3 3v18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <rect x="7" y="10" width="3" height="7" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      <line x1="8.5" y1="7" x2="8.5" y2="10" stroke="currentColor" stroke-width="1.5"/>
+      <rect x="14" y="6" width="3" height="11" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      <line x1="15.5" y1="3" x2="15.5" y2="6" stroke="currentColor" stroke-width="1.5"/>
+    </symbol>
+    <symbol id="ico-board" viewBox="0 0 24 24">
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+    <symbol id="ico-hr" viewBox="0 0 24 24">
+      <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M6 21v-2a6 6 0 0 1 12 0v2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="19" cy="11" r="1.5" fill="currentColor"/>
+    </symbol>
+    <symbol id="ico-education" viewBox="0 0 24 24">
+      <path d="M22 10v6M2 10l10-5 10 5-10 5z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/>
+      <path d="M6 12v5c3 3 9 3 12 0v-5" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-risk" viewBox="0 0 24 24">
+      <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" stroke="currentColor" stroke-width="2" fill="none"/>
+      <line x1="12" y1="9" x2="12" y2="13" stroke="currentColor" stroke-width="2"/>
+      <circle cx="12" cy="17" r="1" fill="currentColor"/>
+    </symbol>
+    <symbol id="ico-shield-check" viewBox="0 0 24 24">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="ico-lock" viewBox="0 0 24 24">
+      <rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-swift" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M3.6 9h16.8M3.6 15h16.8M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" stroke="currentColor" stroke-width="1.8"/>
+    </symbol>
+    <symbol id="ico-instant-pay" viewBox="0 0 24 24">
+      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="ico-cbn-apex" viewBox="0 0 24 24">
+      <path d="M3 21h18M3 10h18M5 6l7-4 7 4M4 10v11M20 10v11M8 10v11M12 10v11M16 10v11" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-card-gateway" viewBox="0 0 24 24">
+      <rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <line x1="2" y1="10" x2="22" y2="10" stroke="currentColor" stroke-width="2"/>
+      <circle cx="16" cy="14" r="2" fill="currentColor"/>
+    </symbol>
+    <symbol id="ico-id-card" viewBox="0 0 24 24">
+      <rect x="3" y="4" width="18" height="16" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="9" cy="10" r="2.5" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      <path d="M5 16a4 4 0 0 1 8 0" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      <line x1="14" y1="9" x2="19" y2="9" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="14" y1="13" x2="18" y2="13" stroke="currentColor" stroke-width="1.5"/>
+    </symbol>
+    <symbol id="ico-telco-tower" viewBox="0 0 24 24">
+      <path d="M12 2v20M4 12l8-4 8 4M6 18l6-3 6 3M8 6l4-2 4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ico-server-cluster" viewBox="0 0 24 24">
+      <rect x="2" y="2" width="20" height="6" rx="1.5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <rect x="2" y="9" width="20" height="6" rx="1.5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <rect x="2" y="16" width="20" height="6" rx="1.5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="6" cy="5" r="1" fill="currentColor"/>
+      <circle cx="6" cy="12" r="1" fill="currentColor"/>
+      <circle cx="6" cy="19" r="1" fill="currentColor"/>
+    </symbol>
+    <symbol id="ico-recon" viewBox="0 0 24 24">
+      <path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+  </defs>
+  <rect x="468.0" y="1348.0" width="1354.0" height="1144.0" fill="#0f172a" />
+  <g id="sec4_primary_datacenter">
+    <title>4. Bank Primary Data Center — Lagos (Equinix / MainOne Tier III) [Core On-Premises Tier]
+================================================================================
+1. WHAT IT DOES:
+The bank's central on-premises computing facility housing Infosys Finacle 11.x Core Banking, on-prem Core Banking Middleware JBoss cluster, Oracle Database 19c Enterprise RAC (2-Node), local Active Data Guard query replica, Dell EMC Data Domain (DD6900), Interswitch Postilion Switch, and self-hosted ERP/Treasury applications.
+
+2. ROLE IN WHOLE ARCHITECTURE:
+Serves as the ultimate system of record and financial transaction settlement core. Authorizes double-entry general ledger entries, settles interbank payments, issues debit cards, and anchors the bank's regulatory book of accounts.
+
+3. HOW IT CONNECTS TO OTHERS:
+• INBOUND: Huawei Cloud Hybrid Gateway via 1 Gbps Direct Connect MPLS (mTLS Port 443), Branch SD-WAN Routers via IPsec (Ports 8000-8080), Payment Switches via ISO 8583 (Port 9000)
+• OUTBOUND: Secondary DR DC via Active Data Guard (Port 1521 over DCI Dark Fiber), Databricks Lakehouse via GoldenGate CDC (Port 9092), Secondary Data Domain via DD Boost (Port 2051)
+• FAILOVER: Active-Active 2-node Oracle RAC with ASM, redundant power, Dell VxRail HCI vSAN, and dual-homed telecom feeds.
+• SECURITY: Thales payShield 10K hardware HSM for PIN translation, Oracle TDE encryption with hardware keys, Fortinet NGFW perimeter, and physical biometric mantrap access.
+(Click box on diagram for interactive detail view)</title>
+    <rect x="480" y="1360" width="1330" height="1120" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)" />
+    <!-- Section Header -->
+    <rect x="480" y="1360" width="1330" height="48" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+    <g transform="translate(475, 1371)">
+      <rect width="26" height="26" rx="6" fill="#1e293b" />
+      <use href="#ico-sec-datacenter" x="4" y="4" width="18" height="18" color="#ffffff" />
+    </g>
+    <text x="511" y="1390" fill="#0f172a" font-size="15" font-weight="700">4. BANK PRIMARY DATA CENTER &#8212; LAGOS (EQUINIX / MAINONE TIER III COLOCATION)</text>
+    <rect x="1670" y="1372" width="125" height="22" rx="4" fill="#eff6ff" stroke="#bfdbfe" />
+    <text x="1732" y="1387" fill="#1d4ed8" font-size="10" font-weight="700" text-anchor="middle">ON-PREMISES DC</text>
+
+    <!-- Sub-Zone 1: Core Banking Middleware Cluster (x: 505, y: 1425, w: 380, h: 1035) -->
+    <g id="box_sec4_middleware" class="interactive-box cursor-pointer" data-id="sec4_middleware" transform="translate(505, 1425)">
+      <title>Core Banking Middleware Bus (On-Prem Primary DC) [Section 4]
+================================================================================
+1. WHAT IT DOES:
+Enterprise Service Bus (Red Hat JBoss EAP / OSB) cluster hosting Account Core Service, Identity Core Service, Payment Core Service, Card Core Service, and on-prem Apache Kafka backbone.
+
+2. ROLE IN WHOLE ARCHITECTURE:
+Acts as the central integration and protocol translation layer between Huawei Cloud digital microservices and Infosys Finacle core banking. Translates external REST/JSON into internal FIXML/EJB requests.
+
+3. HOW IT CONNECTS TO OTHERS:
+• INBOUND: Huawei Cloud Hybrid Gateway via 1 Gbps Direct Connect MPLS (mTLS TCP 443)
+• OUTBOUND: Infosys Finacle Core Banking Engine via high-speed gigabit LAN (FIXML / EJB Ports 9080-9085)
+• FAILOVER: Active-Active clustered deployment across Dell VxRail HCI nodes with automated session failover.
+• SECURITY: Mutual TLS (mTLS) with internal PKI certificates, Thales payShield 10K HSM, and PAM database credentials.
+(Click box on diagram for interactive detail view)</title>
+      <rect width="380" height="1035" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.2" />
+      <rect width="380" height="34" rx="10" fill="#f1f5f9" />
+      <text x="190" y="22" fill="#334155" font-size="12" font-weight="700" text-anchor="middle">CORE BANKING MIDDLEWARE BUS (ON-PREM PRIMARY DC)</text>
+
+      <!-- Middleware Bus Overview -->
+      <g transform="translate(15, 45)">
+        <rect width="350" height="110" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+        <rect x="0" y="0" width="5" height="110" rx="2" fill="#2563eb" />
+        <g transform="translate(15, 7)">
+        <rect width="20" height="20" rx="5" fill="#eff6ff" stroke="#2563eb" stroke-width="0.8" />
+        <use href="#ico-bus" x="3" y="3" width="14" height="14" color="#2563eb" />
+      </g>
+      <text x="41" y="22" fill="#0f172a" font-size="12" font-weight="700">Enterprise Service Bus (Red Hat JBoss / OSB)</text>
+        <text x="15" y="40" fill="#475569" font-size="10">High-Availability Clustered Integration Middleware:</text>
+        <text x="15" y="56" fill="#64748b" font-size="10">&#8226; Bridges Huawei Cloud digital microservices to Finacle</text>
+        <text x="15" y="72" fill="#64748b" font-size="10">&#8226; Protocol translation: REST/JSON to Finacle ISO/FIXML</text>
+        <rect x="15" y="82" width="110" height="18" rx="3" fill="#eff6ff" />
+        <text x="70" y="95" fill="#1d4ed8" font-size="9" font-weight="700" text-anchor="middle">JBOSS EAP CLUSTER</text>
+      </g>
+
+      <!-- Middleware Services Cards -->
+      <!-- Account Core Adapter -->
+      <g transform="translate(15, 165)">
+        <rect width="350" height="105" rx="8" fill="#ffffff" stroke="#cbd5e1" />
+        <rect x="0" y="0" width="5" height="105" rx="2" fill="#0284c7" />
+        <g transform="translate(15, 6)">
+        <rect width="18" height="18" rx="4" fill="#eff6ff" stroke="#2563eb" stroke-width="0.8" />
+        <use href="#ico-api" x="2.5" y="2.5" width="13" height="13" color="#2563eb" />
+      </g>
+      <text x="39" y="20" fill="#0f172a" font-size="11" font-weight="700">Account Core Service (Finacle Adapter)</text>
+        <text x="15" y="38" fill="#64748b" font-size="10">Balance inquiry, mini-statement, account holds, limits</text>
+        <text x="15" y="54" fill="#64748b" font-size="10">Direct synchronous call to Finacle Core Banking Engine</text>
+        <rect x="15" y="70" width="90" height="18" rx="3" fill="#f0f9ff" />
+        <text x="60" y="83" fill="#0284c7" font-size="9" font-weight="700" text-anchor="middle">FIXML / EJB</text>
+      </g>
+
+      <!-- Identity Core Adapter -->
+      <g transform="translate(15, 280)">
+        <rect width="350" height="105" rx="8" fill="#ffffff" stroke="#cbd5e1" />
+        <rect x="0" y="0" width="5" height="105" rx="2" fill="#7c3aed" />
+        <g transform="translate(15, 6)">
+        <rect width="18" height="18" rx="4" fill="#eff6ff" stroke="#2563eb" stroke-width="0.8" />
+        <use href="#ico-id-card" x="2.5" y="2.5" width="13" height="13" color="#2563eb" />
+      </g>
+      <text x="39" y="20" fill="#0f172a" font-size="11" font-weight="700">Identity Core Service (Finacle CIF / Biometrics)</text>
+        <text x="15" y="38" fill="#64748b" font-size="10">Customer Information File (CIF) management &amp; KYC tiers</text>
+        <text x="15" y="54" fill="#64748b" font-size="10">Integrates with NIMC, BVN and biometric enrolment desks</text>
+        <rect x="15" y="70" width="90" height="18" rx="3" fill="#f5f3ff" />
+        <text x="60" y="83" fill="#6d28d9" font-size="9" font-weight="700" text-anchor="middle">FINACLE CIF</text>
+      </g>
+
+      <!-- Payment Core Engine -->
+      <g transform="translate(15, 395)">
+        <rect width="350" height="110" rx="8" fill="#ffffff" stroke="#cbd5e1" />
+        <rect x="0" y="0" width="5" height="110" rx="2" fill="#dc2626" />
+        <g transform="translate(15, 6)">
+        <rect width="18" height="18" rx="4" fill="#eff6ff" stroke="#2563eb" stroke-width="0.8" />
+        <use href="#ico-instant-pay" x="2.5" y="2.5" width="13" height="13" color="#2563eb" />
+      </g>
+      <text x="39" y="20" fill="#0f172a" font-size="11" font-weight="700">Payment Core Service (Financial Posting)</text>
+        <text x="15" y="38" fill="#64748b" font-size="10">Double-entry accounting, transaction memo posting</text>
+        <text x="15" y="54" fill="#64748b" font-size="10">Two-phase commit coordinator for interbank payments</text>
+        <rect x="15" y="75" width="100" height="18" rx="3" fill="#fee2e2" />
+        <text x="65" y="88" fill="#b91c1c" font-size="9" font-weight="700" text-anchor="middle">FINANCIAL POSTING</text>
+      </g>
+
+      <!-- Card Core Bridge -->
+      <g transform="translate(15, 515)">
+        <rect width="350" height="105" rx="8" fill="#ffffff" stroke="#cbd5e1" />
+        <rect x="0" y="0" width="5" height="105" rx="2" fill="#059669" />
+        <g transform="translate(15, 6)">
+        <rect width="18" height="18" rx="4" fill="#eff6ff" stroke="#2563eb" stroke-width="0.8" />
+        <use href="#ico-switch" x="2.5" y="2.5" width="13" height="13" color="#2563eb" />
+      </g>
+      <text x="39" y="20" fill="#0f172a" font-size="11" font-weight="700">Card Core Service (Postilion Switch Bridge)</text>
+        <text x="15" y="38" fill="#64748b" font-size="10">Card transaction authorization &amp; ISO 8583 message bridge</text>
+        <text x="15" y="54" fill="#64748b" font-size="10">Card account balance inquiry &amp; stand-in processing</text>
+        <rect x="15" y="70" width="105" height="18" rx="3" fill="#ecfdf5" />
+        <text x="67" y="83" fill="#047857" font-size="9" font-weight="700" text-anchor="middle">POSTILION BRIDGE</text>
+      </g>
+
+      <!-- On-Prem Kafka Event Bus -->
+      <g transform="translate(15, 630)">
+        <rect width="350" height="115" rx="8" fill="#ffffff" stroke="#cbd5e1" />
+        <rect x="0" y="0" width="5" height="115" rx="2" fill="#d97706" />
+        <g transform="translate(15, 6)">
+        <rect width="18" height="18" rx="4" fill="#fff7ed" stroke="#ea580c" stroke-width="0.8" />
+        <use href="#ico-kafka" x="2.5" y="2.5" width="13" height="13" color="#ea580c" />
+      </g>
+      <text x="39" y="20" fill="#0f172a" font-size="11" font-weight="700">On-Prem Apache Kafka Event Backbone</text>
+        <text x="15" y="38" fill="#64748b" font-size="10">Local event streaming cluster for transaction journals</text>
+        <text x="15" y="54" fill="#64748b" font-size="10">MirrorMaker 2 replication to Cloud DMS Kafka</text>
+        <rect x="15" y="75" width="115" height="18" rx="3" fill="#fef3c7" />
+        <text x="72" y="88" fill="#92400e" font-size="9" font-weight="700" text-anchor="middle">KAFKA MIRRORING</text>
+      </g>
+
+      <!-- Middleware Security &amp; Ingress -->
+      <g transform="translate(15, 755)">
+        <rect width="350" height="260" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.2" />
+        <g transform="translate(15, 8)">
+        <rect width="18" height="18" rx="4" fill="#f1f5f9" stroke="#475569" stroke-width="0.8" />
+        <use href="#ico-shield-key" x="2.5" y="2.5" width="13" height="13" color="#475569" />
+      </g>
+      <text x="39" y="22" fill="#1e3a8a" font-size="12" font-weight="700">Middleware Security &amp; Network Ingress</text>
+        <text x="15" y="42" fill="#1e40af" font-size="10">&#8226; Direct Connect Ingress: Strict IP whitelisting &amp; mTLS client certificates</text>
+        <text x="15" y="60" fill="#1e40af" font-size="10">&#8226; Thales payShield 10K HSM for PIN block translation &amp; MACing</text>
+        <text x="15" y="78" fill="#1e40af" font-size="10">&#8226; Delinea Secret Server for database credential management</text>
+        <text x="15" y="96" fill="#1e40af" font-size="10">&#8226; Active-Active clustered deployment across Dell VxRail HCI nodes</text>
+        <rect x="15" y="120" width="130" height="22" rx="4" fill="#1e40af" />
+        <text x="80" y="135" fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle">THALES HSM / mTLS</text>
+      </g>
+    </g>
+
+    <!-- Sub-Zone 2: Core Banking &amp; Transaction Core (x: 900, y: 1425, w: 440, h: 1035) -->
+    <g transform="translate(900, 1425)">
+      <rect width="440" height="1035" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.2" />
+      <rect width="440" height="34" rx="10" fill="#f1f5f9" />
+      <text x="220" y="22" fill="#334155" font-size="12" font-weight="700" text-anchor="middle">CORE BANKING &amp; TRANSACTION CORE (FINACLE 11.x)</text>
+
+      <!-- Infosys Finacle Core Banking -->
+      <g id="box_sec4_finacle" class="interactive-box cursor-pointer" data-id="sec4_finacle" transform="translate(15, 45)">
+        <title>Infosys Finacle Core Banking System (11.x) [Section 4: Primary Data Center]
+================================================================================
+1. WHAT IT DOES:
+Tier-1 enterprise core banking engine running on Red Hat Enterprise Linux across high-spec Dell PowerEdge compute nodes.
+
+2. ROLE IN WHOLE ARCHITECTURE:
+The primary operational heartbeat of the bank. Maintains the double-entry Chart of Accounts, executes deposits, withdrawals, loan repayments, trade finance, and end-of-day (EOD) general ledger balancing.
+
+3. HOW IT CONNECTS TO OTHERS:
+• INBOUND: Core Middleware Bus via FIXML / EJB (Ports 9080-9085), Branch Tellering Desks via SD-WAN
+• OUTBOUND: Primary Oracle 19c RAC Master via Oracle Net (Port 1521), Postilion Switch via ISO 8583 (Port 9000)
+• FAILOVER: Dell VxRail hypervisor clustering; disaster recovery failover to Secondary DC Finacle Standby via VMware SRM runbooks.
+• SECURITY: Strict dual-control authorization (maker-checker), encrypted EJB transport, database connection pooling with PAM credentials, and annual PCI-DSS audit.
+(Click box on diagram for interactive detail view)</title>
+        <rect width="410" height="220" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+        <rect x="0" y="0" width="6" height="220" rx="3" fill="#2563eb" />
+        <g transform="translate(18, 9)">
+        <rect width="20" height="20" rx="5" fill="#eff6ff" stroke="#1d4ed8" stroke-width="0.8" />
+        <use href="#ico-bank" x="3" y="3" width="14" height="14" color="#1d4ed8" />
+      </g>
+      <text x="44" y="24" fill="#0f172a" font-size="13" font-weight="700">Infosys Finacle Core Banking System (11.x)</text>
+        <text x="18" y="44" fill="#475569" font-size="11">Tier-1 Core Banking Platform running on Red Hat Enterprise Linux:</text>
+        <text x="18" y="64" fill="#64748b" font-size="10">&#8226; <tspan font-weight="600" fill="#0f172a">General Ledger &amp; Chart of Accounts</tspan>: Multi-currency, multi-branch ledger</text>
+        <text x="18" y="80" fill="#64748b" font-size="10">&#8226; <tspan font-weight="600" fill="#0f172a">Deposit &amp; Lending Engines</tspan>: CASA, Term Deposits, Overdrafts, Loans</text>
+        <text x="18" y="96" fill="#64748b" font-size="10">&#8226; <tspan font-weight="600" fill="#0f172a">Trade Finance &amp; FX</tspan>: Letters of Credit, Bank Guarantees, FX Cash/Spot</text>
+        <text x="18" y="112" fill="#64748b" font-size="10">&#8226; <tspan font-weight="600" fill="#0f172a">End-of-Day (EOD) Batch Engine</tspan>: Automated interest, accruals &amp; GL balancing</text>
+        <text x="18" y="128" fill="#64748b" font-size="10">&#8226; Vendor: <tspan font-weight="600" fill="#0f172a">EdgeVerve / Infosys Limited</tspan></text>
+        <rect x="18" y="150" width="130" height="22" rx="4" fill="#dbeafe" />
+        <text x="83" y="165" fill="#1d4ed8" font-size="10" font-weight="700" text-anchor="middle">INFOSYS FINACLE 11</text>
+      </g>
+
+      <!-- Postilion Switch -->
+      <g id="box_sec4_postilion" class="interactive-box cursor-pointer" data-id="sec4_postilion" transform="translate(15, 280)">
+        <title>Postilion Realtime Financial Switch [Section 4: Primary Data Center]
+================================================================================
+1. WHAT IT DOES:
+High-throughput electronic payment switching engine backed by Microsoft SQL Server AlwaysOn Availability Groups.
+
+2. ROLE IN WHOLE ARCHITECTURE:
+Routes, validates, and switches ATM, POS, and online card payments. Translates ISO 8583 transactions, interfaces with Thales payShield HSM for PIN verification, and routes interbank payments to NIBSS NIP and Interswitch.
+
+3. HOW IT CONNECTS TO OTHERS:
+• INBOUND: ATM Fleet &amp; POS Terminals via ISO 8583 (Port 9000), Digital Card Microservices via ISO Bridge
+• OUTBOUND: NIBSS Instant Payments (NIP) via Dedicated MPLS (Ports 9000-9100), Interswitch Gateway via Cross-Connect (Ports 9000-9100), Thales payShield HSM (Port 1500)
+• FAILOVER: AlwaysOn High Availability Group across Primary and DR Data Centers with sub-second failover.
+• SECURITY: Hardware HSM MAC generation and PIN translation, DUKPT remote key management, and PCI-DSS certification.
+(Click box on diagram for interactive detail view)</title>
+        <rect width="410" height="175" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+        <rect x="0" y="0" width="6" height="175" rx="3" fill="#dc2626" />
+        <g transform="translate(18, 9)">
+        <rect width="20" height="20" rx="5" fill="#fffbeb" stroke="#d97706" stroke-width="0.8" />
+        <use href="#ico-switch" x="3" y="3" width="14" height="14" color="#d97706" />
+      </g>
+      <text x="44" y="24" fill="#0f172a" font-size="13" font-weight="700">Postilion Realtime Financial Switch</text>
+        <text x="18" y="44" fill="#475569" font-size="11">National &amp; International Payment Switching:</text>
+        <text x="18" y="64" fill="#64748b" font-size="10">&#8226; ISO 8583 financial switching engine for ATM, POS &amp; Web acquiring</text>
+        <text x="18" y="80" fill="#64748b" font-size="10">&#8226; Direct links to NIBSS Instant Payments (NIP) &amp; Interswitch Verve</text>
+        <text x="18" y="96" fill="#64748b" font-size="10">&#8226; Backed by Microsoft SQL Server AlwaysOn Availability Groups</text>
+        <text x="18" y="112" fill="#64748b" font-size="10">&#8226; Vendor: <tspan font-weight="600" fill="#0f172a">Interswitch Limited</tspan></text>
+        <rect x="18" y="132" width="130" height="22" rx="4" fill="#fee2e2" />
+        <text x="83" y="147" fill="#b91c1c" font-size="10" font-weight="700" text-anchor="middle">POSTILION SWITCH</text>
+      </g>
+
+      <!-- SWIFT Alliance Gateway -->
+      <g transform="translate(15, 470)">
+        <rect width="410" height="165" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+        <rect x="0" y="0" width="6" height="165" rx="3" fill="#b45309" />
+        <text x="18" y="24" fill="#0f172a" font-size="13" font-weight="700">SWIFT Alliance Gateway &amp; Integration</text>
+        <text x="18" y="44" fill="#475569" font-size="11">Cross-Border International Payment Infrastructure:</text>
+        <text x="18" y="64" fill="#64748b" font-size="10">&#8226; SWIFT Alliance Access (SAA) &amp; Alliance WebPlatform</text>
+        <text x="18" y="80" fill="#64748b" font-size="10">&#8226; ISO 20022 MX Messaging &amp; Legacy MT103/MT202 wires</text>
+        <text x="18" y="96" fill="#64748b" font-size="10">&#8226; Dedicated Hardware HSM &amp; Air-Gapped CSCF Enclave</text>
+        <rect x="18" y="120" width="130" height="22" rx="4" fill="#fef3c7" />
+        <text x="83" y="135" fill="#92400e" font-size="10" font-weight="700" text-anchor="middle">SWIFT ALLIANCE</text>
+      </g>
+
+      <!-- Self-Hosted Enterprise Applications -->
+      <g id="box_sec4_enterprise_apps" class="interactive-box cursor-pointer" data-id="sec4_enterprise_apps" transform="translate(15, 650)">
+        <title>Self-Hosted Enterprise Applications (Dell VxRail) [Section 4: Primary Data Center]
+================================================================================
+1. WHAT IT DOES:
+Mission-critical enterprise resource planning (SAP S/4HANA Finance), capital markets treasury (Finacle Treasury &amp; Calypso), automated fraud reconciliation (Fiserv E-Match/X-Match), business process workflows (K2 BPM), biometric staff payroll (Softworks HRMS), and software robots (Blue Prism RPA).
+
+2. ROLE IN WHOLE ARCHITECTURE:
+Executes double-entry general ledger accounting, automated interbank reconciliation, tax remittances, digital credit origination workflows, and robotic process automation across bank operations.
+(Click box on diagram for interactive detail view)</title>
+        <rect width="410" height="365" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+        <rect x="0" y="0" width="6" height="365" rx="3" fill="#475569" />
+        <g transform="translate(18, 9)">
+          <rect width="20" height="20" rx="5" fill="#f8fafc" stroke="#475569" stroke-width="0.8" />
+          <use href="#ico-datacenter" x="3" y="3" width="14" height="14" color="#475569" />
+        </g>
+        <text x="44" y="24" fill="#0f172a" font-size="13" font-weight="700">Self-Hosted Enterprise Applications (Dell VxRail)</text>
+        <text x="18" y="44" fill="#475569" font-size="11">Core enterprise back-office applications on-premises:</text>
+        
+        <g transform="translate(18, 55)">
+          <text x="0" y="15" fill="#0f172a" font-size="11" font-weight="700">&#8226; SAP S/4HANA ERP Platform</text>
+          <text x="15" y="30" fill="#64748b" font-size="10">Financial accounting, vendor procurement, fixed assets (SAP SE)</text>
+        </g>
+        <g transform="translate(18, 95)">
+          <text x="0" y="15" fill="#0f172a" font-size="11" font-weight="700">&#8226; Finacle Treasury &amp; Calypso</text>
+          <text x="15" y="30" fill="#64748b" font-size="10">Fixed income, money markets, FX dealing, Bloomberg B-PIPE link</text>
+        </g>
+        <g transform="translate(18, 135)">
+          <text x="0" y="15" fill="#0f172a" font-size="11" font-weight="700">&#8226; Fiserv E-Match &amp; X-Match Fraud</text>
+          <text x="15" y="30" fill="#64748b" font-size="10">Automated transaction reconciliation &amp; AML enterprise fraud detection</text>
+        </g>
+        <g transform="translate(18, 175)">
+          <text x="0" y="15" fill="#0f172a" font-size="11" font-weight="700">&#8226; K2 BPM Workflow Engine</text>
+          <text x="15" y="30" fill="#64748b" font-size="10">Digital credit appraisal, expense approvals, account modification</text>
+        </g>
+        <g transform="translate(18, 215)">
+          <text x="0" y="15" fill="#0f172a" font-size="11" font-weight="700">&#8226; Softworks HRMS &amp; Payroll</text>
+          <text x="15" y="30" fill="#64748b" font-size="10">Staff payroll calculation, tax remittances, leaves, biometrics</text>
+        </g>
+        <g transform="translate(18, 255)">
+          <text x="0" y="15" fill="#0f172a" font-size="11" font-weight="700">&#8226; Blue Prism Robotic Process Automation (RPA)</text>
+          <text x="15" y="30" fill="#64748b" font-size="10">Software bots for automated statements, NACS, and reconciliations</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Sub-Zone 3: Database Replicas &amp; On-Prem Backup (x: 1355, y: 1425, w: 440, h: 1035) -->
+    <g transform="translate(1355, 1425)">
+      <rect width="440" height="1035" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.2" />
+      <rect width="440" height="34" rx="10" fill="#f1f5f9" />
+      <text x="220" y="22" fill="#334155" font-size="12" font-weight="700" text-anchor="middle">ON-PREMISES DATABASE REPLICAS &amp; BACKUP</text>
+
+      <!-- Primary DB: Oracle 19c RAC -->
+      <g id="box_sec4_oracle_rac" class="interactive-box cursor-pointer" data-id="sec4_oracle_rac" transform="translate(15, 45)">
+        <title>Oracle Database 19c Enterprise RAC (2-Node Cluster) [Section 4: Primary Data Center]
+================================================================================
+1. WHAT IT DOES:
+Mission-critical active-active clustered relational database running on Oracle Grid Infrastructure and Automatic Storage Management (ASM).
+
+2. ROLE IN WHOLE ARCHITECTURE:
+Stores the central ledger of record, account master tables, and transactional journals. Delivers continuous uptime, transactional ACID guarantees, and sub-millisecond write latency backed by Pure Storage NVMe SAN.
+
+3. HOW IT CONNECTS TO OTHERS:
+• INBOUND: Infosys Finacle Core Banking Engines via Oracle Net (Port 1521)
+• OUTBOUND: Secondary DR DC Oracle Standby via Active Data Guard (Port 1521 over DCI Dark Fiber), Databricks Delta Lake Bronze via GoldenGate CDC (Port 9092), Dell Data Domain via RMAN DD Boost (Port 2051)
+• FAILOVER: Active-Active 2-node clustering with transparent application failover (TAF); synchronous zero-loss Active Data Guard failover to DR DC (RPO=0, RTO&lt;5 min).
+• SECURITY: Oracle Transparent Data Encryption (TDE) with keys managed in Thales payShield HSM, Oracle Database Vault separation of duties, and ACS 24/7 premium OEM support.
+(Click box on diagram for interactive detail view)</title>
+        <rect width="410" height="235" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+        <rect x="0" y="0" width="6" height="235" rx="3" fill="#dc2626" />
+        <g transform="translate(18, 9)">
+        <rect width="20" height="20" rx="5" fill="#fef2f2" stroke="#dc2626" stroke-width="0.8" />
+        <use href="#ico-rac" x="3" y="3" width="14" height="14" color="#dc2626" />
+      </g>
+      <text x="44" y="24" fill="#0f172a" font-size="13" font-weight="700">Oracle Database 19c Enterprise RAC</text>
+        <text x="18" y="44" fill="#475569" font-size="11">Mission-Critical Core Banking Database Cluster:</text>
+        
+        <!-- RAC Node 1 &amp; 2 -->
+        <g transform="translate(18, 55)">
+          <rect width="180" height="75" rx="6" fill="#fef2f2" stroke="#fecaca" />
+          <text x="10" y="20" fill="#991b1b" font-size="11" font-weight="700">RAC Node 1 (Active)</text>
+          <text x="10" y="36" fill="#b91c1c" font-size="10">&#8226; Oracle ASM Shared Disk</text>
+          <text x="10" y="52" fill="#b91c1c" font-size="10">&#8226; Infiniband Interconnect</text>
+        </g>
+        <g transform="translate(208, 55)">
+          <rect width="180" height="75" rx="6" fill="#fef2f2" stroke="#fecaca" />
+          <text x="10" y="20" fill="#991b1b" font-size="11" font-weight="700">RAC Node 2 (Active)</text>
+          <text x="10" y="36" fill="#b91c1c" font-size="10">&#8226; Automatic transparent failover</text>
+          <text x="10" y="52" fill="#b91c1c" font-size="10">&#8226; Workload balancing</text>
+        </g>
+        <text x="18" y="150" fill="#475569" font-size="10">&#8226; FlashArray//X All-NVMe SAN Storage (Sub-millisecond write latency)</text>
+        <text x="18" y="166" fill="#475569" font-size="10">&#8226; Vendor &amp; OEM Support: <tspan font-weight="600" fill="#0f172a">Oracle Systems (ACS 24/7 Premium)</tspan></text>
+        <rect x="18" y="185" width="130" height="22" rx="4" fill="#fee2e2" />
+        <text x="83" y="200" fill="#b91c1c" font-size="10" font-weight="700" text-anchor="middle">ORACLE 19c RAC (2-NODE)</text>
+      </g>
+
+      <!-- Local Read-Only Replica (ADG Query Node) -->
+      <g id="box_sec4_local_adg" class="interactive-box cursor-pointer" data-id="sec4_local_adg" transform="translate(15, 295)">
+        <title>Local Read-Only Query Replica (Active Data Guard) [Section 4: Primary Data Center]
+================================================================================
+1. WHAT IT DOES:
+Dedicated read-only Oracle Active Data Guard instance deployed on-premises in the Primary Data Center with Real-Time Redo Apply.
+
+2. ROLE IN WHOLE ARCHITECTURE:
+Protects transactional RAC nodes from locking and CPU exhaustion by offloading heavy financial reporting queries, audit investigations, and End-of-Day (EOD) balance extractions.
+
+3. HOW IT CONNECTS TO OTHERS:
+• INBOUND: Synchronized continuously from Primary RAC Master via Redo Transport (Port 1521)
+• OUTBOUND: Internal Reporting Tools, Financial Control &amp; Compliance Desks via SQL*Net (Port 1521)
+• FAILOVER: Automatic real-time catch-up; zero impact on primary database availability.
+• SECURITY: Read-only database session enforcement; TDE hardware decryption.
+(Click box on diagram for interactive detail view)</title>
+        <rect width="410" height="155" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+        <rect x="0" y="0" width="6" height="155" rx="3" fill="#ea580c" />
+        <g transform="translate(18, 9)">
+        <rect width="20" height="20" rx="5" fill="#eff6ff" stroke="#2563eb" stroke-width="0.8" />
+        <use href="#ico-db-replica" x="3" y="3" width="14" height="14" color="#2563eb" />
+      </g>
+      <text x="44" y="24" fill="#0f172a" font-size="13" font-weight="700">Local Read-Only Query Replica (Active Data Guard)</text>
+        <text x="18" y="44" fill="#475569" font-size="11">Local DC read query offload for reporting &amp; EOD batch extraction:</text>
+        <text x="18" y="64" fill="#64748b" font-size="10">&#8226; Active Data Guard Read-Only with Real-Time Apply (zero lag)</text>
+        <text x="18" y="80" fill="#64748b" font-size="10">&#8226; Offloads heavy audit queries, financial control &amp; EOD report generation</text>
+        <text x="18" y="96" fill="#64748b" font-size="10">&#8226; Protects transactional RAC nodes from heavy analytics locks</text>
+        <rect x="18" y="118" width="135" height="22" rx="4" fill="#ffedd5" />
+        <text x="85" y="133" fill="#c2410c" font-size="10" font-weight="700" text-anchor="middle">LOCAL ADG REPLICA</text>
+      </g>
+
+      <!-- Dell EMC Data Domain On-Prem Backup -->
+      <g id="box_sec4_data_domain" class="interactive-box cursor-pointer" data-id="sec4_data_domain" transform="translate(15, 465)">
+        <title>Dell EMC Data Domain (DD6900 Appliance) [Section 4: Primary Data Center]
+================================================================================
+1. WHAT IT DOES:
+Enterprise deduplicating backup storage appliance integrated with Oracle Recovery Manager (RMAN) via Dell DD Boost.
+
+2. ROLE IN WHOLE ARCHITECTURE:
+Captures hourly transactional archive logs and daily cumulative incremental RMAN database backups with &gt;25:1 deduplication, replicating backup sets to DR Data Domain and writing to LTO-8 tapes.
+
+3. HOW IT CONNECTS TO OTHERS:
+• INBOUND: Oracle 19c RAC and Virtual Machines via DD Boost (TCP Port 2051)
+• OUTBOUND: Secondary DR Data Domain via Asynchronous Encrypted WAN Replication, Dell PowerVault LTO-8 Tape Library for Montgomery Vaults Archival
+• FAILOVER: Dual controller redundancy; replicated backup catalog in DR facility.
+• SECURITY: DD Boost Kerberos authentication, retention lock immutability protecting against ransomware, and hardware AES-256 encryption.
+(Click box on diagram for interactive detail view)</title>
+        <rect width="410" height="175" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+        <rect x="0" y="0" width="6" height="175" rx="3" fill="#0284c7" />
+        <g transform="translate(18, 9)">
+        <rect width="20" height="20" rx="5" fill="#f8fafc" stroke="#334155" stroke-width="0.8" />
+        <use href="#ico-storage" x="3" y="3" width="14" height="14" color="#334155" />
+      </g>
+      <text x="44" y="24" fill="#0f172a" font-size="13" font-weight="700">Dell EMC Data Domain (DD6900 Appliance)</text>
+        <text x="18" y="44" fill="#475569" font-size="11">Enterprise Deduplication Backup Storage Tier:</text>
+        <text x="18" y="64" fill="#64748b" font-size="10">&#8226; <tspan font-weight="600" fill="#0f172a">Oracle RMAN with DD Boost</tspan>: Hourly archive logs &amp; daily cumulative backups</text>
+        <text x="18" y="80" fill="#64748b" font-size="10">&#8226; Deduplication ratio &gt; 25:1 reducing storage and replication footprint</text>
+        <text x="18" y="96" fill="#64748b" font-size="10">&#8226; Direct replication over DCI fiber to Secondary DR Data Domain</text>
+        <text x="18" y="112" fill="#64748b" font-size="10">&#8226; Automated writes to PowerVault LTO-8 tape library</text>
+        <rect x="18" y="135" width="130" height="22" rx="4" fill="#e0f2fe" />
+        <text x="83" y="150" fill="#0369a1" font-size="10" font-weight="700" text-anchor="middle">DELL DATA DOMAIN</text>
+      </g>
+
+      <!-- On-Prem Virtualization &amp; HCI Infrastructure -->
+      <g transform="translate(15, 655)">
+        <rect width="410" height="185" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+        <rect x="0" y="0" width="6" height="185" rx="3" fill="#1e293b" />
+        <g transform="translate(18, 10)">
+        <rect width="18" height="18" rx="4" fill="#f8fafc" stroke="#334155" stroke-width="0.8" />
+        <use href="#ico-server-cluster" x="2.5" y="2.5" width="13" height="13" color="#334155" />
+      </g>
+      <text x="42" y="24" fill="#0f172a" font-size="13" font-weight="700">Dell VxRail Hyperconverged Infrastructure (HCI)</text>
+        <text x="18" y="44" fill="#475569" font-size="11">Primary Virtualization Compute Cluster:</text>
+        <text x="18" y="64" fill="#64748b" font-size="10">&#8226; Dell PowerEdge nodes running VMware vSphere Enterprise Plus</text>
+        <text x="18" y="80" fill="#64748b" font-size="10">&#8226; VMware vSAN All-Flash storage &amp; NSX-T Software Defined Networking</text>
+        <text x="18" y="96" fill="#64748b" font-size="10">&#8226; Hosts Finacle Middleware, SAP ERP, Fiserv E-Match, and Postilion</text>
+        <rect x="18" y="130" width="130" height="22" rx="4" fill="#f1f5f9" />
+        <text x="83" y="145" fill="#334155" font-size="10" font-weight="700" text-anchor="middle">DELL VXRAIL CLUSTER</text>
+      </g>
+
+      <!-- Hardware Security &amp; Key Management -->
+      <g transform="translate(15, 855)">
+        <rect width="410" height="155" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.2" />
+        <g transform="translate(18, 10)">
+        <rect width="18" height="18" rx="4" fill="#eff6ff" stroke="#1d4ed8" stroke-width="0.8" />
+        <use href="#ico-shield-key" x="2.5" y="2.5" width="13" height="13" color="#1d4ed8" />
+      </g>
+      <text x="42" y="24" fill="#1e3a8a" font-size="12" font-weight="700">On-Prem Security, Compliance &amp; Key Governance</text>
+        <text x="18" y="44" fill="#1e40af" font-size="10">&#8226; Thales payShield 10K hardware HSM for cryptographic keys &amp; PIN blocks</text>
+        <text x="18" y="60" fill="#1e40af" font-size="10">&#8226; Oracle TDE (Transparent Data Encryption) with auto-rotating HSM keys</text>
+        <text x="18" y="76" fill="#1e40af" font-size="10">&#8226; CyberSOC Africa continuous syslog ingestion for SIEM correlation</text>
+        <rect x="18" y="105" width="130" height="22" rx="4" fill="#1e40af" />
+        <text x="83" y="120" fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle">PCI-DSS PIN &amp; TDE</text>
+      </g>
+    </g>
+  </g>
+</svg>

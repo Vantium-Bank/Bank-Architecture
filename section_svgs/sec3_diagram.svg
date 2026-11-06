@@ -1,0 +1,530 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="3858.0 1348.0 614.0 1144.0" width="100%" height="auto" class="rounded-xl shadow-lg border border-slate-700/60 bg-slate-900" style="max-height: 480px;">
+  <defs>
+    <!-- Card Shadow -->
+    <filter id="cardShadow" x="-1%" y="-1%" width="102%" height="103%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.05" />
+    </filter>
+    <filter id="badgeGlow" x="-5%" y="-5%" width="110%" height="110%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#0f172a" flood-opacity="0.10" />
+    </filter>
+
+    <!-- Arrow Markers -->
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb" />
+    </marker>
+    <marker id="arr-emerald" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#059669" />
+    </marker>
+    <marker id="arr-purple" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#7c3aed" />
+    </marker>
+        <marker id="arr-amber-prominent" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#d97706" />
+    </marker>
+    <marker id="arr-orange-prominent" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#ea580c" />
+    </marker>
+    <marker id="arr-amber" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#d97706" />
+    </marker>
+    <marker id="arr-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#dc2626" />
+    </marker>
+    <marker id="arr-cyan" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#0891b2" />
+    </marker>
+
+    <!-- Subtle Architectural Background Grid -->
+    <pattern id="dotPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="1" fill="#f1f5f9" />
+    </pattern>
+  
+    <marker id="arr-orange" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#ea580c" />
+    </marker>
+    <marker id="arr-slate" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#334155" />
+    </marker>
+    <marker id="arr-sky" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#0284c7" />
+    </marker>
+    <marker id="arr-teal" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#0d9488" />
+    </marker>
+
+  
+    <!-- ==================== ENTERPRISE VECTOR ICON DEFINITIONS ==================== -->
+    <symbol id="ico-sec-channels" viewBox="0 0 24 24">
+      <rect x="5" y="2" width="14" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
+      <line x1="10" y1="18" x2="14" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="12" cy="5" r="1" fill="currentColor"/>
+    </symbol>
+    <symbol id="ico-sec-cloud" viewBox="0 0 24 24">
+      <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-sec-lakehouse" viewBox="0 0 24 24">
+      <path d="M12 2L2 7l10 5 10-5-10-5Z" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-sec-saas" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-sec-regulators" viewBox="0 0 24 24">
+      <path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v4M12 14v4M16 14v4" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-sec-branches" viewBox="0 0 24 24">
+      <path d="M3 21h18M4 18V9l8-5 8 5v9M9 18v-5h6v5" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-sec-datacenter" viewBox="0 0 24 24">
+      <rect x="2" y="3" width="20" height="7" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <rect x="2" y="14" width="20" height="7" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="6" cy="6.5" r="1" fill="currentColor"/>
+      <circle cx="6" cy="17.5" r="1" fill="currentColor"/>
+      <line x1="10" y1="6.5" x2="18" y2="6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <line x1="10" y1="17.5" x2="18" y2="17.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ico-sec-dr" viewBox="0 0 24 24">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="ico-sec-headoffice" viewBox="0 0 24 24">
+      <rect x="4" y="2" width="16" height="20" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <line x1="9" y1="6" x2="9.01" y2="6" stroke="currentColor" stroke-width="2"/>
+      <line x1="15" y1="6" x2="15.01" y2="6" stroke="currentColor" stroke-width="2"/>
+      <line x1="9" y1="10" x2="9.01" y2="10" stroke="currentColor" stroke-width="2"/>
+      <line x1="15" y1="10" x2="15.01" y2="10" stroke="currentColor" stroke-width="2"/>
+      <line x1="9" y1="14" x2="9.01" y2="14" stroke="currentColor" stroke-width="2"/>
+      <line x1="15" y1="14" x2="15.01" y2="14" stroke="currentColor" stroke-width="2"/>
+      <line x1="11" y1="22" x2="11" y2="18" stroke="currentColor" stroke-width="2"/>
+      <line x1="13" y1="22" x2="13" y2="18" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+    <symbol id="ico-sec-contact" viewBox="0 0 24 24">
+      <path d="M3 18v-6a9 9 0 0 1 18 0v6" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-sec-network" viewBox="0 0 24 24">
+      <circle cx="12" cy="5" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="5" cy="19" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="19" cy="19" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M12 8v4m-5 4 3-2m4 0 3 2" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+
+    <!-- Component Icons -->
+    <symbol id="ico-mobile" viewBox="0 0 24 24">
+      <rect x="5" y="2" width="14" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
+      <line x1="10" y1="18" x2="14" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ico-web" viewBox="0 0 24 24">
+      <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <line x1="2" y1="7" x2="22" y2="7" stroke="currentColor" stroke-width="2"/>
+      <line x1="6" y1="20" x2="18" y2="20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <line x1="12" y1="17" x2="12" y2="20" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+    <symbol id="ico-dialer" viewBox="0 0 24 24">
+      <rect x="4" y="2" width="16" height="20" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="8" cy="7" r="1" fill="currentColor"/>
+      <circle cx="12" cy="7" r="1" fill="currentColor"/>
+      <circle cx="16" cy="7" r="1" fill="currentColor"/>
+      <circle cx="8" cy="11" r="1" fill="currentColor"/>
+      <circle cx="12" cy="11" r="1" fill="currentColor"/>
+      <circle cx="16" cy="11" r="1" fill="currentColor"/>
+      <circle cx="8" cy="15" r="1" fill="currentColor"/>
+      <circle cx="12" cy="15" r="1" fill="currentColor"/>
+      <circle cx="16" cy="15" r="1" fill="currentColor"/>
+    </symbol>
+    <symbol id="ico-pos" viewBox="0 0 24 24">
+      <rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <line x1="2" y1="10" x2="22" y2="10" stroke="currentColor" stroke-width="2"/>
+      <rect x="5" y="14" width="4" height="2.5" rx="0.5" fill="currentColor"/>
+    </symbol>
+    <symbol id="ico-atm" viewBox="0 0 24 24">
+      <rect x="3" y="2" width="18" height="20" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <rect x="6" y="5" width="12" height="6" rx="1" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      <line x1="7" y1="15" x2="17" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="12" cy="18" r="1" fill="currentColor"/>
+    </symbol>
+    <symbol id="ico-chat" viewBox="0 0 24 24">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-shield-key" viewBox="0 0 24 24">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="12" cy="10" r="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      <path d="M12 12v3" stroke="currentColor" stroke-width="1.5"/>
+    </symbol>
+    <symbol id="ico-waf" viewBox="0 0 24 24">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M8 9h8M8 13h8M12 9v8" stroke="currentColor" stroke-width="1.5"/>
+    </symbol>
+    <symbol id="ico-ddos" viewBox="0 0 24 24">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="m13 8-3 4h4l-2 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="ico-api" viewBox="0 0 24 24">
+      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-nat" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M3.6 9h16.8M3.6 15h16.8M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" stroke="currentColor" stroke-width="1.5"/>
+    </symbol>
+    <symbol id="ico-radar" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      <line x1="12" y1="12" x2="18.5" y2="5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ico-key" viewBox="0 0 24 24">
+      <circle cx="7.5" cy="15.5" r="4.5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="m10.8 12.2 7.7-7.7a1 1 0 0 1 1.4 0l1.6 1.6-2 2 1.5 1.5-2 2" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-workflow" viewBox="0 0 24 24">
+      <circle cx="6" cy="6" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="18" cy="18" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="18" cy="6" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M6 9v9a3 3 0 0 0 3 3h6M9 6h6" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+    <symbol id="ico-kafka" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="5" cy="6" r="2.5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="19" cy="6" r="2.5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="5" cy="18" r="2.5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="19" cy="18" r="2.5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="m7.2 7.5 3 3M16.8 7.5l-3 3M7.2 16.5l3-3M16.8 16.5l-3-3" stroke="currentColor" stroke-width="1.8"/>
+    </symbol>
+    <symbol id="ico-mesh" viewBox="0 0 24 24">
+      <polygon points="12 2 2 7 12 12 22 7 12 2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <polyline points="2 17 12 22 22 17" stroke="currentColor" stroke-width="2" fill="none"/>
+      <polyline points="2 12 12 17 22 12" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-hybrid-gw" viewBox="0 0 24 24">
+      <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="m8 17 4 4 4-4M12 12v9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ico-database" viewBox="0 0 24 24">
+      <ellipse cx="12" cy="5" rx="8" ry="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-db-replica" viewBox="0 0 24 24">
+      <ellipse cx="9" cy="5" rx="6" ry="2.5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M3 5v10c0 1.38 2.69 2.5 6 2.5s6-1.12 6-2.5V5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M3 10c0 1.38 2.69 2.5 6 2.5s6-1.12 6-2.5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M15 13v6c0 1.38 2.69 2.5 6 2.5s6-1.12 6-2.5v-6" stroke="currentColor" stroke-width="1.8" fill="none"/>
+      <ellipse cx="21" cy="13" rx="4" ry="1.8" stroke="currentColor" stroke-width="1.8" fill="none"/>
+    </symbol>
+    <symbol id="ico-cache" viewBox="0 0 24 24">
+      <rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <rect x="9" y="9" width="6" height="6" fill="currentColor"/>
+      <line x1="9" y1="1" x2="9" y2="4" stroke="currentColor" stroke-width="2"/>
+      <line x1="15" y1="1" x2="15" y2="4" stroke="currentColor" stroke-width="2"/>
+      <line x1="9" y1="20" x2="9" y2="23" stroke="currentColor" stroke-width="2"/>
+      <line x1="15" y1="20" x2="15" y2="23" stroke="currentColor" stroke-width="2"/>
+      <line x1="20" y1="9" x2="23" y2="9" stroke="currentColor" stroke-width="2"/>
+      <line x1="20" y1="15" x2="23" y2="15" stroke="currentColor" stroke-width="2"/>
+      <line x1="1" y1="9" x2="4" y2="9" stroke="currentColor" stroke-width="2"/>
+      <line x1="1" y1="15" x2="4" y2="15" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+    <symbol id="ico-backup" viewBox="0 0 24 24">
+      <path d="M19 11v9a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-9" stroke="currentColor" stroke-width="2" fill="none"/>
+      <rect x="2" y="3" width="20" height="5" rx="1" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M12 12v5m-2-2 2 2 2-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ico-bronze" viewBox="0 0 24 24">
+      <path d="M3 6h18l-2 13a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2L3 6Z" stroke="currentColor" stroke-width="2" fill="none"/>
+      <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2"/>
+      <circle cx="9" cy="13" r="1" fill="currentColor"/>
+      <circle cx="15" cy="13" r="1" fill="currentColor"/>
+    </symbol>
+    <symbol id="ico-silver" viewBox="0 0 24 24">
+      <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <line x1="12" y1="2" x2="12" y2="22" stroke="currentColor" stroke-width="1.5"/>
+    </symbol>
+    <symbol id="ico-gold" viewBox="0 0 24 24">
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-unity" viewBox="0 0 24 24">
+      <circle cx="12" cy="8" r="6" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="m15.4 12.8 2.6 7.2-6-3-6 3 2.6-7.2" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-bus" viewBox="0 0 24 24">
+      <rect x="2" y="5" width="20" height="14" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <line x1="2" y1="10" x2="22" y2="10" stroke="currentColor" stroke-width="2"/>
+      <circle cx="7" cy="15" r="1.5" fill="currentColor"/>
+      <circle cx="17" cy="15" r="1.5" fill="currentColor"/>
+    </symbol>
+    <symbol id="ico-bank" viewBox="0 0 24 24">
+      <path d="M3 21h18M3 10h18M5 6l7-4 7 4M4 10v11M20 10v11M8 10v11M12 10v11M16 10v11" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-switch" viewBox="0 0 24 24">
+      <path d="m16 3 4 4-4 4M20 7H4M8 21l-4-4 4-4M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="ico-rac" viewBox="0 0 24 24">
+      <ellipse cx="8" cy="5" rx="5" ry="2" stroke="currentColor" stroke-width="1.8" fill="none"/>
+      <path d="M3 5v8c0 1.1 2.2 2 5 2s5-.9 5-2V5" stroke="currentColor" stroke-width="1.8" fill="none"/>
+      <ellipse cx="16" cy="11" rx="5" ry="2" stroke="currentColor" stroke-width="1.8" fill="none"/>
+      <path d="M11 11v8c0 1.1 2.2 2 5 2s5-.9 5-2v-8" stroke="currentColor" stroke-width="1.8" fill="none"/>
+      <line x1="8" y1="9" x2="16" y2="15" stroke="currentColor" stroke-width="1.8"/>
+    </symbol>
+    <symbol id="ico-storage" viewBox="0 0 24 24">
+      <rect x="3" y="4" width="18" height="6" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <rect x="3" y="14" width="18" height="6" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="7" cy="7" r="1" fill="currentColor"/>
+      <circle cx="7" cy="17" r="1" fill="currentColor"/>
+    </symbol>
+    <symbol id="ico-tape" viewBox="0 0 24 24">
+      <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="8" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="16" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <line x1="8" y1="15" x2="16" y2="15" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+    <symbol id="ico-sdwan" viewBox="0 0 24 24">
+      <rect x="2" y="14" width="20" height="8" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <line x1="6" y1="14" x2="6" y2="4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <line x1="18" y1="14" x2="18" y2="4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="6" cy="3" r="1" fill="currentColor"/>
+      <circle cx="18" cy="3" r="1" fill="currentColor"/>
+      <circle cx="8" cy="18" r="1" fill="currentColor"/>
+      <circle cx="12" cy="18" r="1" fill="currentColor"/>
+      <circle cx="16" cy="18" r="1" fill="currentColor"/>
+    </symbol>
+    <symbol id="ico-teller" viewBox="0 0 24 24">
+      <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M5 21v-2a7 7 0 0 1 14 0v2M2 21h20" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-chart" viewBox="0 0 24 24">
+      <path d="m3 3v18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="m7 14 4-4 4 4 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="ico-soc" viewBox="0 0 24 24">
+      <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M2 17h20M12 17v4M8 21h8" stroke="currentColor" stroke-width="2"/>
+      <path d="m6 10 3 3 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ico-headset" viewBox="0 0 24 24">
+      <path d="M3 18v-6a9 9 0 0 1 18 0v6" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-direct-connect" viewBox="0 0 24 24">
+      <line x1="6" y1="3" x2="6" y2="15" stroke="currentColor" stroke-width="2"/>
+      <line x1="18" y1="3" x2="18" y2="15" stroke="currentColor" stroke-width="2"/>
+      <circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="18" cy="18" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M6 18h12" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+    <symbol id="ico-dci" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <line x1="12" y1="3" x2="12" y2="9" stroke="currentColor" stroke-width="2"/>
+      <line x1="12" y1="15" x2="12" y2="21" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+    <symbol id="ico-lightning" viewBox="0 0 24 24">
+      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/>
+    </symbol>
+
+  
+    <symbol id="ico-office" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M3 9h18M9 21V9" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+    <symbol id="ico-market" viewBox="0 0 24 24">
+      <path d="M3 3v18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <rect x="7" y="10" width="3" height="7" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      <line x1="8.5" y1="7" x2="8.5" y2="10" stroke="currentColor" stroke-width="1.5"/>
+      <rect x="14" y="6" width="3" height="11" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      <line x1="15.5" y1="3" x2="15.5" y2="6" stroke="currentColor" stroke-width="1.5"/>
+    </symbol>
+    <symbol id="ico-board" viewBox="0 0 24 24">
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+    <symbol id="ico-hr" viewBox="0 0 24 24">
+      <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M6 21v-2a6 6 0 0 1 12 0v2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="19" cy="11" r="1.5" fill="currentColor"/>
+    </symbol>
+    <symbol id="ico-education" viewBox="0 0 24 24">
+      <path d="M22 10v6M2 10l10-5 10 5-10 5z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/>
+      <path d="M6 12v5c3 3 9 3 12 0v-5" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-risk" viewBox="0 0 24 24">
+      <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" stroke="currentColor" stroke-width="2" fill="none"/>
+      <line x1="12" y1="9" x2="12" y2="13" stroke="currentColor" stroke-width="2"/>
+      <circle cx="12" cy="17" r="1" fill="currentColor"/>
+    </symbol>
+    <symbol id="ico-shield-check" viewBox="0 0 24 24">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="ico-lock" viewBox="0 0 24 24">
+      <rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-swift" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M3.6 9h16.8M3.6 15h16.8M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" stroke="currentColor" stroke-width="1.8"/>
+    </symbol>
+    <symbol id="ico-instant-pay" viewBox="0 0 24 24">
+      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="ico-cbn-apex" viewBox="0 0 24 24">
+      <path d="M3 21h18M3 10h18M5 6l7-4 7 4M4 10v11M20 10v11M8 10v11M12 10v11M16 10v11" stroke="currentColor" stroke-width="2" fill="none"/>
+    </symbol>
+    <symbol id="ico-card-gateway" viewBox="0 0 24 24">
+      <rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+      <line x1="2" y1="10" x2="22" y2="10" stroke="currentColor" stroke-width="2"/>
+      <circle cx="16" cy="14" r="2" fill="currentColor"/>
+    </symbol>
+    <symbol id="ico-id-card" viewBox="0 0 24 24">
+      <rect x="3" y="4" width="18" height="16" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="9" cy="10" r="2.5" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      <path d="M5 16a4 4 0 0 1 8 0" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      <line x1="14" y1="9" x2="19" y2="9" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="14" y1="13" x2="18" y2="13" stroke="currentColor" stroke-width="1.5"/>
+    </symbol>
+    <symbol id="ico-telco-tower" viewBox="0 0 24 24">
+      <path d="M12 2v20M4 12l8-4 8 4M6 18l6-3 6 3M8 6l4-2 4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ico-server-cluster" viewBox="0 0 24 24">
+      <rect x="2" y="2" width="20" height="6" rx="1.5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <rect x="2" y="9" width="20" height="6" rx="1.5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <rect x="2" y="16" width="20" height="6" rx="1.5" stroke="currentColor" stroke-width="2" fill="none"/>
+      <circle cx="6" cy="5" r="1" fill="currentColor"/>
+      <circle cx="6" cy="12" r="1" fill="currentColor"/>
+      <circle cx="6" cy="19" r="1" fill="currentColor"/>
+    </symbol>
+    <symbol id="ico-recon" viewBox="0 0 24 24">
+      <path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+  </defs>
+  <rect x="3858.0" y="1348.0" width="614.0" height="1144.0" fill="#0f172a" />
+  <g id="sec3_hybrid_connectivity">
+    <title>3. Hybrid Connectivity &amp; Perimeter Ingress [Network Backbone Tier]
+================================================================================
+1. WHAT IT DOES:
+The dedicated inter-facility backbone encompassing the 1 Gbps Huawei Cloud Direct Connect circuit, backup IPsec VPN tunnels, low-latency (&lt;2ms) DCI dark fiber rings, and perimeter Fortinet Next-Gen Firewalls (NGFW).
+
+2. ROLE IN WHOLE ARCHITECTURE:
+Forms the mission-critical transport highway uniting Huawei Cloud with on-premise primary and disaster recovery data centers. Enforces zero-trust boundary segmentation, cryptographic encapsulation, and sub-millisecond data replication.
+
+3. HOW IT CONNECTS TO OTHERS:
+• INBOUND: Huawei Cloud CCE Cluster via Direct Connect MPLS (Port 443), Primary DC Core Switches via 10 GbE SFP+ Cross-Connects, Secondary DR DC via DCI Dark Fiber Ring
+• OUTBOUND: Core Banking Middleware Bus (mTLS Port 443), Oracle Active Data Guard Standby (Port 1521), Databricks Delta Lake Bronze Stream (Port 9092)
+• FAILOVER: Sub-second BGP routing failover from Direct Connect 1 Gbps to redundant IPsec VPN tunnels; protected dual-routed metro dark fiber rings.
+• SECURITY: Hardware IPsec AES-256-GCM encryption, Fortinet deep packet inspection (DPI), Forcepoint SWG egress proxy, and strict network segmentation (DMZ).
+(Click box on diagram for interactive detail view)</title>
+    <rect x="3870" y="1360" width="590" height="1120" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)" />
+    <!-- Section Header -->
+    <rect x="3870" y="1360" width="590" height="48" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+    <g transform="translate(3890, 1371)">
+      <rect width="26" height="26" rx="6" fill="#0891b2" />
+      <use href="#ico-sec-network" x="4" y="4" width="18" height="18" color="#ffffff" />
+    </g>
+    <text x="3926" y="1390" fill="#0f172a" font-size="15" font-weight="700">3. HYBRID CONNECTIVITY &amp; PERIMETER INGRESS</text>
+    <rect x="4370" y="1372" width="75" height="22" rx="4" fill="#eff6ff" stroke="#bfdbfe" />
+    <text x="4407" y="1387" fill="#1d4ed8" font-size="10" font-weight="700" text-anchor="middle">NETWORK</text>
+
+    <!-- Direct Connect MPLS -->
+    <g id="box_sec3_direct_connect" class="interactive-box cursor-pointer" data-id="sec3_direct_connect" transform="translate(3890, 1425)">
+      <title>Huawei Cloud Direct Connect (Primary 1 Gbps) [Section 3: Hybrid Connectivity]
+================================================================================
+1. WHAT IT DOES:
+Dedicated private Layer-2/Layer-3 leased circuit terminating in Equinix/MainOne Primary DC with redundant BGP peering and jumbo frame support.
+
+2. ROLE IN WHOLE ARCHITECTURE:
+Forms the central private network highway connecting the Huawei Cloud digital banking platform to on-premise Finacle Core Banking and streaming Databricks CDC pipelines.
+
+3. HOW IT CONNECTS TO OTHERS:
+• INBOUND: Huawei Cloud Hybrid Gateway &amp; CCE Cluster
+• OUTBOUND: Primary DC Core Banking Middleware Bus (mTLS Port 443), Databricks Delta Lake Bronze Stream (Port 9092)
+• FAILOVER: Automated sub-second BGP failover to dual IPsec VPN backup tunnels over public internet backhauls.
+• SECURITY: Dedicated physical fiber isolated from the public internet, mutual TLS (mTLS) application encryption, and 802.1Q VLAN encapsulation.
+(Click box on diagram for interactive detail view)</title>
+      <rect width="550" height="220" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+      <rect x="0" y="0" width="6" height="220" rx="3" fill="#2563eb" />
+      <g transform="translate(20, 9)">
+        <rect width="20" height="20" rx="5" fill="#eff6ff" stroke="#2563eb" stroke-width="0.8" />
+        <use href="#ico-direct-connect" x="3" y="3" width="14" height="14" color="#2563eb" />
+      </g>
+      <text x="46" y="24" fill="#0f172a" font-size="13" font-weight="700">Huawei Cloud Direct Connect (Primary 1 Gbps)</text>
+      <text x="20" y="44" fill="#475569" font-size="11">Dedicated Private Layer-2/Layer-3 Circuit:</text>
+      <text x="20" y="64" fill="#64748b" font-size="10">&#8226; Dedicated sub-10ms leased fiber circuit terminating in Equinix/MainOne Primary DC</text>
+      <text x="20" y="80" fill="#64748b" font-size="10">&#8226; Redundant BGP peering with jumbo frame support for high-throughput database CDC</text>
+      <text x="20" y="96" fill="#64748b" font-size="10">&#8226; Dual physical cross-connects via MainOne &amp; Priority Communications</text>
+      <text x="20" y="112" fill="#64748b" font-size="10">&#8226; Carries Core Banking API traffic, Kafka streams, and Databricks CDC pipelines</text>
+      <rect x="20" y="145" width="145" height="22" rx="4" fill="#dbeafe" />
+      <text x="92" y="160" fill="#1d4ed8" font-size="10" font-weight="700" text-anchor="middle">DIRECT CONNECT 1Gbps</text>
+    </g>
+
+    <!-- Dual IPsec VPN Backup -->
+    <g transform="translate(3890, 1660)">
+      <rect width="550" height="200" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+      <rect x="0" y="0" width="6" height="200" rx="3" fill="#0284c7" />
+      <g transform="translate(20, 9)">
+        <rect width="20" height="20" rx="5" fill="#f0f9ff" stroke="#0284c7" stroke-width="0.8" />
+        <use href="#ico-lock" x="3" y="3" width="14" height="14" color="#0284c7" />
+      </g>
+      <text x="46" y="24" fill="#0f172a" font-size="13" font-weight="700">Dual IPsec VPN Tunnels (Automated Backup)</text>
+      <text x="20" y="44" fill="#475569" font-size="11">Encrypted Fallback Transport over Public Internet:</text>
+      <text x="20" y="64" fill="#64748b" font-size="10">&#8226; AES-256 GCM encrypted tunnel running over diverse telco internet backhauls</text>
+      <text x="20" y="80" fill="#64748b" font-size="10">&#8226; BGP Route health monitoring with automated sub-second failover on Direct Connect failure</text>
+      <text x="20" y="96" fill="#64748b" font-size="10">&#8226; Terminated on Fortinet FortiGate enterprise cluster in Primary DC</text>
+      <rect x="20" y="130" width="140" height="22" rx="4" fill="#e0f2fe" />
+      <text x="90" y="145" fill="#0369a1" font-size="10" font-weight="700" text-anchor="middle">IPSEC VPN BACKUP</text>
+    </g>
+
+    <!-- Dark Fiber DCI Interconnect -->
+    <g id="box_sec3_dci" class="interactive-box cursor-pointer" data-id="sec3_dci" transform="translate(3890, 1875)">
+      <title>Inter-DC Dark Fiber Ring (DCI Interconnect) [Section 3: Hybrid Connectivity]
+================================================================================
+1. WHAT IT DOES:
+High-bandwidth, ultra-low latency (&lt;2ms round-trip) metro dark fiber ring connecting the Primary Data Center (Lekki) to the Secondary DR Data Center (Ikeja).
+
+2. ROLE IN WHOLE ARCHITECTURE:
+Transports synchronous block-level database redo logs for Oracle Active Data Guard with guaranteed zero data loss (RPO = 0), alongside Dell Data Domain backup replication.
+
+3. HOW IT CONNECTS TO OTHERS:
+• INBOUND: Primary DC Oracle 19c RAC Nodes and Dell Data Domain
+• OUTBOUND: Secondary DR DC Oracle Standby (Port 1521) and DR Data Domain (Port 2051)
+• FAILOVER: Dual-routed physical fiber paths provided by Broadbased Communications and 21st Century Technologies with automated optical switching.
+• SECURITY: Private dedicated dark fiber cores with hardware-level optical wiretap protection.
+(Click box on diagram for interactive detail view)</title>
+      <rect width="550" height="210" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+      <rect x="0" y="0" width="6" height="210" rx="3" fill="#dc2626" />
+      <g transform="translate(20, 9)">
+        <rect width="20" height="20" rx="5" fill="#fef2f2" stroke="#dc2626" stroke-width="0.8" />
+        <use href="#ico-dci" x="3" y="3" width="14" height="14" color="#dc2626" />
+      </g>
+      <text x="46" y="24" fill="#0f172a" font-size="13" font-weight="700">Inter-DC Dark Fiber Ring (DCI Interconnect)</text>
+      <text x="20" y="44" fill="#475569" font-size="11">Ultra-Low Latency Backbone between Primary &amp; DR Data Centers:</text>
+      <text x="20" y="64" fill="#64748b" font-size="10">&#8226; Dual-routed protected fiber paths by <tspan font-weight="600" fill="#0f172a">Broadbased Communications &amp; 21st Century</tspan></text>
+      <text x="20" y="80" fill="#64748b" font-size="10">&#8226; Sub-2ms round-trip latency enabling zero-loss synchronous Oracle Active Data Guard</text>
+      <text x="20" y="96" fill="#64748b" font-size="10">&#8226; Carries Dell Data Domain DD Boost backup replication and storage mirroring</text>
+      <rect x="20" y="140" width="145" height="22" rx="4" fill="#fee2e2" />
+      <text x="92" y="155" fill="#b91c1c" font-size="10" font-weight="700" text-anchor="middle">DCI DARK FIBER (&lt;2ms)</text>
+    </g>
+
+    <!-- Next-Gen Perimeter Firewalls -->
+    <g transform="translate(3890, 2100)">
+      <rect width="550" height="360" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2" />
+      <rect x="0" y="0" width="6" height="360" rx="3" fill="#0f172a" />
+      <g transform="translate(18, 9)">
+        <rect width="20" height="20" rx="5" fill="#f8fafc" stroke="#0f172a" stroke-width="0.8" />
+        <use href="#ico-waf" x="3" y="3" width="14" height="14" color="#0f172a" />
+      </g>
+      <text x="44" y="24" fill="#0f172a" font-size="13" font-weight="700">Perimeter Ingress &amp; Next-Gen Firewalls (NGFW)</text>
+      <text x="20" y="44" fill="#475569" font-size="11">Enterprise Perimeter Defense Tier:</text>
+      <text x="20" y="64" fill="#64748b" font-size="10">&#8226; Active-Active Fortinet FortiGate enterprise cluster with deep packet inspection</text>
+      <text x="20" y="80" fill="#64748b" font-size="10">&#8226; Ingress demilitarized zone (DMZ) isolating branch SD-WAN and external partner VPNs</text>
+      <text x="20" y="96" fill="#64748b" font-size="10">&#8226; Forcepoint Secure Web Gateway (SWG) filtering all outbound internet access</text>
+      <text x="20" y="112" fill="#64748b" font-size="10">&#8226; Microsoft Entra ID SAML authentication proxy &amp; Delinea PAM privileged bastion</text>
+      <rect x="20" y="155" width="130" height="22" rx="4" fill="#0f172a" />
+      <text x="85" y="170" fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle">FORTIGATE NGFW</text>
+      <rect x="165" y="155" width="130" height="22" rx="4" fill="#f1f5f9" />
+      <text x="230" y="170" fill="#334155" font-size="10" font-weight="600" text-anchor="middle">FORCEPOINT SWG</text>
+    </g>
+  </g>
+</svg>
