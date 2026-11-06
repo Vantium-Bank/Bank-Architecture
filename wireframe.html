@@ -43,6 +43,31 @@
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(30, 41, 59, 0.9);
     }
+    /* Sleek custom scrollbars for executive wireframe viewport */
+    #viewportContainer::-webkit-scrollbar {
+      width: 14px;
+      height: 14px;
+    }
+    #viewportContainer::-webkit-scrollbar-track {
+      background: #080d1a;
+      border-left: 1px solid #1e293b;
+      border-top: 1px solid #1e293b;
+    }
+    #viewportContainer::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 7px;
+      border: 3px solid #080d1a;
+    }
+    #viewportContainer::-webkit-scrollbar-thumb:hover {
+      background: #0ea5e9;
+    }
+    #viewportContainer::-webkit-scrollbar-corner {
+      background: #080d1a;
+    }
+    #viewportContainer {
+      scrollbar-width: auto;
+      scrollbar-color: #334155 #080d1a;
+    }
     ::-webkit-scrollbar {
       width: 8px;
       height: 8px;
@@ -135,11 +160,14 @@
     </div>
   </div>
 
-  <!-- ==================== MAIN CANVAS CONTAINER ==================== -->
-  <main class="relative flex-1 overflow-hidden bg-[#070b14] cursor-grab active:cursor-grabbing" id="canvasContainer">
+  <!-- ==================== MAIN WORKSPACE VIEWPORT WITH NATIVE DUAL SCROLLBARS ==================== -->
+  <main id="viewportContainer" class="relative flex-1 min-h-0 min-w-0 w-full h-full overflow-x-auto overflow-y-auto bg-[#070b14] select-none cursor-grab active:cursor-grabbing">
 
-    <!-- Interactive SVG Architecture Canvas -->
-    <svg id="architectureSvg" viewBox="0 0 2600 1520" class="w-full h-full transition-transform origin-top-left">
+    <!-- Canvas Sizer: sets the scrollable area so native left-to-right & up-and-down scrollbars appear -->
+    <div id="canvasSizer" class="relative p-6 sm:p-8" style="width: 2720px; height: 1640px; min-width: 2720px; min-height: 1640px;">
+      
+      <!-- Interactive SVG Architecture Canvas -->
+      <svg id="architectureSvg" viewBox="0 0 2600 1520" style="width: 2600px; height: 1520px;" class="shadow-2xl rounded-2xl block transition-transform origin-top-left">
       <defs>
         <!-- Grid Pattern -->
         <pattern id="wireframeGrid" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -2024,6 +2052,24 @@
     
       </g>
     </svg>
+    </div>
+
+    <!-- Floating On-Screen Navigation & Scroll Quick-Buttons -->
+    <div class="fixed bottom-4 right-6 z-20 bg-slate-900/95 border border-slate-800 rounded-xl p-2 shadow-2xl backdrop-blur flex items-center space-x-2 text-xs font-mono text-slate-300">
+      <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider mr-1">SCROLL:</span>
+      <button onclick="scrollViewport(-450, 0)" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-cyan-600 hover:text-white transition flex items-center space-x-1" title="Scroll Left (West)">
+        <span>◀</span><span>Left</span>
+      </button>
+      <button onclick="scrollViewport(0, -350)" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-cyan-600 hover:text-white transition flex items-center space-x-1" title="Scroll Up (North)">
+        <span>▲</span><span>Up</span>
+      </button>
+      <button onclick="scrollViewport(0, 350)" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-cyan-600 hover:text-white transition flex items-center space-x-1" title="Scroll Down (South)">
+        <span>▼</span><span>Down</span>
+      </button>
+      <button onclick="scrollViewport(450, 0)" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-cyan-600 hover:text-white transition flex items-center space-x-1" title="Scroll Right (East)">
+        <span>▶</span><span>Right</span>
+      </button>
+    </div>
 
     <!-- Floating Legend & Status Pill -->
     <div class="absolute bottom-4 left-4 z-20 bg-slate-900/90 border border-slate-800 rounded-xl p-3 shadow-xl backdrop-blur flex items-center space-x-5 text-xs text-slate-300 font-mono">
@@ -2136,60 +2182,84 @@
     const TIERS = {"tier1": {"id": "tier1", "num": 1, "name": "Customer Channels & Ingress", "short_name": "TIER 1: CUSTOMER CHANNELS & INGRESS", "rect": [80, 80, 2440, 230], "color": "#38bdf8", "border": "#0284c7"}, "tier2": {"id": "tier2", "num": 2, "name": "Huawei Cloud Digital Platform", "short_name": "TIER 2: HUAWEI CLOUD DIGITAL CORE", "rect": [80, 350, 780, 640], "color": "#818cf8", "border": "#4f46e5"}, "tier3": {"id": "tier3", "num": 3, "name": "Connectivity & Perimeter Ingress", "short_name": "TIER 3: CONNECTIVITY SPINE", "rect": [890, 350, 500, 640], "color": "#2dd4bf", "border": "#0d9488"}, "tier4": {"id": "tier4", "num": 4, "name": "Primary Data Center (Lagos Tier III)", "short_name": "TIER 4: PRIMARY DC (LAGOS CORE)", "rect": [1420, 350, 640, 640], "color": "#fbbf24", "border": "#d97706"}, "tier5": {"id": "tier5", "num": 5, "name": "Abuja DR Data Center & Cold Vault", "short_name": "TIER 5: ABUJA DR DC & COLD VAULT", "rect": [2090, 350, 430, 640], "color": "#f87171", "border": "#e11d48"}, "tier6": {"id": "tier6", "num": 6, "name": "Strategic Branches (220 Locations)", "short_name": "TIER 6: BRANCH NETWORK (220)", "rect": [80, 1030, 380, 440], "color": "#34d399", "border": "#059669"}, "tier7": {"id": "tier7", "num": 7, "name": "Marina Head Office & Treasury", "short_name": "TIER 7: HEAD OFFICE & TREASURY", "rect": [490, 1030, 370, 440], "color": "#c084fc", "border": "#9333ea"}, "tier8": {"id": "tier8", "num": 8, "name": "Omnichannel Contact Center", "short_name": "TIER 8: CONTACT CENTER", "rect": [890, 1030, 370, 440], "color": "#38bdf8", "border": "#0891b2"}, "tier9": {"id": "tier9", "num": 9, "name": "Enterprise SaaS & Productivity", "short_name": "TIER 9: ENTERPRISE SAAS", "rect": [1290, 1030, 370, 440], "color": "#a78bfa", "border": "#7c3aed"}, "tier10": {"id": "tier10", "num": 10, "name": "Financial Clearing Rails & Regulators", "short_name": "TIER 10: FINANCIAL RAILS & CBN", "rect": [1690, 1030, 400, 440], "color": "#f59e0b", "border": "#b45309"}, "tier11": {"id": "tier11", "num": 11, "name": "Enterprise Data Lakehouse & AI", "short_name": "TIER 11: DATA LAKEHOUSE & AI", "rect": [2120, 1030, 400, 440], "color": "#ec4899", "border": "#db2777"}};
 
     let currentScale = 1.0;
+    const BASE_WIDTH = 2600;
+    const BASE_HEIGHT = 1520;
     let isPanning = false;
     let startX = 0, startY = 0;
-    let translateX = 0, translateY = 0;
+    let scrollStartLeft = 0, scrollStartTop = 0;
     let activeNodeId = null;
     let currentMode = 'all';
 
     const svg = document.getElementById('architectureSvg');
-    const container = document.getElementById('canvasContainer');
+    const viewport = document.getElementById('viewportContainer');
+    const canvasSizer = document.getElementById('canvasSizer');
     const drawer = document.getElementById('executiveDrawer');
 
-    // Pan & Zoom Implementation
-    container.addEventListener('mousedown', (e) => {
-      if (e.target.closest('.node-card') || e.target.closest('#executiveDrawer')) return;
+    // Directional scroll helpers
+    function scrollViewport(dx, dy) {
+      viewport.scrollBy({ left: dx, top: dy, behavior: 'smooth' });
+    }
+
+    // Drag-to-Pan via native scroll
+    viewport.addEventListener('mousedown', (e) => {
+      if (e.target.closest('.node-card') || e.target.closest('#executiveDrawer') || e.target.closest('button') || e.target.closest('input')) return;
       isPanning = true;
-      startX = e.clientX - translateX;
-      startY = e.clientY - translateY;
-      container.style.cursor = 'grabbing';
+      startX = e.clientX;
+      startY = e.clientY;
+      scrollStartLeft = viewport.scrollLeft;
+      scrollStartTop = viewport.scrollTop;
+      viewport.style.cursor = 'grabbing';
     });
 
     window.addEventListener('mousemove', (e) => {
       if (!isPanning) return;
-      translateX = e.clientX - startX;
-      translateY = e.clientY - startY;
-      applyTransform();
+      const dx = e.clientX - startX;
+      const dy = e.clientY - startY;
+      viewport.scrollLeft = scrollStartLeft - dx;
+      viewport.scrollTop = scrollStartTop - dy;
     });
 
     window.addEventListener('mouseup', () => {
-      isPanning = false;
-      container.style.cursor = 'grab';
+      if (isPanning) {
+        isPanning = false;
+        viewport.style.cursor = 'grab';
+      }
     });
 
-    container.addEventListener('wheel', (e) => {
-      e.preventDefault();
-      const zoomFactor = e.deltaY < 0 ? 1.08 : 0.92;
-      zoomCanvas(zoomFactor);
+    // Ctrl+Wheel Zoom
+    viewport.addEventListener('wheel', (e) => {
+      if (e.ctrlKey) {
+        e.preventDefault();
+        const factor = e.deltaY < 0 ? 1.08 : 0.92;
+        zoomCanvas(factor);
+      }
     }, { passive: false });
 
     function zoomCanvas(factor) {
-      const newScale = Math.min(Math.max(currentScale * factor, 0.4), 2.5);
+      const newScale = Math.min(Math.max(currentScale * factor, 0.5), 2.2);
       currentScale = newScale;
       document.getElementById('zoomLevel').innerText = Math.round(currentScale * 100) + '%';
-      applyTransform();
+      
+      const newSvgW = Math.round(BASE_WIDTH * currentScale);
+      const newSvgH = Math.round(BASE_HEIGHT * currentScale);
+      svg.style.width = newSvgW + 'px';
+      svg.style.height = newSvgH + 'px';
+      canvasSizer.style.width = (newSvgW + 80) + 'px';
+      canvasSizer.style.height = (newSvgH + 80) + 'px';
+      canvasSizer.style.minWidth = (newSvgW + 80) + 'px';
+      canvasSizer.style.minHeight = (newSvgH + 80) + 'px';
     }
 
     function resetZoom() {
       currentScale = 1.0;
-      translateX = 0;
-      translateY = 0;
       document.getElementById('zoomLevel').innerText = '100%';
-      applyTransform();
-    }
-
-    function applyTransform() {
-      svg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${currentScale})`;
+      svg.style.width = BASE_WIDTH + 'px';
+      svg.style.height = BASE_HEIGHT + 'px';
+      canvasSizer.style.width = (BASE_WIDTH + 80) + 'px';
+      canvasSizer.style.height = (BASE_HEIGHT + 80) + 'px';
+      canvasSizer.style.minWidth = (BASE_WIDTH + 80) + 'px';
+      canvasSizer.style.minHeight = (BASE_HEIGHT + 80) + 'px';
+      viewport.scrollTo({ left: 0, top: 0, behavior: 'smooth' });
     }
 
     // Mode Filtering
@@ -2290,15 +2360,13 @@
         }
       });
 
-      // Auto-pan to tier
+      // Auto-scroll to tier coordinates
       const tObj = TIERS[tierId];
       if (tObj) {
         const r = tObj.rect;
-        translateX = -(r[0] - 100);
-        translateY = -(r[1] - 80);
-        currentScale = 1.1;
-        applyTransform();
-        document.getElementById('zoomLevel').innerText = '110%';
+        const targetX = Math.max(0, (r[0] * currentScale) - 40);
+        const targetY = Math.max(0, (r[1] * currentScale) - 40);
+        viewport.scrollTo({ left: targetX, top: targetY, behavior: 'smooth' });
       }
     }
 
@@ -2424,15 +2492,22 @@
         nodes.forEach(n => n.classList.remove('node-dimmed'));
         return;
       }
+      let firstMatch = null;
       nodes.forEach(n => {
         const nId = n.id.replace('node_', '');
         const nodeObj = NODES[nId];
         if (nodeObj && (nodeObj.name.toLowerCase().includes(q) || nodeObj.sub.toLowerCase().includes(q) || nodeObj.summary.toLowerCase().includes(q))) {
           n.classList.remove('node-dimmed');
+          if (!firstMatch) firstMatch = nodeObj;
         } else {
           n.classList.add('node-dimmed');
         }
       });
+      if (firstMatch) {
+        const targetX = Math.max(0, (firstMatch.x * currentScale) - 200);
+        const targetY = Math.max(0, (firstMatch.y * currentScale) - 150);
+        viewport.scrollTo({ left: targetX, top: targetY, behavior: 'smooth' });
+      }
     }
   </script>
 </body>
